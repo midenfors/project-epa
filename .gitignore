@@ -26,3 +26,4 @@ mono_crash.*.json
 
 # Build files
 build/
+export_presets.cfg

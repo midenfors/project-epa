@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://ce43gijqqf1we"]
 
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
 
 [node name="world" type="Node2D" unique_id=235366172]
 
 [node name="Obstacle" parent="." unique_id=372518061 instance=ExtResource("1_a02cp")]
 position = Vector2(536, 334)
+
+[node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
+position = Vector2(204, 209)
+rotation = 1.9069173

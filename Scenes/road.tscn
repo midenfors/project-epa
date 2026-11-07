@@ -15,6 +15,7 @@ _data = {
 point_count = 44
 
 [node name="Road" type="Node2D" unique_id=1390165455]
+z_index = -1
 
 [node name="Background1" type="Sprite2D" parent="." unique_id=354325644]
 z_index = -1
@@ -36,7 +37,7 @@ shape = SubResource("RectangleShape2D_w872l")
 [node name="Obstacles" type="Node" parent="." unique_id=1533878863]
 
 [node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("2_wtjdh")]
-position = Vector2(577, 300)
+position = Vector2(1117, 65)
 
 [node name="Obstacle6" parent="Obstacles" unique_id=1168195045 instance=ExtResource("2_wtjdh")]
 position = Vector2(1087, 345)

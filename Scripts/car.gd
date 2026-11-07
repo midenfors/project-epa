@@ -1,13 +1,22 @@
 class_name Car
 extends CharacterBody2D
 
+@export var engine_level: int = 0
+@export var boost_level: int = 0
+@export var snus_level: int = 0
 
 # Upgradable
-@export var num_speed_boosts : int = 2 		# Number of snus in the bucket
-@export var speed_boost : float = 100.0		# Car Booster Upgrade
-@export var deceleration : float = -10		# Car Engine Upgrade
+@export var num_speed_boosts : int = 3 		# Number of snus in the bucket
+@export var speed_boost : float = 150.0		# Car Booster Upgrade
+@export var deceleration : float = -30		# Car Engine Upgrade
 
-var steering_speed : float = PI/10
+var boost_delay = 1000
+var time_last_boost : float = -999
+var boost_charge_duration : float = 0
+var time_boost_charge_start : float = 0
+var boost_time_target = 500
+
+var steering_speed : float = PI/16
 var speed : float = 0
 
 var on_grass : bool = false
@@ -22,10 +31,21 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
+	var time_now = Time.get_ticks_msec()
 	if Input.is_action_just_pressed("Boost"):
-		if num_speed_boosts > 0:
+		time_boost_charge_start = time_now
+	if Input.is_action_just_released("Boost"):
+		var boost_crit : bool = false
+		if abs(time_now - time_boost_charge_start - boost_time_target) < 50:
+			boost_crit = true 
+		if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
+			time_last_boost = time_now
 			num_speed_boosts -= 1
-			speed += speed_boost
+			if boost_crit:
+				speed += speed_boost * 2
+			else:
+				speed += speed_boost
+			
 	speed = clamp(speed, 0, 10000)
 	
 	var dec_modifer = 1

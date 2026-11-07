@@ -19,7 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			hide_upgrades()
 
 func update_poppy_label() -> void:
-	poppy_label.text = "Poppys: " + str(Global.poppys)
+	poppy_label.text = ": " + str(Global.poppys)
 
 func _process(_delta: float) -> void:
 	update_poppy_label()

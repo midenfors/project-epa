@@ -41,6 +41,7 @@ shape = SubResource("RectangleShape2D_qi6xy")
 modulate = Color(0.37888458, 0.30823612, 0.22541577, 1)
 material = SubResource("CanvasItemMaterial_argdw")
 position = Vector2(5.3327894e-06, 122)
+emitting = false
 amount = 3
 texture = ExtResource("4_yi23e")
 lifetime = 2.1399999999999997

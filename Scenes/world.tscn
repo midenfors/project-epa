@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ce43gijqqf1we"]
 
+[ext_resource type="Script" uid="uid://y5lbexiudvff" path="res://Scripts/world.gd" id="1_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
 
 [node name="world" type="Node2D" unique_id=235366172]
+script = ExtResource("1_5a7ea")
 
 [node name="Obstacle" parent="." unique_id=372518061 instance=ExtResource("1_a02cp")]
 position = Vector2(536, 334)

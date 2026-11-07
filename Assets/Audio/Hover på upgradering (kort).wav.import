@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wa1fhw03irq6"
+path="res://.godot/imported/Hover på upgradering (kort).wav-438c8d2aea54b3105b1970d8ddfeddee.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Hover på upgradering (kort).wav"
+dest_files=["res://.godot/imported/Hover på upgradering (kort).wav-438c8d2aea54b3105b1970d8ddfeddee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

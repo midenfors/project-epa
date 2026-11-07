@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://djeomro3ibjbj"]
+
+[ext_resource type="Texture2D" uid="uid://dlo5ipledi3xk" path="res://icon.svg" id="1_dwcnn"]
+
+[node name="UpgradeContainer" type="Control" unique_id=203992832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1179568591]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=24992920]
+layout_mode = 2
+texture = ExtResource("1_dwcnn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=280630782]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=960296813]
+layout_mode = 2
+text = "Upgrade"
+
+[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1340556331]
+layout_mode = 2
+text = "Lorem ipsum ....."

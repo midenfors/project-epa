@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmkqluooe27nq" path="res://Assets/Art/Car_Wheels1.png" id="2_1sfmx"]
 [ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="2_go66d"]
 [ext_resource type="Texture2D" uid="uid://d3ccid6njm4vr" path="res://Assets/Art/Particles/Large_Particle_Atlas.png" id="4_yi23e"]
+[ext_resource type="Texture2D" uid="uid://nsvd8cniyj7m" path="res://Assets/Art/Car_Engine1.png" id="5_u41r7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
 size = Vector2(78.99999, 220)
@@ -59,3 +60,8 @@ angular_velocity_min = -90.0
 angular_velocity_max = 90.0
 scale_amount_curve = SubResource("Curve_u41r7")
 anim_offset_max = 1.0
+
+[node name="CarEngine" type="Sprite2D" parent="." unique_id=427579668]
+position = Vector2(-1.9999999, 2)
+rotation = -1.5707964
+texture = ExtResource("5_u41r7")

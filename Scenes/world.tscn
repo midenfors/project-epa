@@ -16,6 +16,7 @@ position = Vector2(1396, 71)
 texture = ExtResource("2_8j60k")
 
 [node name="GrassArea" type="Area2D" parent="Background1" unique_id=577770111]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=1466651633]
 position = Vector2(-0.5, -439)
@@ -52,3 +53,6 @@ position = Vector2(1659, -313)
 position = Vector2(2111, -244)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
+
+[connection signal="body_entered" from="Background1/GrassArea" to="." method="_on_grass_area_body_entered"]
+[connection signal="body_exited" from="Background1/GrassArea" to="." method="_on_grass_area_body_exited"]

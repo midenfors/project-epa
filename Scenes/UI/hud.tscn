@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dvhqp0ov4flbi"]
+
+[ext_resource type="Script" path="res://Scripts/speedometer.gd" id="1_8glcj"]
+[ext_resource type="Texture2D" uid="uid://bdms7jtderd63" path="res://Assets/Art/Speedometer_Background.png" id="1_fdl0h"]
+[ext_resource type="Texture2D" uid="uid://c2tv6xdth32vj" path="res://Assets/Art/Speedometer_Arrow.png" id="2_8glcj"]
+[ext_resource type="Texture2D" uid="uid://diunf0q6dtv5p" path="res://Assets/Art/Speedometer_Top.png" id="3_vsu76"]
+
+[node name="HUD" type="Control" unique_id=341932580]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Speedometer" type="Control" parent="." unique_id=340154884]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -279.0
+offset_right = 275.0
+offset_bottom = -23.0
+grow_vertical = 0
+script = ExtResource("1_8glcj")
+
+[node name="BG" type="TextureRect" parent="Speedometer" unique_id=653147771]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("1_fdl0h")
+
+[node name="Arrow" type="Sprite2D" parent="Speedometer" unique_id=986789983]
+position = Vector2(130, 180)
+rotation = -0.44654956
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8glcj")
+offset = Vector2(-2.285, -32.24)
+
+[node name="FG" type="TextureRect" parent="Speedometer" unique_id=1982562522]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+texture = ExtResource("3_vsu76")

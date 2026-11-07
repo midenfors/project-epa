@@ -1,18 +1,27 @@
 extends Node
-var player_scene = load("res://Scenes/audio_player.tscn")
+class_name AudioManager
+
+## AUDIO LINKS
+const CRASCH_EPA = preload("uid://ni1y1w432d8y")
+const ENERGIDRYCK = preload("uid://dpr6fw7koy44y")
+const HOVER_PÅ_UPGRADERING__KORT_ = preload("uid://wa1fhw03irq6")
+const MOTORLJUD_1_EPA = preload("uid://81h62fvowxqo")
+const STANNA_EPA = preload("uid://bk16bgx0son5r")
+const START_EPA = preload("uid://dnqka6x5bl1oh")
+const UPGRADERINGSLJUD = preload("uid://dldq4pa6txajm")
+const VIND_EPA = preload("uid://dgcvrtathsxym")
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	initialize_sound("Start EPA.wav")
-	pass # Replace with function body.
+	play_sfx(START_EPA)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func initialize_sound(sound_name: String) -> void:
-	var player = player_scene.instantiate()
-	player.stream = load("res://Assets/Audio/"+ sound_name)
+func play_sfx(_stream) -> void:
+	var player = AudioStreamPlayer.new()
 	add_child(player)
+	player.stream = _stream
+	player.autoplay = true
+	player.play()
+	player.finished.connect.bind(sfx_finished)
+
+func sfx_finished(streamPlayer):
+	streamPlayer.queue_free()

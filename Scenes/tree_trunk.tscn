@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cq7mavo41v6b6"]
+
+[ext_resource type="Script" uid="uid://wfgps0lb6vvr" path="res://Scripts/obstacle.gd" id="1_2p81s"]
+[ext_resource type="Texture2D" uid="uid://ergupdo16tdg" path="res://Assets/Art/Tradstam.png" id="2_2p81s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6d2"]
+size = Vector2(240, 206)
+
+[node name="Obstacle" type="Area2D" unique_id=372518061]
+script = ExtResource("1_2p81s")
+speed_reduce = 1000
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439096254]
+texture = ExtResource("2_2p81s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845757294]
+rotation = -0.43633232
+scale = Vector2(0.1, 0.9)
+shape = SubResource("RectangleShape2D_vm6d2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

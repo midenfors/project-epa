@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ckwp5efuycvjo"]
+
+[ext_resource type="Script" uid="uid://wfgps0lb6vvr" path="res://Scripts/obstacle.gd" id="1_n1u2y"]
+[ext_resource type="Texture2D" uid="uid://8ljxnleu0nd7" path="res://Assets/Art/Gren.png" id="2_n1u2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6d2"]
+size = Vector2(240, 206)
+
+[node name="Tree" type="Area2D" unique_id=372518061]
+script = ExtResource("1_n1u2y")
+speed_reduce = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439096254]
+texture = ExtResource("2_n1u2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845757294]
+rotation = -0.8150688
+scale = Vector2(0.2, 0.5)
+shape = SubResource("RectangleShape2D_vm6d2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

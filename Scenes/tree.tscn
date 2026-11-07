@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lxd2l5gyanry"]
+
+[ext_resource type="Script" uid="uid://wfgps0lb6vvr" path="res://Scripts/obstacle.gd" id="1_rsuno"]
+[ext_resource type="Texture2D" uid="uid://btk7cspdie830" path="res://Assets/Art/Tradkron.png" id="2_rsuno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6d2"]
+size = Vector2(240, 206)
+
+[node name="Tree" type="Area2D" unique_id=372518061]
+script = ExtResource("1_rsuno")
+speed_reduce = 350
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439096254]
+texture = ExtResource("2_rsuno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845757294]
+rotation = -0.34906584
+scale = Vector2(0.6, 1)
+shape = SubResource("RectangleShape2D_vm6d2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

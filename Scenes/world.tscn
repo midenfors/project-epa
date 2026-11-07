@@ -1,60 +1,29 @@
 [gd_scene format=3 uid="uid://ce43gijqqf1we"]
 
 [ext_resource type="Script" uid="uid://y5lbexiudvff" path="res://Scripts/world.gd" id="1_5a7ea"]
-[ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="1_a02cp"]
-[ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://dvhqp0ov4flbi" path="res://Scenes/UI/hud.tscn" id="5_fo5ed"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
-size = Vector2(3965, 450)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
+size = Vector2(32, 645)
 
 [node name="world" type="Node" unique_id=521325791]
 script = ExtResource("1_5a7ea")
 
-[node name="Background1" type="Sprite2D" parent="." unique_id=1900512445]
-position = Vector2(1396, 71)
-texture = ExtResource("2_8j60k")
-
-[node name="GrassArea" type="Area2D" parent="Background1" unique_id=577770111]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=1466651633]
-position = Vector2(-0.5, -439)
-shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=956874921]
-position = Vector2(4, 442)
-shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="Obstacles" type="Node" parent="." unique_id=1110523923]
-
-[node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("1_a02cp")]
-position = Vector2(577, 300)
-
-[node name="Obstacle6" parent="Obstacles" unique_id=889171400 instance=ExtResource("1_a02cp")]
-position = Vector2(1087, 345)
-
-[node name="Obstacle7" parent="Obstacles" unique_id=58693557 instance=ExtResource("1_a02cp")]
-position = Vector2(1713, 414)
-
-[node name="Obstacle8" parent="Obstacles" unique_id=727033906 instance=ExtResource("1_a02cp")]
-position = Vector2(2227, 305)
-
-[node name="Obstacle2" parent="Obstacles" unique_id=558244027 instance=ExtResource("1_a02cp")]
-position = Vector2(635, -309)
-
-[node name="Obstacle3" parent="Obstacles" unique_id=1187342610 instance=ExtResource("1_a02cp")]
-position = Vector2(1119, -191)
-
-[node name="Obstacle4" parent="Obstacles" unique_id=887496392 instance=ExtResource("1_a02cp")]
-position = Vector2(1659, -313)
-
-[node name="Obstacle5" parent="Obstacles" unique_id=512059037 instance=ExtResource("1_a02cp")]
-position = Vector2(2111, -244)
+[node name="RoadParent" type="Marker2D" parent="." unique_id=1470602965]
+position = Vector2(-678, 0)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
+
+[node name="RoadCaller" type="Area2D" parent="." unique_id=914110124]
+position = Vector2(-678, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoadCaller" unique_id=700905560]
+position = Vector2(-6, -0.5)
+shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1650432471]
 
 [node name="HUD" parent="CanvasLayer" unique_id=341932580 instance=ExtResource("5_fo5ed")]
+
+[connection signal="body_exited" from="RoadCaller" to="." method="_on_area_2d_body_exited"]

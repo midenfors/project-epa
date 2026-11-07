@@ -28,6 +28,7 @@ rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
 [node name="BodySprite" type="Sprite2D" parent="." unique_id=1424530375]
+position = Vector2(1, -4.371139e-08)
 rotation = -1.5707964
 texture = ExtResource("2_go66d")
 

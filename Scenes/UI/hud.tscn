@@ -137,55 +137,31 @@ theme_override_constants/separation = 100
 [node name="UpgradeContainer" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=203992832 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="UpgradeContainer2" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=745871550 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="UpgradeContainer3" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1349211232 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="UpgradeContainer4" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1678027254 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="UpgradeContainer5" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1588523995 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="UpgradeContainer6" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1944248447 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
 script = ExtResource("8_fqivn")
 
 [node name="PauseScreen" type="Control" parent="." unique_id=1957676972]

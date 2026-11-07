@@ -3,16 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="1_b51y2"]
 [ext_resource type="Script" uid="uid://r42874pyqe48" path="res://Scripts/grass_area.gd" id="2_w872l"]
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/tree_trunk.tscn" id="2_wtjdh"]
-[ext_resource type="Script" uid="uid://d15rr2qji1sj8" path="res://Scripts/poppy_spawner.gd" id="4_w872l"]
+[ext_resource type="Script" uid="uid://dglgdnvibcxqn" path="res://Scripts/spawner.gd" id="5_80q1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w872l"]
 size = Vector2(3965, 450)
-
-[sub_resource type="Curve2D" id="Curve2D_80q1u"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 570, 70, 0, 0, 0, 0, 573, -55, 0, 0, 0, 0, 723, -55, 0, 0, 0, 0, 718, 147, 0, 0, 0, 0, 917, 153, 0, 0, 0, 0, 915, 71, 0, 0, 0, 0, 1052, 65, 0, 0, 0, 0, 1048, -38, 0, 0, 0, 0, 1237, -38, 0, 0, 0, 0, 1238, 181, 0, 0, 0, 0, 1455, 186, 0, 0, 0, 0, 1453, 69, 0, 0, 0, 0, 1587, 66, 0, 0, 0, 0, 1586, -47, 0, 0, 0, 0, 1776, -54, 0, 0, 0, 0, 1778, 182, 0, 0, 0, 0, 1947, 181, 0, 0, 0, 0, 1940, 56, 0, 0, 0, 0, 2126, 71, 0, 0, 0, 0, 2121, -50, 0, 0, 0, 0, 2332, -54, 0, 0, 0, 0, 2330, 178, 0, 0, 0, 0, 2509, 166, 0, 0, 0, 0, 2491, 51, 0, 0, 0, 0, 2638, 51, 0, 0, 0, 0, 2634, -54, 0, 0, 0, 0, 2822, -56, 0, 0, 0, 0, 2820, 172, 0, 0, 0, 0, 2981, 177, 0, 0, 0, 0, 2980, 69, 0, 0, 0, 0, 3119, 65, 0, 0, 0, 0, 3119, -59, 0, 0, 0, 0, 3277, -58, 0, 0, 0, 0, 3278, 183, 0, 0, 0, 0, 3450, 187, 0, 0, 0, 0, 3450, 58, 0, 0, 0, 0, 3610, 67, 0, 0, 0, 0, 3608, -58, 0, 0, 0, 0, 3796, -59, 0, 0, 0, 0, 3785, 172, 0, 0, 0, 0, 3877, 172, 0, 0, 0, 0, 3871, 70, 0, 0, 0, 0, 3958, 76)
-}
-point_count = 43
 
 [node name="Road" type="Node2D" unique_id=1390165455]
 z_index = -1
@@ -35,9 +29,6 @@ position = Vector2(4, 442)
 shape = SubResource("RectangleShape2D_w872l")
 
 [node name="Obstacles" type="Node" parent="." unique_id=1533878863]
-
-[node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("2_wtjdh")]
-position = Vector2(1117, 65)
 
 [node name="Obstacle6" parent="Obstacles" unique_id=1168195045 instance=ExtResource("2_wtjdh")]
 position = Vector2(1087, 345)
@@ -65,13 +56,8 @@ position = Vector2(2111, -244)
 [node name="End" type="Marker2D" parent="Position" unique_id=1702662950]
 position = Vector2(3960, 0)
 
-[node name="PoppySpawner" type="Path2D" parent="." unique_id=2102083080]
-curve = SubResource("Curve2D_80q1u")
-script = ExtResource("4_w872l")
-
-[node name="PoppyPosition" type="PathFollow2D" parent="PoppySpawner" unique_id=275264777]
-position = Vector2(570, 70)
-rotation = -1.546801
+[node name="Spawner" type="Node" parent="." unique_id=1963505092]
+script = ExtResource("5_80q1u")
 
 [connection signal="body_entered" from="Background1/GrassArea" to="Background1/GrassArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Background1/GrassArea" to="Background1/GrassArea" method="_on_body_exited"]

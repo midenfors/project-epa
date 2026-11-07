@@ -7,3 +7,4 @@ func _ready() -> void:
 		$HBoxContainer/TextureRect.texture = upgrade.icon
 		$HBoxContainer/VBoxContainer/Title.text = upgrade.name
 		$HBoxContainer/VBoxContainer/Description.text = upgrade.description
+		$HBoxContainer/VBoxContainer2/CostAmount.text = str(upgrade.upgrade_cost)

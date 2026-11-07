@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 	update_poppy_label()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Upgrades"):
 		if not $Dashboard/UpgradeMenu.visible:
 			show_upgrades()

@@ -28,36 +28,6 @@ shape = SubResource("RectangleShape2D_qi6xy")
 position = Vector2(4, 442)
 shape = SubResource("RectangleShape2D_qi6xy")
 
-[node name="Background2" type="Sprite2D" parent="." unique_id=271030503]
-position = Vector2(5353, 79)
-texture = ExtResource("2_8j60k")
-
-[node name="GrassArea" type="Area2D" parent="Background2" unique_id=434395409]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background2/GrassArea" unique_id=1435647088]
-position = Vector2(-0.5, -439)
-shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background2/GrassArea" unique_id=988336649]
-position = Vector2(4, 442)
-shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="Background3" type="Sprite2D" parent="." unique_id=1978498080]
-position = Vector2(9310, 86)
-texture = ExtResource("2_8j60k")
-
-[node name="GrassArea" type="Area2D" parent="Background3" unique_id=698558844]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background3/GrassArea" unique_id=543812724]
-position = Vector2(-0.5, -439)
-shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background3/GrassArea" unique_id=657079910]
-position = Vector2(4, 442)
-shape = SubResource("RectangleShape2D_qi6xy")
-
 [node name="Obstacles" type="Node" parent="." unique_id=1110523923]
 
 [node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("1_a02cp")]
@@ -114,7 +84,3 @@ position = Vector2(6993, 146)
 
 [connection signal="body_entered" from="Background1/GrassArea" to="." method="_on_grass_area_body_entered"]
 [connection signal="body_exited" from="Background1/GrassArea" to="." method="_on_grass_area_body_exited"]
-[connection signal="body_entered" from="Background2/GrassArea" to="." method="_on_grass_area_body_entered"]
-[connection signal="body_exited" from="Background2/GrassArea" to="." method="_on_grass_area_body_exited"]
-[connection signal="body_entered" from="Background3/GrassArea" to="." method="_on_grass_area_body_entered"]
-[connection signal="body_exited" from="Background3/GrassArea" to="." method="_on_grass_area_body_exited"]

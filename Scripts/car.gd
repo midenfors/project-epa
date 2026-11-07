@@ -8,9 +8,9 @@ extends CharacterBody2D
 @export var snus_level: int = 0
 
 # Upgradable
-@export var num_speed_boosts : int = 3 		# Number of snus in the bucket
-@export var speed_boost : float = 150.0		# Car Booster Upgrade
-@export var deceleration : float = -30		# Car Engine Upgrade
+@export var num_speed_boosts : int = 3      # Number of snus in the bucket
+@export var speed_boost : float = 150.0     # Car Booster Upgrade
+@export var deceleration : float = -30      # Car Engine Upgrade
 
 var boost_delay = 1000
 var time_last_boost : float = -999
@@ -21,6 +21,7 @@ var boost_time_target = 500
 var steering_speed : float = PI/16
 var speed : float = 0
 
+var car_started_motion = false
 var on_grass : bool = false
 var grass_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
@@ -33,12 +34,12 @@ func _ready() -> void:
 	
 func _physics_process(_delta: float) -> void:
 	num_speed_boosts = snus_gauge.num_snus_remaining()
-	
 	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
 	var time_now = Time.get_ticks_msec()
 	if Input.is_action_just_pressed("Boost"):
 		time_boost_charge_start = time_now
 	if Input.is_action_just_released("Boost"):
+		car_started_motion = true
 		var boost_crit : bool = false
 		if abs(time_now - time_boost_charge_start - boost_time_target) < 50:
 			boost_crit = true 

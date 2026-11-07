@@ -29,3 +29,11 @@ func show_upgrades() -> void:
 
 func hide_upgrades() -> void:
 	$Dashboard/UpgradeMenu.hide()
+	
+func show_end_state() -> void:
+	$EndScreen.show()
+	get_tree().paused = true
+
+func hide_end_state() -> void:
+	$EndScreen.hide()
+	get_tree().paused = false

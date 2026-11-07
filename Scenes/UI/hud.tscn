@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvhqp0ov4flbi"]
 
-[ext_resource type="Script" path="res://Scripts/speedometer.gd" id="1_8glcj"]
+[ext_resource type="Script" uid="uid://dniaxkkyve3iq" path="res://Scripts/speedometer.gd" id="1_8glcj"]
 [ext_resource type="Texture2D" uid="uid://bdms7jtderd63" path="res://Assets/Art/Speedometer_Background.png" id="1_fdl0h"]
 [ext_resource type="Texture2D" uid="uid://c2tv6xdth32vj" path="res://Assets/Art/Speedometer_Arrow.png" id="2_8glcj"]
 [ext_resource type="Texture2D" uid="uid://diunf0q6dtv5p" path="res://Assets/Art/Speedometer_Top.png" id="3_vsu76"]

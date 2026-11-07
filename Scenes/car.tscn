@@ -12,3 +12,5 @@ polygon = PackedVector2Array(-32, -64, 31, -64, 31, 64, -32, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481306472]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_qi6xy")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1537647939]

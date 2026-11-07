@@ -11,5 +11,3 @@ script = ExtResource("1_5a7ea")
 position = Vector2(536, 334)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
-position = Vector2(204, 209)
-rotation = 1.9069173

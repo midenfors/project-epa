@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2ummxx7qclep"
+path="res://.godot/imported/EPA i lera.wav-81501f2c911858b118db2d058cbc6765.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/EPA i lera.wav"
+dest_files=["res://.godot/imported/EPA i lera.wav-81501f2c911858b118db2d058cbc6765.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

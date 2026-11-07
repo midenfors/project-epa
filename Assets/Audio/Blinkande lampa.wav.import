@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ce5uw7qwj5x03"
+path="res://.godot/imported/Blinkande lampa.wav-5e80d5ed75725b7e324ddbb7b60c70bd.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Blinkande lampa.wav"
+dest_files=["res://.godot/imported/Blinkande lampa.wav-5e80d5ed75725b7e324ddbb7b60c70bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

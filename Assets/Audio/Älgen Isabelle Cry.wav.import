@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://x20vn2ocqi2r"
+path="res://.godot/imported/Älgen Isabelle Cry.wav-3873b78c4051acadda17f000ce115ed0.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Älgen Isabelle Cry.wav"
+dest_files=["res://.godot/imported/Älgen Isabelle Cry.wav-3873b78c4051acadda17f000ce115ed0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

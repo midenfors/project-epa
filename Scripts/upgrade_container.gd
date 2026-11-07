@@ -8,3 +8,7 @@ func _ready() -> void:
 		$HBoxContainer/VBoxContainer/Title.text = upgrade.name
 		$HBoxContainer/VBoxContainer/Description.text = upgrade.description
 		$HBoxContainer/VBoxContainer2/CostAmount.text = str(upgrade.upgrade_cost)
+		$HBoxContainer/Button.pressed.connect(upgrade_btn)
+
+func upgrade_btn():
+	pass

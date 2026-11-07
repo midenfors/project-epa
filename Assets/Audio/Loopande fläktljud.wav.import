@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbv1yq5ybtj3i"
+path="res://.godot/imported/Loopande fläktljud.wav-bbb356856298d24255208b8764c2ae29.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Loopande fläktljud.wav"
+dest_files=["res://.godot/imported/Loopande fläktljud.wav-bbb356856298d24255208b8764c2ae29.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

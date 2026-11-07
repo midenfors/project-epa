@@ -1,6 +1,8 @@
 class_name Car
 extends CharacterBody2D
 
+var audio_manager : AudioManager
+
 @export var snus_gauge : Snus_Gauge
 
 @export var engine_level: int = 0
@@ -29,14 +31,16 @@ var grass_particle_speed_limit = 12
 var speedometer : Speedometer
 
 func _ready() -> void:
+	audio_manager = get_node("../AudioManager")
 	speedometer = get_node("../CanvasLayer/HUD/Speedometer")
-	
+	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
 func _physics_process(_delta: float) -> void:
 	num_speed_boosts = snus_gauge.num_snus_remaining()
 	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
 	var time_now = Time.get_ticks_msec()
 	if Input.is_action_just_pressed("Boost"):
+		audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
 		time_boost_charge_start = time_now
 	if Input.is_action_just_released("Boost"):
 		car_started_motion = true

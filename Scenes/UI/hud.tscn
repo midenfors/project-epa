@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://0be866d3kn3x" path="res://Assets/Art/Poppy.png" id="6_qdh5o"]
 [ext_resource type="Script" uid="uid://bwgijuonu3ed8" path="res://Scripts/pause_screen.gd" id="6_ux5h0"]
 [ext_resource type="PackedScene" uid="uid://djeomro3ibjbj" path="res://Scenes/UI/upgrade_container.tscn" id="7_7wqu8"]
+[ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="9_am52h"]
 [ext_resource type="Script" uid="uid://w5gl52gct288" path="res://Scripts/end_screen.gd" id="11_cna6x"]
 
 [sub_resource type="Gradient" id="Gradient_7wqu8"]
@@ -99,12 +100,10 @@ text = ": 999"
 [node name="UpgradeMenu" type="Control" parent="Dashboard" unique_id=1791634231]
 visible = false
 layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_mqf2c")
 
@@ -117,12 +116,27 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_vm6d2")
 
+[node name="CAR" type="TextureRect" parent="Dashboard/UpgradeMenu" unique_id=1600665002]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_right = 256.0
+offset_bottom = 191.0
+grow_vertical = 0
+rotation = -1.5707964
+scale = Vector2(2.1234288, 2.0421836)
+texture = ExtResource("9_am52h")
+
 [node name="MarginContainer" type="MarginContainer" parent="Dashboard/UpgradeMenu" unique_id=698395331]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -651.0
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16

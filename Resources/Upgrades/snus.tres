@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://b1a50u3ppk0x6"]
+
+[ext_resource type="Texture2D" uid="uid://cyn202pcky0er" path="res://Assets/Art/Snusdossa.png" id="1_2mmnb"]
+[ext_resource type="Script" uid="uid://vn6db8n58n3i" path="res://Scripts/Upgrades.gd" id="1_dp32i"]
+
+[resource]
+script = ExtResource("1_dp32i")
+icon = ExtResource("1_2mmnb")
+name = "Snus"
+metadata/_custom_type_script = "uid://vn6db8n58n3i"

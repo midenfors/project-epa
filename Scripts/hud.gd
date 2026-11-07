@@ -11,8 +11,21 @@ func _ready() -> void:
 	
 	update_poppy_label()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Upgrades"):
+		if not $Dashboard/UpgradeMenu.visible:
+			show_upgrades()
+		else:
+			hide_upgrades()
+
 func update_poppy_label() -> void:
 	poppy_label.text = "Poppys: " + str(Global.poppys)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_poppy_label()
+
+func show_upgrades() -> void:
+	$Dashboard/UpgradeMenu.show()
+
+func hide_upgrades() -> void:
+	$Dashboard/UpgradeMenu.hide()

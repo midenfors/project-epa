@@ -1,5 +1,5 @@
-# Godot 4.2+ specific ignores
-~*.dll
+s# Godot 4.2+ specific ignores
+*.dll
 
 # Godot 4+ specific ignores
 .godot/
@@ -28,4 +28,4 @@ mono_crash.*.json
 # Build files
 build/
 export_presets.cfg
-build/*
+builds/*

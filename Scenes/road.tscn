@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ck05dpn6rx62v"]
+
+[ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="1_b51y2"]
+[ext_resource type="Script" uid="uid://r42874pyqe48" path="res://Scripts/grass_area.gd" id="2_w872l"]
+[ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="2_wtjdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w872l"]
+size = Vector2(3965, 450)
+
+[node name="Road" type="Node2D" unique_id=1390165455]
+
+[node name="Background1" type="Sprite2D" parent="." unique_id=354325644]
+z_index = -1
+position = Vector2(1980, 71)
+texture = ExtResource("1_b51y2")
+
+[node name="GrassArea" type="Area2D" parent="Background1" unique_id=675285593]
+collision_layer = 2
+script = ExtResource("2_w872l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=489354967]
+position = Vector2(-0.5, -439)
+shape = SubResource("RectangleShape2D_w872l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=1691655923]
+position = Vector2(4, 442)
+shape = SubResource("RectangleShape2D_w872l")
+
+[node name="Obstacles" type="Node" parent="." unique_id=1533878863]
+
+[node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("2_wtjdh")]
+position = Vector2(577, 300)
+
+[node name="Obstacle6" parent="Obstacles" unique_id=1168195045 instance=ExtResource("2_wtjdh")]
+position = Vector2(1087, 345)
+
+[node name="Obstacle7" parent="Obstacles" unique_id=1543230491 instance=ExtResource("2_wtjdh")]
+position = Vector2(1713, 414)
+
+[node name="Obstacle8" parent="Obstacles" unique_id=876041721 instance=ExtResource("2_wtjdh")]
+position = Vector2(2227, 305)
+
+[node name="Obstacle2" parent="Obstacles" unique_id=1982681806 instance=ExtResource("2_wtjdh")]
+position = Vector2(635, -309)
+
+[node name="Obstacle3" parent="Obstacles" unique_id=2139430511 instance=ExtResource("2_wtjdh")]
+position = Vector2(1119, -191)
+
+[node name="Obstacle4" parent="Obstacles" unique_id=594615901 instance=ExtResource("2_wtjdh")]
+position = Vector2(1659, -313)
+
+[node name="Obstacle5" parent="Obstacles" unique_id=1842943117 instance=ExtResource("2_wtjdh")]
+position = Vector2(2111, -244)
+
+[node name="Position" type="Node" parent="." unique_id=563851728]
+
+[node name="End" type="Marker2D" parent="Position" unique_id=1702662950]
+position = Vector2(3960, 0)
+
+[connection signal="body_entered" from="Background1/GrassArea" to="Background1/GrassArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Background1/GrassArea" to="Background1/GrassArea" method="_on_body_exited"]

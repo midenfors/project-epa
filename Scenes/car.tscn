@@ -1,17 +1,23 @@
 [gd_scene format=3 uid="uid://jlu1jv40kyf0"]
 
 [ext_resource type="Script" uid="uid://ciec4ui37y4dn" path="res://Scripts/car.gd" id="1_wqo35"]
+[ext_resource type="Texture2D" uid="uid://dmkqluooe27nq" path="res://Assets/Art/Car_Wheels1.png" id="2_1sfmx"]
+[ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="2_go66d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
-size = Vector2(63, 128)
+size = Vector2(78.99999, 220)
 
 [node name="Car" type="CharacterBody2D" unique_id=1563742778]
 rotation = 1.5707964
 script = ExtResource("1_wqo35")
 
-[node name="Placeholder Polygon" type="Polygon2D" parent="." unique_id=1600371534]
-color = Color(0.49, 0.30845502, 0.2107, 1)
-polygon = PackedVector2Array(-32, -64, 31, -64, 31, 64, -32, 64)
+[node name="WheelSprite" type="Sprite2D" parent="." unique_id=1524077083]
+rotation = -1.5707964
+texture = ExtResource("2_1sfmx")
+
+[node name="BodySprite" type="Sprite2D" parent="." unique_id=1424530375]
+rotation = -1.5707964
+texture = ExtResource("2_go66d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481306472]
 position = Vector2(-0.5, 0)

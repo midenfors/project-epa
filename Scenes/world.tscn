@@ -2,12 +2,53 @@
 
 [ext_resource type="Script" uid="uid://y5lbexiudvff" path="res://Scripts/world.gd" id="1_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="1_a02cp"]
+[ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
+size = Vector2(3965, 450)
 
 [node name="world" type="Node2D" unique_id=235366172]
 script = ExtResource("1_5a7ea")
 
-[node name="Obstacle" parent="." unique_id=372518061 instance=ExtResource("1_a02cp")]
-position = Vector2(536, 334)
+[node name="Background1" type="Sprite2D" parent="." unique_id=1900512445]
+position = Vector2(1396, 71)
+texture = ExtResource("2_8j60k")
+
+[node name="GrassArea" type="Area2D" parent="Background1" unique_id=577770111]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=1466651633]
+position = Vector2(-0.5, -439)
+shape = SubResource("RectangleShape2D_qi6xy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background1/GrassArea" unique_id=956874921]
+position = Vector2(4, 442)
+shape = SubResource("RectangleShape2D_qi6xy")
+
+[node name="Obstacles" type="Node" parent="." unique_id=1110523923]
+
+[node name="Obstacle" parent="Obstacles" unique_id=372518061 instance=ExtResource("1_a02cp")]
+position = Vector2(577, 300)
+
+[node name="Obstacle6" parent="Obstacles" unique_id=889171400 instance=ExtResource("1_a02cp")]
+position = Vector2(1087, 345)
+
+[node name="Obstacle7" parent="Obstacles" unique_id=58693557 instance=ExtResource("1_a02cp")]
+position = Vector2(1713, 414)
+
+[node name="Obstacle8" parent="Obstacles" unique_id=727033906 instance=ExtResource("1_a02cp")]
+position = Vector2(2227, 305)
+
+[node name="Obstacle2" parent="Obstacles" unique_id=558244027 instance=ExtResource("1_a02cp")]
+position = Vector2(635, -309)
+
+[node name="Obstacle3" parent="Obstacles" unique_id=1187342610 instance=ExtResource("1_a02cp")]
+position = Vector2(1119, -191)
+
+[node name="Obstacle4" parent="Obstacles" unique_id=887496392 instance=ExtResource("1_a02cp")]
+position = Vector2(1659, -313)
+
+[node name="Obstacle5" parent="Obstacles" unique_id=512059037 instance=ExtResource("1_a02cp")]
+position = Vector2(2111, -244)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]

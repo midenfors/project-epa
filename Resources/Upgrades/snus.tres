@@ -7,4 +7,5 @@
 script = ExtResource("1_dp32i")
 icon = ExtResource("1_2mmnb")
 name = "Snus"
+description = "Fuel for EPA"
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

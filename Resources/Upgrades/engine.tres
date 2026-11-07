@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://7jho10spoi8b"]
+
+[ext_resource type="Script" uid="uid://vn6db8n58n3i" path="res://Scripts/Upgrades.gd" id="1_3qrcw"]
+[ext_resource type="Texture2D" uid="uid://tg4u023ovifj" path="res://Assets/Art/Car_Engine2.png" id="1_a1vr3"]
+
+[resource]
+script = ExtResource("1_3qrcw")
+icon = ExtResource("1_a1vr3")
+name = "Engine"
+description = "For better speed"
+metadata/_custom_type_script = "uid://vn6db8n58n3i"

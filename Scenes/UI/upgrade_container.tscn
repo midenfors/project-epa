@@ -1,34 +1,65 @@
 [gd_scene format=3 uid="uid://djeomro3ibjbj"]
 
 [ext_resource type="Texture2D" uid="uid://dlo5ipledi3xk" path="res://icon.svg" id="1_dwcnn"]
+[ext_resource type="Script" uid="uid://cem1pomj4g7ir" path="res://Scripts/upgrade_container.gd" id="1_y445p"]
+[ext_resource type="Texture2D" uid="uid://0be866d3kn3x" path="res://Assets/Art/Poppy.png" id="3_i25oc"]
 
-[node name="UpgradeContainer" type="Control" unique_id=203992832]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1179568591]
-layout_mode = 1
+[node name="UpgradeContainer" type="MarginContainer" unique_id=203992832]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 128.0
 grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_y445p")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1179568591]
+layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=24992920]
+custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+size_flags_vertical = 4
 texture = ExtResource("1_dwcnn")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=280630782]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 
 [node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=960296813]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Upgrade"
 
 [node name="Description" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1340556331]
 layout_mode = 2
 text = "Lorem ipsum ....."
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1409506297]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1609703749]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Cost:"
+
+[node name="CostAmount" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=93973739]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=409634085]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "BUY"
+icon = ExtResource("3_i25oc")
+expand_icon = true

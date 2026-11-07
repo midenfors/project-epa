@@ -1,21 +1,20 @@
 extends Node
 var road_scene = load("res://Scenes/road.tscn")
 
+<<<<<<< HEAD
 var current_roads = {}
 var key = 0
 
+=======
+>>>>>>> c4ffff7ef273690d91101011d0abf6418984a340
 func _ready() -> void:
 	add_road()
 	add_road()
-
-func _process(delta: float) -> void:
-	pass
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
 	var car : Car = body as Car
 	car.on_grass = true
 	pass # Replace with function body.
-
 
 func _on_grass_area_body_exited(body: Node2D) -> void:
 	var car : Car = body as Car

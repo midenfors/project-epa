@@ -15,6 +15,10 @@ run/main_scene="uid://saqv4pskbbjo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Debug="*uid://c5626oax5gr61"
@@ -28,6 +32,16 @@ window/stretch/aspect="expand"
 [editor]
 
 movie_writer/movie_file="/home/atomicmage/Documents/Programming/Godot/project-epa/builds/test.avi"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://Resources/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "blue",
+"res://builds/": "gray"
+}
 
 [global_group]
 

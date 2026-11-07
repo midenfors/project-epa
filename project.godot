@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project-epa"
-run/main_scene="uid://ce43gijqqf1we"
+run/main_scene="uid://saqv4pskbbjo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

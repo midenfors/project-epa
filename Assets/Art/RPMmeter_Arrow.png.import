@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd00lymitaift"
-path="res://.godot/imported/Speedometer_Background.png-34f5b84e50ef995909c6b128336a2af6.ctex"
+uid="uid://cqvh1f6idaj6"
+path="res://.godot/imported/RPMmeter_Arrow.png-48d29131f19db98a3314f2442740c6f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Particles/Speedometer_Background.png"
-dest_files=["res://.godot/imported/Speedometer_Background.png-34f5b84e50ef995909c6b128336a2af6.ctex"]
+source_file="res://Assets/Art/RPMmeter_Arrow.png"
+dest_files=["res://.godot/imported/RPMmeter_Arrow.png-48d29131f19db98a3314f2442740c6f7.ctex"]
 
 [params]
 

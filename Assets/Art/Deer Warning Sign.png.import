@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwyuiv25qk5fk"
-path="res://.godot/imported/Speedometer_Arrow.png-005cdca83085b89d47efbf544f5b4c64.ctex"
+uid="uid://bvvwlsliasvdt"
+path="res://.godot/imported/Deer Warning Sign.png-e03143e4e64d99ca4293b944f1a4cba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Particles/Speedometer_Arrow.png"
-dest_files=["res://.godot/imported/Speedometer_Arrow.png-005cdca83085b89d47efbf544f5b4c64.ctex"]
+source_file="res://Assets/Art/Deer Warning Sign.png"
+dest_files=["res://.godot/imported/Deer Warning Sign.png-e03143e4e64d99ca4293b944f1a4cba7.ctex"]
 
 [params]
 

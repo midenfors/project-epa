@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm0cnta3vmnqm"
-path="res://.godot/imported/Speedometer_Top.png-4896cee48305be24180451c33416add5.ctex"
+uid="uid://c8awambstt2hx"
+path="res://.godot/imported/Warning Sign.png-65bb049d452570ae1e88a4170b1d2d72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Particles/Speedometer_Top.png"
-dest_files=["res://.godot/imported/Speedometer_Top.png-4896cee48305be24180451c33416add5.ctex"]
+source_file="res://Assets/Art/Warning Sign.png"
+dest_files=["res://.godot/imported/Warning Sign.png-65bb049d452570ae1e88a4170b1d2d72.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0tbr3t12hkg2"
-path="res://.godot/imported/RPMmeter_Background.png-7daf80e9b290f2dc966dfd14656b1a7f.ctex"
+uid="uid://dv3y30o31o73f"
+path="res://.godot/imported/RPMmeter_Top.png-9f01f7a04c3ee0a834a0e277b68acdef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Particles/RPMmeter_Background.png"
-dest_files=["res://.godot/imported/RPMmeter_Background.png-7daf80e9b290f2dc966dfd14656b1a7f.ctex"]
+source_file="res://Assets/Art/RPMmeter_Top.png"
+dest_files=["res://.godot/imported/RPMmeter_Top.png-9f01f7a04c3ee0a834a0e277b68acdef.ctex"]
 
 [params]
 

@@ -13,7 +13,7 @@ config_version=5
 config/name="project-epa"
 run/main_scene="uid://saqv4pskbbjo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://cdpy2t5xl4yfl"
+config/icon="uid://clo31shfm22jj"
 
 [audio]
 

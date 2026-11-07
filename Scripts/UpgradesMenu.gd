@@ -2,6 +2,8 @@ extends Control
 
 const UPGRADES_DIR = "res://Resources/Upgrades/"
 
+var EngineMilestones = [2, 5, 10]
+
 var upgrade_container_scene = load("res://Scenes/UI/upgrade_container.tscn") as PackedScene
 @onready var upgrades_container = $MarginContainer/ScrollContainer/VBoxContainer
 

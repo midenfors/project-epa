@@ -8,5 +8,5 @@ script = ExtResource("2_fnjpg")
 icon = ExtResource("1_kvkag")
 name = "Poppy Power"
 description = "Increase the sazz"
-upgrade_cost = 2
+base_cost = 2
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

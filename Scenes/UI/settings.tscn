@@ -1,23 +1,80 @@
 [gd_scene format=3 uid="uid://cds3j2kei57o7"]
 
-[node name="Settings" type="Control" unique_id=405480214]
+[ext_resource type="Script" uid="uid://cnmyt7i65at70" path="res://Scripts/UI/settings.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="2_bg"]
+[ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="3_font"]
+
+[node name="Settings" type="Control" unique_id=1218047381]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_script")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=986493709]
-layout_mode = 0
-offset_right = 508.0
-offset_bottom = 40.0
+[node name="BG" type="TextureRect" parent="." unique_id=556146297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=309891883]
+[node name="Panel" type="Panel" parent="." unique_id=1695021957]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=717359947]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1384453940]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1498860403]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1315490113]
+layout_mode = 2
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 26
 text = "Volume"
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer" unique_id=1148410964]
+[node name="VolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=1421601690]
+unique_name_in_owner = true
 layout_mode = 2
 value = 100.0
+
+[node name="FullscreenCheck" type="CheckButton" parent="CenterContainer/VBoxContainer" unique_id=24527758]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "Fullscreen"
+
+[node name="Back" type="Button" parent="CenterContainer/VBoxContainer" unique_id=836587465]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Back"

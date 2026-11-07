@@ -5,7 +5,7 @@ var snus_counter : int = 3
 var snus_upgrades : int = 0
 var poppy_power_upgrades : int = 0
 var engine_upgrades : int = 0
-
+var wheels_upgrades
 
 func increase_poppy(amount):
 	poppys += amount
@@ -13,7 +13,6 @@ func increase_poppy(amount):
 func get_upgrade_level(id: String) -> int:
 	var level = get(id + "_upgrades")
 	if level == null:
-		push_error("Global has no variable '%s_upgrades'" % id)
 		return 0
 	return level
 

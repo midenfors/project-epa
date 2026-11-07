@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bntfv4w5w50ht"]
+
+[ext_resource type="Script" uid="uid://vn6db8n58n3i" path="res://Scripts/Upgrades.gd" id="1_o3g43"]
+[ext_resource type="Texture2D" uid="uid://bwnvs5shehrrl" path="res://Assets/Art/Car_Wheel2.png" id="1_y0yoy"]
+
+[resource]
+script = ExtResource("1_o3g43")
+name = "Wheel upgrades"
+description = "Ground control"
+max_level = 3
+icon = ExtResource("1_y0yoy")
+metadata/_custom_type_script = "uid://vn6db8n58n3i"

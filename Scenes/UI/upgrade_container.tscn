@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://djeomro3ibjbj"]
 
-[ext_resource type="Texture2D" uid="uid://dlo5ipledi3xk" path="res://icon.svg" id="1_dwcnn"]
+[ext_resource type="Texture2D" uid="uid://dlo5ipledi3xk" path="res://Assets/godot_icon.svg" id="1_dwcnn"]
 [ext_resource type="Script" uid="uid://cem1pomj4g7ir" path="res://Scripts/upgrade_container.gd" id="1_y445p"]
 [ext_resource type="Texture2D" uid="uid://0be866d3kn3x" path="res://Assets/Art/Poppy.png" id="3_i25oc"]
 [ext_resource type="Texture2D" uid="uid://b3ouwrfh6d6j8" path="res://Assets/Art/UI_Box.png" id="4_gew5t"]
-[ext_resource type="Texture2D" uid="uid://c6old18rflgxa" path="res://Assets/Art/UpgradeLight_BG_Off.png" id="4_tyxeg"]
-[ext_resource type="Texture2D" uid="uid://xnmuo7xpscwu" path="res://Assets/Art/UpgradeLight_Top.png" id="5_jq8ut"]
-[ext_resource type="Texture2D" uid="uid://depfxjjd27x8e" path="res://Assets/Art/UpgradeLight_BG_On.png" id="6_elbrf"]
 
 [node name="UpgradeContainer" type="MarginContainer" unique_id=203992832]
 anchors_preset = 10
@@ -20,9 +17,8 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 script = ExtResource("1_y445p")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1608839393]
+[node name="Box" type="NinePatchRect" parent="." unique_id=1608839393]
 layout_mode = 2
-offset_transform_enabled = true
 texture = ExtResource("4_gew5t")
 region_rect = Rect2(0, 0, 332, 130)
 patch_margin_left = 52
@@ -30,11 +26,12 @@ patch_margin_top = 39
 patch_margin_right = 45
 patch_margin_bottom = 45
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1179568591]
+[node name="Row" type="HBoxContainer" parent="." unique_id=1179568591]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=24992920]
+[node name="Icon" type="TextureRect" parent="Row" unique_id=24992920]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 size_flags_vertical = 4
@@ -42,65 +39,46 @@ texture = ExtResource("1_dwcnn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=280630782]
+[node name="Info" type="VBoxContainer" parent="Row" unique_id=280630782]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=960296813]
+[node name="Title" type="Label" parent="Row/Info" unique_id=960296813]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Upgrade"
 
-[node name="Description" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1340556331]
+[node name="Description" type="Label" parent="Row/Info" unique_id=1340556331]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Lorem ipsum ....."
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1409506297]
+[node name="Lights" type="HBoxContainer" parent="Row/Info" unique_id=795872538]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Cost" type="VBoxContainer" parent="Row" unique_id=1409506297]
+layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1609703749]
+[node name="CostTitle" type="Label" parent="Row/Cost" unique_id=1609703749]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Cost:"
 
-[node name="CostAmount" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=93973739]
+[node name="CostAmount" type="Label" parent="Row/Cost" unique_id=93973739]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "0"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=795872538]
+[node name="BuyButton" type="Button" parent="Row" unique_id=409634085]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-theme_override_constants/separation = 17
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer" unique_id=1716362093]
-custom_minimum_size = Vector2(0.405, 0)
-layout_mode = 2
-texture = ExtResource("6_elbrf")
-expand_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/TextureRect" unique_id=1074512343]
-layout_mode = 0
-offset_right = 99.0
-offset_bottom = 93.0
-texture = ExtResource("5_jq8ut")
-
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/HBoxContainer" unique_id=1016460257]
-layout_mode = 2
-texture = ExtResource("4_tyxeg")
-expand_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/HBoxContainer/TextureRect2" unique_id=1797485139]
-layout_mode = 0
-offset_right = 99.0
-offset_bottom = 93.0
-texture = ExtResource("5_jq8ut")
-
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=409634085]
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 4
 text = "BUY"
 icon = ExtResource("3_i25oc")

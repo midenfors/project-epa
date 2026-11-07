@@ -1,17 +1,23 @@
 extends Control
 
+const LIGHT_ON := preload("res://Assets/Art/UpgradeLight_BG_On.png")
+const LIGHT_OFF := preload("res://Assets/Art/UpgradeLight_BG_Off.png")
+const LIGHT_TOP := preload("res://Assets/Art/UpgradeLight_Top.png")
+
 @export var upgrade : Upgrade
 
-@onready var cost_label: Label = $HBoxContainer/VBoxContainer2/CostAmount
-@onready var buy_button: Button = $HBoxContainer/Button
+@onready var cost_label: Label = %CostAmount
+@onready var buy_button: Button = %BuyButton
+@onready var lights: HBoxContainer = %Lights
 
 func _ready() -> void:
 	if not upgrade:
 		return
-	$HBoxContainer/TextureRect.texture = upgrade.icon
-	$HBoxContainer/VBoxContainer/Title.text = upgrade.name
-	$HBoxContainer/VBoxContainer/Description.text = upgrade.description
+	%Icon.texture = upgrade.icon
+	%Title.text = upgrade.name
+	%Description.text = upgrade.description
 	buy_button.pressed.connect(_on_buy_pressed)
+	_make_lights()
 	_refresh()
 
 func _process(_delta: float) -> void:
@@ -19,17 +25,23 @@ func _process(_delta: float) -> void:
 	if upgrade and is_visible_in_tree():
 		_refresh()
 
-func current_cost() -> int:
-	return upgrade.upgrade_cost + upgrade.cost_increase * Global.get_upgrade_level(upgrade.get_id())
+# One light per level, with the top overlay drawn over it.
+func _make_lights() -> void:
+	for i in upgrade.max_level:
+		var light := TextureRect.new()
+		light.texture = LIGHT_OFF
+		var top := TextureRect.new()
+		top.texture = LIGHT_TOP
+		light.add_child(top)
+		lights.add_child(light)
 
 func _refresh() -> void:
-	cost_label.text = str(current_cost())
-	buy_button.disabled = Global.poppys < current_cost()
+	cost_label.text = "MAX" if upgrade.is_maxed() else str(upgrade.get_cost())
+	buy_button.disabled = not upgrade.can_buy()
+	var level := upgrade.get_level()
+	for i in lights.get_child_count():
+		lights.get_child(i).texture = LIGHT_ON if i < level else LIGHT_OFF
 
 func _on_buy_pressed() -> void:
-	var cost := current_cost()
-	if Global.poppys < cost:
-		return
-	Global.poppys -= cost
-	Global.add_upgrade_level(upgrade.get_id(), upgrade.amount)
+	upgrade.buy()
 	_refresh()

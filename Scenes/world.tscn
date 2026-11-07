@@ -58,3 +58,6 @@ position = Vector2(2111, -244)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1650432471]
 
 [node name="HUD" parent="CanvasLayer" unique_id=341932580 instance=ExtResource("5_fo5ed")]
+
+[connection signal="body_entered" from="Background1/GrassArea" to="." method="_on_grass_area_body_entered"]
+[connection signal="body_exited" from="Background1/GrassArea" to="." method="_on_grass_area_body_exited"]

@@ -15,7 +15,11 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	
 	var throttle_modifier : float = 1.0
-	if on_grass: throttle_modifier *= 0.5
+	if on_grass:
+		throttle_modifier *= 0.5
+		$CPUParticles2D.emitting = true
+	else:
+		$CPUParticles2D.emitting = false
 	
 	var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
 	var input_steering = Input.get_axis("Turn Left", "Turn Right")

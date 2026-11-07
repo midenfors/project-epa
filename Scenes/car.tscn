@@ -38,7 +38,6 @@ shape = SubResource("RectangleShape2D_qi6xy")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1537647939]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1243732601]
-visible = false
 modulate = Color(0.37888458, 0.30823612, 0.22541577, 1)
 material = SubResource("CanvasItemMaterial_argdw")
 position = Vector2(5.3327894e-06, 122)

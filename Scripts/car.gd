@@ -27,7 +27,7 @@ func _physics_process(_delta: float) -> void:
 	var input_steering = Input.get_axis("Turn Left", "Turn Right")
 	
 	if input_throttle > 0:
-		speedometer.set_arrow_to_degrees(-75)
+		speedometer.set_speed(input_throttle * 35)
 	else:
 		speedometer.set_arrow_to_zero()
 	

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cp8547jt1pcjv"]
+
+[ext_resource type="Script" uid="uid://j8fm4xd7x6j1" path="res://Scripts/poppy.gd" id="1_gi6fe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8q2ih"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6d2"]
+size = Vector2(124, 122)
+
+[node name="Poppy" type="Area2D" unique_id=1648136322]
+script = ExtResource("1_gi6fe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2146298501]
+texture = SubResource("CompressedTexture2D_8q2ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1629176658]
+shape = SubResource("RectangleShape2D_vm6d2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

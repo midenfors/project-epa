@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/obstacle.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="2_8j60k"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://cp8547jt1pcjv" path="res://Scenes/poppy.tscn" id="4_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://dvhqp0ov4flbi" path="res://Scenes/UI/hud.tscn" id="5_fo5ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
@@ -90,6 +91,20 @@ position = Vector2(1659, -313)
 [node name="Obstacle5" parent="Obstacles" unique_id=512059037 instance=ExtResource("1_a02cp")]
 visible = false
 position = Vector2(2111, -244)
+
+[node name="Collectibles" type="Node" parent="." unique_id=1833142453]
+
+[node name="Poppy" parent="Collectibles" unique_id=1648136322 instance=ExtResource("4_5ukr8")]
+position = Vector2(956, 122)
+
+[node name="Poppy2" parent="Collectibles" unique_id=736988511 instance=ExtResource("4_5ukr8")]
+position = Vector2(1633, -2)
+
+[node name="Poppy3" parent="Collectibles" unique_id=1023685493 instance=ExtResource("4_5ukr8")]
+position = Vector2(3881, -22)
+
+[node name="Poppy4" parent="Collectibles" unique_id=1476327348 instance=ExtResource("4_5ukr8")]
+position = Vector2(6993, 146)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
 

@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Debug="*uid://c5626oax5gr61"
+Global="*uid://biirinrksdpv5"
 
 [display]
 

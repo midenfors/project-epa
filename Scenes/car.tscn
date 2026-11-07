@@ -19,7 +19,7 @@ _limits = [1.0, 3.6094933, 0.0, 1.0]
 _data = [Vector2(0.24468085, 1.1172805), 0.0, 2.0211363, 0, 0, Vector2(0.9787234, 3.6094933), 4.7247334, 0.0, 0, 0]
 point_count = 2
 
-[node name="Car" type="CharacterBody2D" unique_id=1563742778]
+[node name="Car" type="CharacterBody2D" unique_id=1563742778 groups=["Player"]]
 rotation = 1.5707964
 script = ExtResource("1_wqo35")
 

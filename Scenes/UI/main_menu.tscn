@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://saqv4pskbbjo"]
 
 [ext_resource type="Script" uid="uid://bdbb072wtom2m" path="res://Scripts/UI/button.gd" id="1_5wsvm"]
+[ext_resource type="Texture2D" uid="uid://cyn202pcky0er" path="res://Assets/Art/Snusdossa.png" id="2_i2xx2"]
 
 [node name="MainMenu" type="Control" unique_id=1447482263]
 layout_mode = 3
@@ -40,6 +41,10 @@ theme_override_font_sizes/font_size = 26
 text = "Settings"
 script = ExtResource("1_5wsvm")
 button = "res://Scenes/UI/settings.tscn"
+
+[node name="Snusdossa" type="Sprite2D" parent="." unique_id=412676672]
+position = Vector2(409, 180)
+texture = ExtResource("2_i2xx2")
 
 [connection signal="pressed" from="BoxContainer/Start" to="BoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="BoxContainer/Settings" to="BoxContainer/Start" method="_on_settings_pressed"]

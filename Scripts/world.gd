@@ -27,7 +27,8 @@ func add_road() -> void:
 	current_roads.set(key, road);
 	if key > 3:
 		var free = current_roads[1]
-		free.queue_free()
+		if free:
+			free.queue_free()
 		for roads in range(2, 3+1):
 			current_roads[roads-1] = current_roads[roads]
 		key = key - 1

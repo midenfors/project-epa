@@ -1,12 +1,9 @@
 extends Node
 var road_scene = load("res://Scenes/road.tscn")
 
-<<<<<<< HEAD
 var current_roads = {}
 var key = 0
 
-=======
->>>>>>> c4ffff7ef273690d91101011d0abf6418984a340
 func _ready() -> void:
 	add_road()
 	add_road()

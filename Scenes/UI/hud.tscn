@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dvhqp0ov4flbi"]
 
 [ext_resource type="Script" uid="uid://dniaxkkyve3iq" path="res://Scripts/speedometer.gd" id="1_8glcj"]
-[ext_resource type="Texture2D" uid="uid://bdms7jtderd63" path="res://Assets/Art/Speedometer_Background.png" id="1_fdl0h"]
+[ext_resource type="Texture2D" uid="uid://dd00lymitaift" path="res://Assets/Art/Speedometer_Background.png" id="1_fdl0h"]
 [ext_resource type="Script" uid="uid://cxiogb40yjcxn" path="res://Scripts/hud.gd" id="1_vsu76"]
-[ext_resource type="Texture2D" uid="uid://c2tv6xdth32vj" path="res://Assets/Art/Speedometer_Arrow.png" id="2_8glcj"]
-[ext_resource type="Texture2D" uid="uid://diunf0q6dtv5p" path="res://Assets/Art/Speedometer_Top.png" id="3_vsu76"]
+[ext_resource type="Texture2D" uid="uid://cwyuiv25qk5fk" path="res://Assets/Art/Speedometer_Arrow.png" id="2_8glcj"]
+[ext_resource type="Script" uid="uid://bvhoq1jt85p8g" path="res://Scenes/UI/snus_gauge.gd" id="2_fqivn"]
+[ext_resource type="Texture2D" uid="uid://dm0cnta3vmnqm" path="res://Assets/Art/Speedometer_Top.png" id="3_vsu76"]
 [ext_resource type="Script" uid="uid://ctavn3ky1hso2" path="res://Scripts/UpgradesMenu.gd" id="6_mqf2c"]
 [ext_resource type="Script" uid="uid://bwgijuonu3ed8" path="res://Scripts/pause_screen.gd" id="6_ux5h0"]
 [ext_resource type="PackedScene" uid="uid://djeomro3ibjbj" path="res://Scenes/UI/upgrade_container.tscn" id="7_7wqu8"]
@@ -24,6 +25,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vsu76")
+
+[node name="SnusGauge" type="Control" parent="." unique_id=1621035185]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_fqivn")
+
+[node name="SnusMarker2D" type="Marker2D" parent="SnusGauge" unique_id=1996838785]
+position = Vector2(331, 537)
 
 [node name="Speedometer" type="Control" parent="." unique_id=340154884]
 layout_mode = 1

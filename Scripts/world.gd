@@ -1,12 +1,15 @@
 extends Node
 var road_scene = load("res://Scenes/road.tscn")
+@onready var car : Car = $Car
 
 var current_roads = {}
 var key = 0
 
+
 func _ready() -> void:
 	add_road()
 	add_road()
+	car.snus_gauge = $CanvasLayer/HUD/SnusGauge
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
 	var car : Car = body as Car

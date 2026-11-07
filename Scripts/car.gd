@@ -1,6 +1,8 @@
 class_name Car
 extends CharacterBody2D
 
+@export var snus_gauge : Snus_Gauge
+
 @export var engine_level: int = 0
 @export var boost_level: int = 0
 @export var snus_level: int = 0
@@ -30,6 +32,8 @@ func _ready() -> void:
 	
 	
 func _physics_process(_delta: float) -> void:
+	num_speed_boosts = snus_gauge.num_snus_remaining()
+	
 	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
 	var time_now = Time.get_ticks_msec()
 	if Input.is_action_just_pressed("Boost"):
@@ -41,6 +45,7 @@ func _physics_process(_delta: float) -> void:
 		if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
 			time_last_boost = time_now
 			num_speed_boosts -= 1
+			snus_gauge.consume_snus()
 			if boost_crit:
 				speed += speed_boost * 2
 			else:

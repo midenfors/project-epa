@@ -13,3 +13,5 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_key_label_pressed(KEY_PLUS):
 		Global.poppys += 1
 	
+	if Input.is_key_label_pressed(KEY_R):
+		get_tree().reload_current_scene()

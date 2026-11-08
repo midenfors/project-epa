@@ -70,7 +70,12 @@ func _on_upgrade_button_pressed() -> void:
 func _on_close_upgr_button_pressed() -> void:
 	hide_upgrades()
 	$Dashboard/UpgradeButton.show()
-	
 
 func _on_cheat_button_pressed() -> void:
 	Global.increase_poppy(50)
+
+func _on_menu_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+
+func show_win_screen() -> void:
+	$WinScreen.show()

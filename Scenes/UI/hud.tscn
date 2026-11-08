@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="18_qff6j"]
 [ext_resource type="Theme" uid="uid://cxb3kvws7iov1" path="res://Resources/main-buttons.tres" id="19_e17ao"]
 [ext_resource type="Texture2D" uid="uid://c3do4pebinvxk" path="res://Assets/Art/Craft Icon.png" id="20_0hfmd"]
+[ext_resource type="Texture2D" uid="uid://bs674xu6mvg2d" path="res://Assets/Art/Final_Image.png" id="24_iiebs"]
+[ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="25_n5w8m"]
 
 [sub_resource type="Gradient" id="Gradient_7wqu8"]
 offsets = PackedFloat32Array(1)
@@ -180,6 +182,17 @@ theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 32
 text = ": 999"
 
+[node name="UpgradeButton" type="Button" parent="Dashboard" unique_id=641129064]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 141.79716
+offset_bottom = 134.55371
+focus_mode = 0
+theme = ExtResource("19_e17ao")
+icon = ExtResource("20_0hfmd")
+expand_icon = true
+
 [node name="UpgradeMenu" type="Control" parent="Dashboard" unique_id=1791634231]
 visible = false
 z_index = 5
@@ -327,17 +340,6 @@ theme = ExtResource("19_e17ao")
 icon = ExtResource("6_qdh5o")
 expand_icon = true
 
-[node name="UpgradeButton" type="Button" parent="Dashboard" unique_id=641129064]
-layout_mode = 1
-offset_left = 40.0
-offset_top = 34.0
-offset_right = 141.79716
-offset_bottom = 134.55371
-focus_mode = 0
-theme = ExtResource("19_e17ao")
-icon = ExtResource("20_0hfmd")
-expand_icon = true
-
 [node name="PauseScreen" type="Control" parent="." unique_id=1957676972]
 process_mode = 3
 visible = false
@@ -456,6 +458,53 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Tow home"
 
+[node name="WinScreen" type="Control" parent="." unique_id=1757390665]
+process_mode = 3
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="WinScreen" unique_id=1016210258]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_iiebs")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="WinScreen" unique_id=276656854]
+layout_mode = 1
+offset_right = 303.0
+offset_bottom = 182.0
+theme_override_constants/margin_left = 88
+theme_override_constants/margin_top = 113
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinScreen/MarginContainer" unique_id=435143335]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="WinScreen/MarginContainer/VBoxContainer" unique_id=754180730]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -50)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 21
+theme_override_fonts/font = ExtResource("25_n5w8m")
+theme_override_font_sizes/font_size = 64
+text = "YOU MADE IT"
+
+[node name="MenuBtn" type="Button" parent="WinScreen/MarginContainer/VBoxContainer" unique_id=1855125437]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "MENU"
+
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1704118310]
 layout_mode = 0
 offset_left = 305.0
@@ -468,10 +517,11 @@ action_right = &"Turn Right"
 action_up = &""
 action_down = &""
 
+[connection signal="pressed" from="Dashboard/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CloseUpgrButton" to="." method="_on_close_upgr_button_pressed"]
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CheatButton" to="." method="_on_cheat_button_pressed"]
-[connection signal="pressed" from="Dashboard/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/ResumeBtn" to="PauseScreen" method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/MenuBtn" to="PauseScreen" method="_on_menu_btn_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/QuitBtn" to="PauseScreen" method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="EndScreen/MarginContainer/VBoxContainer/TowHomeBtn" to="EndScreen" method="_on_tow_home_btn_pressed"]
+[connection signal="pressed" from="WinScreen/MarginContainer/VBoxContainer/MenuBtn" to="." method="_on_menu_btn_pressed"]

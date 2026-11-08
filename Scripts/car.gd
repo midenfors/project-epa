@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 var audio_manager : AudioManager
 
+@export var turn_smoothing : float = 8.0 # Högre = snabbare
+
 @export var snus_gauge : Snus_Gauge
 
 @export var engine_level: int = 0
@@ -15,11 +17,12 @@ var audio_manager : AudioManager
 @export var deceleration : float = -30      # Car Engine Upgrade
 @export var engine_decel_reduction : float = 0.05  # Each engine level cuts deceleration by 5%
 
-var boost_delay = 1000
+var boost_delay = 1200
 var time_last_boost : float = -999
-var boost_charge_duration : float = 0
 var time_boost_charge_start : float = 0
-var boost_time_target = 500
+var boost_duration_target = 600
+var boost_duration_cutoff = boost_duration_target * 1.8
+var boost_crit_window = 300
 
 var steering_speed : float = PI/16
 var speed : float = 0
@@ -28,12 +31,18 @@ var car_started_motion = false
 var on_grass : bool = false
 var grass_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
+var break_deceleration_modifier = 15
 
 var speedometer : Speedometer
+var tachometer : Tachometer
+var steering_wheel : Node2D
 
 func _ready() -> void:
 	audio_manager = get_node("../AudioManager")
-	speedometer = get_node("../CanvasLayer/HUD/Speedometer")
+	speedometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Speedometer")
+	tachometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Tachometer")
+	steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
+	
 	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
 # Deceleration after engine upgrades (level 10 = half the slowdown).
@@ -43,16 +52,21 @@ func get_deceleration() -> float:
 
 func _physics_process(_delta: float) -> void:
 	num_speed_boosts = snus_gauge.num_snus_remaining()
-	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
+
 	var time_now = Time.get_ticks_msec()
+	var boost_duration = 0
+	if Input.is_action_pressed("Boost") and num_speed_boosts > 0:
+		boost_duration = time_now - time_boost_charge_start
 	if Input.is_action_just_pressed("Boost"):
 		audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
 		time_boost_charge_start = time_now
+		
 	if Input.is_action_just_released("Boost"):
 		car_started_motion = true
 		var boost_crit : bool = false
-		if abs(time_now - time_boost_charge_start - boost_time_target) < 50:
-			boost_crit = true 
+		
+		if abs(boost_duration - boost_duration_target) < boost_crit_window/2:
+			boost_crit = true
 		if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
 			time_last_boost = time_now
 			num_speed_boosts -= 1
@@ -64,9 +78,9 @@ func _physics_process(_delta: float) -> void:
 			
 	speed = clamp(speed, 0, 10000)
 	
-	var dec_modifer = 1
+	var dec_modifier = 1
 	if on_grass:
-		dec_modifer *= grass_deceleration_modifier
+		dec_modifier *= grass_deceleration_modifier
 		if $CPUParticles2D.emitting == false:
 			if speed > grass_particle_speed_limit:
 				$CPUParticles2D.restart()
@@ -76,23 +90,24 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if $CPUParticles2D.emitting == true:
 			$CPUParticles2D.emitting = false
-	speed += get_deceleration() * dec_modifer * _delta
+	if Input.is_action_pressed("Break"):
+		dec_modifier *= break_deceleration_modifier
+	speed += get_deceleration() * dec_modifier * _delta
 	if speed < 0:
 		speed = 0
 	velocity = Vector2(speed, 0)
 	var steering_angle = steering_speed * Input.get_axis("Turn Left", "Turn Right")
 	velocity = velocity.rotated(steering_angle)
-	rotation = PI/2 + steering_angle
-		
-	#var input_steering = Input.get_axis("Turn Left", "Turn Right") * speed * steering_speed
-	#var horizontal_speed = 
 	
+	# Visual turning feedback
+	# rotation = PI/2 + steering_angle
+	rotation = lerpf(rotation, PI/2 + steering_angle, 1.0 - exp(-turn_smoothing * _delta))
+	steering_wheel.rotation = lerpf(steering_wheel.rotation, steering_angle * 5, 1.0 - exp(-turn_smoothing * _delta))
+	
+	tachometer.set_rpm(boost_duration / boost_duration_cutoff)
 	if speed > 0:
 		speedometer.set_speed(speed * 0.1)
 	else:
 		speedometer.set_arrow_to_zero()
-	
-	# velocity.x = input_throttle * speed
-	# velocity.y = input_steering * steering_speed
 	
 	move_and_slide()

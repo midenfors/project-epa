@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dvhqp0ov4flbi"]
 
-[ext_resource type="Script" uid="uid://dniaxkkyve3iq" path="res://Scripts/speedometer.gd" id="1_8glcj"]
+[ext_resource type="Script" uid="uid://dniaxkkyve3iq" path="res://Scripts/UI/speedometer.gd" id="1_8glcj"]
 [ext_resource type="Texture2D" uid="uid://dd00lymitaift" path="res://Assets/Art/Speedometer_Background.png" id="1_fdl0h"]
 [ext_resource type="Script" uid="uid://cxiogb40yjcxn" path="res://Scripts/hud.gd" id="1_vsu76"]
 [ext_resource type="Texture2D" uid="uid://cwyuiv25qk5fk" path="res://Assets/Art/Speedometer_Arrow.png" id="2_8glcj"]
@@ -10,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://0be866d3kn3x" path="res://Assets/Art/Poppy.png" id="6_qdh5o"]
 [ext_resource type="Script" uid="uid://bwgijuonu3ed8" path="res://Scripts/pause_screen.gd" id="6_ux5h0"]
 [ext_resource type="PackedScene" uid="uid://djeomro3ibjbj" path="res://Scenes/UI/upgrade_container.tscn" id="7_7wqu8"]
+[ext_resource type="Texture2D" uid="uid://b0tbr3t12hkg2" path="res://Assets/Art/RPMmeter_Background.png" id="7_qt3ij"]
+[ext_resource type="Script" uid="uid://damsbdycuc05o" path="res://Scripts/UI/tachometer.gd" id="7_uidm2"]
+[ext_resource type="Texture2D" uid="uid://dv3y30o31o73f" path="res://Assets/Art/RPMmeter_Top.png" id="8_uidm2"]
 [ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="9_am52h"]
+[ext_resource type="Texture2D" uid="uid://cfyj6w3iv6vr1" path="res://Assets/Art/Ratt.png" id="10_8c63k"]
 [ext_resource type="Texture2D" uid="uid://nsvd8cniyj7m" path="res://Assets/Art/Car_Engine1.png" id="10_yttkt"]
 [ext_resource type="Texture2D" uid="uid://tg4u023ovifj" path="res://Assets/Art/Car_Engine2.png" id="11_8km2t"]
 [ext_resource type="Script" uid="uid://w5gl52gct288" path="res://Scripts/end_screen.gd" id="11_cna6x"]
@@ -41,37 +45,6 @@ script = ExtResource("2_fqivn")
 [node name="SnusMarker2D" type="Marker2D" parent="SnusGauge" unique_id=1996838785]
 position = Vector2(331, 537)
 
-[node name="Speedometer" type="Control" parent="." unique_id=340154884]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -279.0
-offset_right = 275.0
-offset_bottom = -23.0
-grow_vertical = 0
-script = ExtResource("1_8glcj")
-
-[node name="BG" type="TextureRect" parent="Speedometer" unique_id=653147771]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 256.0
-texture = ExtResource("1_fdl0h")
-
-[node name="Arrow" type="Sprite2D" parent="Speedometer" unique_id=986789983]
-position = Vector2(130, 180)
-rotation = -0.44654956
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("2_8glcj")
-offset = Vector2(-2.285, -32.24)
-
-[node name="FG" type="TextureRect" parent="Speedometer" unique_id=1982562522]
-layout_mode = 0
-offset_right = 256.0
-offset_bottom = 256.0
-texture = ExtResource("3_vsu76")
-
 [node name="Dashboard" type="Control" parent="." unique_id=1968035191]
 layout_mode = 1
 anchors_preset = 15
@@ -80,7 +53,88 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Dashboard" unique_id=890823072]
+[node name="Gauges" type="Control" parent="Dashboard" unique_id=1053239954]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Speedometer" type="Control" parent="Dashboard/Gauges" unique_id=340154884]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 592.0
+offset_top = 485.0
+offset_right = 848.0
+offset_bottom = 741.0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_8glcj")
+
+[node name="BG" type="TextureRect" parent="Dashboard/Gauges/Speedometer" unique_id=653147771]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 113.0
+texture = ExtResource("1_fdl0h")
+
+[node name="Arrow" type="Sprite2D" parent="Dashboard/Gauges/Speedometer" unique_id=986789983]
+position = Vector2(64.589745, 79.47188)
+rotation = -1.9198622
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8glcj")
+offset = Vector2(0.5493276, -16.758984)
+
+[node name="FG" type="TextureRect" parent="Dashboard/Gauges/Speedometer" unique_id=1982562522]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 113.0
+texture = ExtResource("3_vsu76")
+
+[node name="Tachometer" type="Control" parent="Dashboard/Gauges" unique_id=721485880]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 423.00003
+offset_top = 486.0
+offset_right = 684.0
+offset_bottom = 665.0
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+script = ExtResource("7_uidm2")
+
+[node name="BG" type="TextureRect" parent="Dashboard/Gauges/Tachometer" unique_id=65108779]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_qt3ij")
+
+[node name="Arrow" type="Sprite2D" parent="Dashboard/Gauges/Tachometer" unique_id=1125141493]
+position = Vector2(67.00001, 79)
+rotation = -1.9198622
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8glcj")
+offset = Vector2(0.4988668, -17.065945)
+
+[node name="FG" type="TextureRect" parent="Dashboard/Gauges/Tachometer" unique_id=877480775]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 39.999996
+offset_bottom = 40.0
+texture = ExtResource("8_uidm2")
+
+[node name="Ratt" type="Sprite2D" parent="Dashboard" unique_id=952292294]
+position = Vector2(591, 736)
+texture = ExtResource("10_8c63k")
+
+[node name="PoppyCounter" type="Control" parent="Dashboard" unique_id=1482944850]
+anchors_preset = 0
+offset_left = -300.0
+offset_top = 29.0
+offset_right = -260.0
+offset_bottom = 69.0
+
+[node name="TextureRect" type="TextureRect" parent="Dashboard/PoppyCounter" unique_id=890823072]
 layout_mode = 0
 offset_left = 300.0
 offset_top = 538.0
@@ -89,7 +143,7 @@ offset_bottom = 616.0
 texture = ExtResource("6_qdh5o")
 expand_mode = 1
 
-[node name="PoppyCountLabel" type="Label" parent="Dashboard" unique_id=1304172771]
+[node name="PoppyCountLabel" type="Label" parent="Dashboard/PoppyCounter" unique_id=1304172771]
 layout_mode = 0
 offset_left = 373.0
 offset_top = 563.0

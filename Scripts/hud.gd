@@ -1,13 +1,15 @@
 extends Control
 
 @export var speedometer : Speedometer
+@export var tachometer : Tachometer
 @export var pause : Control
 @export var poppy_label : Label
 
 func _ready() -> void:
-	speedometer = $Speedometer
+	speedometer = $Gauges/Speedometer
+	tachometer = $Gauges/Tachometer
 	pause = $PauseScreen
-	poppy_label = $Dashboard/PoppyCountLabel
+	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
 	
 	update_poppy_label()
 

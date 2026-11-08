@@ -40,13 +40,12 @@ var snus_gauge : Snus_Gauge
 var steering_wheel : Node2D
 
 func _ready() -> void:
-	audio_manager = get_node("../AudioManager")
-	speedometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Speedometer")
-	tachometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Tachometer")
-	snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
-	steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
-	
 	if not faux:
+		audio_manager = get_node("../AudioManager")
+		speedometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Speedometer")
+		tachometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Tachometer")
+		snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
+		steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
 		audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
 	engine_upgrade = Global.engine_upgrades

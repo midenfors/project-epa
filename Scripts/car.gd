@@ -74,17 +74,17 @@ func _ready() -> void:
 		_:
 			pass
 	
-	wheels_upgrade = Global.get_upgrade_level("wheels")
+	wheels_upgrade = Global.get_upgrade_level("wheel")
 	$Wheels/T1.visible = false
 	$Wheels/T2.visible = false
 	$Wheels/T2.visible = false
 	match wheels_upgrade:
+		1:
+			$Wheels/T2.visible = true
+		2:
+			$Wheels/T3.visible = true
 		_:
 			$Wheels/T1.visible = true
-		5, 6, 7:
-			$Wheels/T2.visible = true
-		8, 9, 10:
-			$Wheels/T3.visible = true
 			pass
 	
 # Deceleration after engine upgrades (level 10 = half the slowdown).

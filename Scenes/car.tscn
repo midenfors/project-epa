@@ -57,6 +57,7 @@ texture = ExtResource("2_argdw")
 [node name="Wheels" type="Node2D" parent="." unique_id=2041051414]
 
 [node name="T1" type="Node2D" parent="Wheels" unique_id=1895207755]
+visible = false
 
 [node name="Wheel_Front_Left" type="Sprite2D" parent="Wheels/T1" unique_id=1524077083]
 position = Vector2(-46.000004, -73)

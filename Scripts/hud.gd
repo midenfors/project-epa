@@ -19,6 +19,7 @@ func _unhandled_input(_event: InputEvent) -> void:
 			show_upgrades()
 		else:
 			hide_upgrades()
+			get_tree().reload_current_scene()
 
 func update_poppy_label() -> void:
 	poppy_label.text = ": " + str(Global.poppys)

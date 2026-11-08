@@ -62,7 +62,6 @@ func _ready() -> void:
 			$Engines/CarEngine3.visible = true
 		_:
 			pass
-	deceleration *= (1 - engine_decel_reduction * Global.engine_upgrades)
 	
 	booster_upgrade = Global.booster_upgrades
 	$BottomBosters/CarBoost1.visible = false
@@ -176,3 +175,7 @@ func _physics_process(_delta: float) -> void:
 			speedometer.set_arrow_to_zero()
 		
 		move_and_slide()
+
+
+func play_poppy_audio():
+	audio_manager.play_sfx(audio_manager.POPPY_BOTTLE)

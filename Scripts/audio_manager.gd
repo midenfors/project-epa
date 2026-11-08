@@ -37,7 +37,7 @@ func play_sfx(_stream) -> void:
 	player.stream = _stream
 	player.autoplay = true
 	player.play()
-	player.finished.connect.bind(sfx_finished)
+	player.finished.connect(sfx_finished.bind(player))
 
 func sfx_finished(streamPlayer):
 	streamPlayer.queue_free()

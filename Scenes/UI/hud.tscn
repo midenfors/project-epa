@@ -50,17 +50,17 @@ grow_vertical = 2
 
 [node name="DistanceLabel" type="Label" parent="Dashboard" unique_id=1543603963]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -312.0
-offset_top = 37.0
-offset_right = -38.0
-offset_bottom = 60.0
-grow_horizontal = 0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 24.0
+offset_right = 91.0
+offset_bottom = 58.0
+grow_horizontal = 2
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 24
-text = "Distance: 0"
+text = "Distance: 99999"
 
 [node name="SnusGauge" type="Control" parent="Dashboard" unique_id=1621035185]
 anchors_preset = 0
@@ -69,14 +69,15 @@ offset_bottom = 40.0
 script = ExtResource("2_fqivn")
 
 [node name="SnusMarker2D" type="Marker2D" parent="Dashboard/SnusGauge" unique_id=1996838785]
-position = Vector2(1064, 557)
+position = Vector2(699, 578)
 
 [node name="PedalControls" parent="Dashboard" unique_id=1547500086 instance=ExtResource("3_iiebs")]
 layout_mode = 1
 
 [node name="Gauges" type="Control" parent="Dashboard" unique_id=1053239954]
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -250.0
+offset_right = -210.0
 offset_bottom = 40.0
 
 [node name="Speedometer" type="Control" parent="Dashboard/Gauges" unique_id=340154884]
@@ -145,7 +146,7 @@ offset_bottom = 40.0
 texture = ExtResource("8_uidm2")
 
 [node name="Ratt" type="Sprite2D" parent="Dashboard" unique_id=952292294]
-position = Vector2(591, 736)
+position = Vector2(328, 741)
 texture = ExtResource("10_8c63k")
 
 [node name="PoppyCounter" type="Control" parent="Dashboard" unique_id=1482944850]
@@ -159,12 +160,12 @@ mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Dashboard/PoppyCounter" unique_id=117545653]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -85.0
-offset_right = 196.0
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -196.0
+offset_bottom = 85.0
+grow_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="Dashboard/PoppyCounter/HBoxContainer" unique_id=890823072]
 custom_minimum_size = Vector2(80, 80)
@@ -340,6 +341,7 @@ expand_icon = true
 [node name="PauseScreen" type="Control" parent="." unique_id=1957676972]
 process_mode = 3
 visible = false
+z_index = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -400,6 +402,7 @@ text = "QUIT"
 [node name="EndScreen" type="Control" parent="." unique_id=1464624105]
 process_mode = 3
 visible = false
+z_index = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -455,10 +458,10 @@ text = "Tow home"
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1704118310]
 layout_mode = 0
-offset_left = 566.0
-offset_top = 454.0
-offset_right = 606.0
-offset_bottom = 494.0
+offset_left = 305.0
+offset_top = 459.0
+offset_right = 345.0
+offset_bottom = 499.0
 joystick_mode = 1
 action_left = &"Turn Left"
 action_right = &"Turn Right"

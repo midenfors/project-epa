@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 	update_distance_label()
 
 func update_distance_label():
-	distance_label.text = "Distance: " + str(int(Global.distance) / 3960)
+	distance_label.text = "KM driven: " + str(int(Global.distance) / 3960)
 
 func show_upgrades() -> void:
 	$Dashboard/UpgradeMenu.show()

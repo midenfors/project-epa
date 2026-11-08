@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://wfgps0lb6vvr" path="res://Scripts/obstacle.gd" id="1_r0kin"]
 [ext_resource type="Texture2D" uid="uid://socrblkqqltj" path="res://Assets/Art/Box 3.png" id="2_r0kin"]
+[ext_resource type="Texture2D" uid="uid://c8ug7r1tlqmvx" path="res://Assets/Art/Box 1.png" id="3_vdbs4"]
+[ext_resource type="Texture2D" uid="uid://bvck4vj8qod56" path="res://Assets/Art/Box 2.png" id="4_1eepy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vm6d2"]
-size = Vector2(240, 206)
+size = Vector2(458.82355, 263)
 
 [node name="Obstacle" type="Area2D" unique_id=372518061]
+rotation = -0.24783675
 script = ExtResource("1_r0kin")
 speed_reduce = 150
 
@@ -15,7 +18,24 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_r0kin")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=845757294]
+position = Vector2(15.000002, 7.125)
 scale = Vector2(0.17, 0.25)
 shape = SubResource("RectangleShape2D_vm6d2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=728454743]
+position = Vector2(40, 23)
+rotation = 0.23212878
+texture = ExtResource("3_vdbs4")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1991130605]
+position = Vector2(39.000004, -9)
+rotation = -0.116937056
+texture = ExtResource("4_1eepy")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1239541233]
+position = Vector2(24, 6)
+rotation = -0.23212878
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_vdbs4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

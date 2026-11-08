@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxopj5xp5ho34"]
+
+[ext_resource type="Texture2D" uid="uid://c8awambstt2hx" path="res://Assets/Art/Warning Sign.png" id="2_hqvqy"]
+
+[node name="Sign" type="Area2D" unique_id=372518061]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439096254]
+texture = ExtResource("2_hqvqy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

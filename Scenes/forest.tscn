@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bdcxmevnwt6k0"]
+
+[ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/tree_trunk.tscn" id="1_t7h48"]
+[ext_resource type="PackedScene" uid="uid://oyg412rbjmdr" path="res://Scenes/standing_tree.tscn" id="2_8hnfc"]
+[ext_resource type="PackedScene" uid="uid://cnk2tarlghxj4" path="res://Scenes/stones.tscn" id="3_8hnfc"]
+
+[node name="Forest" type="Node2D" unique_id=222415836]
+
+[node name="Obstacle10" parent="." unique_id=372518061 instance=ExtResource("1_t7h48")]
+position = Vector2(1087, 345)
+
+[node name="Obstacle11" parent="." unique_id=1289382949 instance=ExtResource("1_t7h48")]
+position = Vector2(1713, 414)
+
+[node name="Obstacle12" parent="." unique_id=1111228892 instance=ExtResource("1_t7h48")]
+position = Vector2(2227, 305)
+
+[node name="Obstacle13" parent="." unique_id=264388380 instance=ExtResource("1_t7h48")]
+position = Vector2(635, -309)
+
+[node name="Obstacle14" parent="." unique_id=444014656 instance=ExtResource("1_t7h48")]
+position = Vector2(3325, -298)
+
+[node name="Obstacle15" parent="." unique_id=2109216269 instance=ExtResource("1_t7h48")]
+position = Vector2(1659, -313)
+
+[node name="Obstacle16" parent="." unique_id=1330132708 instance=ExtResource("1_t7h48")]
+position = Vector2(2111, -244)
+
+[node name="Standing_Tree" parent="." unique_id=556551997 instance=ExtResource("2_8hnfc")]
+position = Vector2(747, -229)
+
+[node name="Standing_Tree2" parent="." unique_id=1571813767 instance=ExtResource("2_8hnfc")]
+position = Vector2(924, -288)
+
+[node name="Standing_Tree3" parent="." unique_id=525823162 instance=ExtResource("2_8hnfc")]
+position = Vector2(1264, -202)
+
+[node name="Standing_Tree4" parent="." unique_id=1183126253 instance=ExtResource("2_8hnfc")]
+position = Vector2(1488, -275)
+
+[node name="Standing_Tree5" parent="." unique_id=861320933 instance=ExtResource("2_8hnfc")]
+position = Vector2(1866, -230)
+
+[node name="Standing_Tree6" parent="." unique_id=544937270 instance=ExtResource("2_8hnfc")]
+position = Vector2(2282, -299)
+
+[node name="Standing_Tree7" parent="." unique_id=720211816 instance=ExtResource("2_8hnfc")]
+position = Vector2(535, 411)
+
+[node name="Standing_Tree8" parent="." unique_id=601985887 instance=ExtResource("2_8hnfc")]
+position = Vector2(861, 528)
+
+[node name="Standing_Tree9" parent="." unique_id=1388536694 instance=ExtResource("2_8hnfc")]
+position = Vector2(1004, 401)
+
+[node name="Standing_Tree10" parent="." unique_id=8988662 instance=ExtResource("2_8hnfc")]
+position = Vector2(1371, 361)
+
+[node name="Standing_Tree11" parent="." unique_id=1033937597 instance=ExtResource("2_8hnfc")]
+position = Vector2(1624, 475)
+
+[node name="Standing_Tree12" parent="." unique_id=2062487555 instance=ExtResource("2_8hnfc")]
+position = Vector2(1943, 371)
+
+[node name="Standing_Tree13" parent="." unique_id=2076954390 instance=ExtResource("2_8hnfc")]
+position = Vector2(2152, 548)
+
+[node name="Standing_Tree14" parent="." unique_id=1029460498 instance=ExtResource("2_8hnfc")]
+position = Vector2(2451, 462)
+
+[node name="Standing_Tree15" parent="." unique_id=964854341 instance=ExtResource("2_8hnfc")]
+position = Vector2(172, -325)
+
+[node name="Standing_Tree16" parent="." unique_id=1947958251 instance=ExtResource("2_8hnfc")]
+position = Vector2(323, -239)
+
+[node name="Standing_Tree17" parent="." unique_id=1955571698 instance=ExtResource("2_8hnfc")]
+position = Vector2(156, 483)
+
+[node name="Standing_Tree18" parent="." unique_id=232231254 instance=ExtResource("2_8hnfc")]
+position = Vector2(2626, 555)
+
+[node name="Standing_Tree19" parent="." unique_id=530188675 instance=ExtResource("2_8hnfc")]
+position = Vector2(2827, 485)
+
+[node name="Standing_Tree20" parent="." unique_id=1735161396 instance=ExtResource("2_8hnfc")]
+position = Vector2(3309, 566)
+
+[node name="Standing_Tree21" parent="." unique_id=811759981 instance=ExtResource("2_8hnfc")]
+position = Vector2(3530, 488)
+
+[node name="Standing_Tree22" parent="." unique_id=1443774003 instance=ExtResource("2_8hnfc")]
+position = Vector2(2714, -265)
+
+[node name="Standing_Tree23" parent="." unique_id=1284717379 instance=ExtResource("2_8hnfc")]
+position = Vector2(2945, -245)
+
+[node name="Standing_Tree24" parent="." unique_id=1323014968 instance=ExtResource("2_8hnfc")]
+position = Vector2(3679, -368)
+
+[node name="Standing_Tree25" parent="." unique_id=668570487 instance=ExtResource("2_8hnfc")]
+position = Vector2(3845, -298)
+
+[node name="Obstacles" type="Node" parent="." unique_id=377840540]
+
+[node name="Obstacle" parent="." unique_id=603497099 instance=ExtResource("3_8hnfc")]
+position = Vector2(3064, -335)
+
+[node name="Obstacle2" parent="." unique_id=1457714335 instance=ExtResource("3_8hnfc")]
+position = Vector2(2001, -413)
+
+[node name="Obstacle3" parent="." unique_id=1605621756 instance=ExtResource("3_8hnfc")]
+position = Vector2(859, -230)
+
+[node name="Obstacle4" parent="." unique_id=1830980184 instance=ExtResource("3_8hnfc")]
+position = Vector2(424, -416)
+
+[node name="Obstacle5" parent="." unique_id=1290470958 instance=ExtResource("3_8hnfc")]
+position = Vector2(2502, -288)
+
+[node name="Obstacle6" parent="." unique_id=2010247398 instance=ExtResource("3_8hnfc")]
+position = Vector2(3082, 319)
+
+[node name="Obstacle7" parent="." unique_id=1245252111 instance=ExtResource("3_8hnfc")]
+position = Vector2(1280, 495)
+
+[node name="Obstacle8" parent="." unique_id=812711556 instance=ExtResource("3_8hnfc")]
+position = Vector2(334, 409)
+
+[node name="Obstacle9" parent="." unique_id=710672861 instance=ExtResource("3_8hnfc")]
+position = Vector2(3717, -299)

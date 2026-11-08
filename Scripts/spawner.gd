@@ -17,10 +17,12 @@ func _ready() -> void:
 		add_child(poppy)
 	
 
-func milestone():
+func milestone(km_left: int):
 	var sign = sign_scene.instantiate()
-	sign.position = get_parent().position
+	sign.position = Vector2(1800, -250) + get_parent().position
+	sign.get_node(str(km_left) + "km").set_visible(true)
 	add_child(sign)
+	
 
 func box_terrain():
 	for i in range(box_amount):

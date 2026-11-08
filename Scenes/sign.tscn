@@ -1,10 +1,36 @@
 [gd_scene format=3 uid="uid://bxopj5xp5ho34"]
 
-[ext_resource type="Texture2D" uid="uid://c8awambstt2hx" path="res://Assets/Art/Warning Sign.png" id="2_hqvqy"]
+[ext_resource type="Texture2D" uid="uid://cxkavl14r0fcp" path="res://Assets/Art/Sign_5km.png" id="1_v8ien"]
+[ext_resource type="Texture2D" uid="uid://ckoo1lx437gg8" path="res://Assets/Art/Sign_17km.png" id="2_u6bny"]
+[ext_resource type="Texture2D" uid="uid://c14x2pcea3uhk" path="res://Assets/Art/Sign_31km.png" id="3_qwoug"]
+[ext_resource type="Texture2D" uid="uid://b4120elw4p3k1" path="res://Assets/Art/Sign_47km.png" id="4_bqbd3"]
+[ext_resource type="Texture2D" uid="uid://nmgeu58f4tof" path="res://Assets/Art/Sign_55km.png" id="5_6fgx1"]
 
 [node name="Sign" type="Area2D" unique_id=372518061]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=439096254]
-texture = ExtResource("2_hqvqy")
+[node name="5km" type="Sprite2D" parent="." unique_id=439096254]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("1_v8ien")
+
+[node name="17km" type="Sprite2D" parent="." unique_id=1197353482]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("2_u6bny")
+
+[node name="31km" type="Sprite2D" parent="." unique_id=252640083]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_qwoug")
+
+[node name="47km" type="Sprite2D" parent="." unique_id=1516718820]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4_bqbd3")
+
+[node name="55km" type="Sprite2D" parent="." unique_id=2141553611]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("5_6fgx1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,9 +7,9 @@ var current_roads = {}
 var key = 0
 var roads_past = 0
 
-var milestones = [3, 7, 13, 20, 100]
-var box_obstacle = [10, 15, 19, 23, 26, 29, 30, 32]
-var mud = [5, 12, 16, 20, 24, 23, 26, 30]
+var milestones = [1, 9, 25, 39, 51, 56]
+var box_obstacle = [2, 6, 9, 13, 18, 21, 26, 27]
+var mud = [5, 12, 16, 20, 23, 24, 26, 30]
 
 @onready var camera = $Camera2D
 
@@ -52,7 +52,7 @@ func add_road() -> void:
 	roads_past = roads_past + 1
 	for i in milestones:
 		if roads_past == i:
-			road.find_child("Spawner").milestone()
+			road.find_child("Spawner").milestone(56-i)
 	for i in box_obstacle:
 		if roads_past == i:
 			road.find_child("Spawner").box_terrain()

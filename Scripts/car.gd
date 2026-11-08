@@ -12,9 +12,9 @@ var booster_upgrade : int = 0
 @export var faux : bool = false
 
 # Upgradable
-@export var num_speed_boosts : int = 3      # Number of snus in the bucket
-@export var speed_boost : float = 150.0     # Car Booster Upgrade
-@export var deceleration : float = -30      # Car Engine Upgrade
+@export var num_speed_boosts : int = 1      # Number of snus in the bucket
+@export var speed_boost : float = 200.0     # Car Booster Upgrade
+@export var deceleration : float = -15      # Car Engine Upgrade
 @export var engine_decel_reduction : float = 0.05  # Each engine level cuts deceleration by 5%
 
 var current_boost_has_triggered : bool = false

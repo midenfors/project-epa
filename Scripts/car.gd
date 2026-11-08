@@ -110,7 +110,7 @@ func _ready() -> void:
 			$Bumpers/CarBumper2RenPlog.visible = true
 		_:
 			pass
-	obstacle_slowdown_modifier *= (1 - Global.bumper_upgrades)
+	obstacle_slowdown_modifier *= (1 - bumper_upgrade_effect * Global.bumper_upgrades)
 	
 # Deceleration after engine upgrades (level 10 = half the slowdown).
 func get_deceleration() -> float:
@@ -149,7 +149,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					speed += speed_boost
 				
-		speed = clamp(speed, 0, 2000)
+		speed = clamp(speed, 0, Global.speed_limmit)
 		
 		var dec_modifier = 1
 		if on_grass:

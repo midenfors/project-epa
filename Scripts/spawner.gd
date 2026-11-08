@@ -34,3 +34,6 @@ func mud_terrain():
 	var mud = mud_scene.instantiate()
 	mud.position = Vector2(0.5 * 3960, 50) + get_parent().position
 	add_child(mud)
+
+func driver():
+	var a

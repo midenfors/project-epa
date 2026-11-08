@@ -15,21 +15,32 @@ mouse_filter = 2
 script = ExtResource("1_qjtap")
 
 [node name="AccelerateButton" type="TextureButton" parent="." unique_id=1567038410]
-layout_mode = 0
-offset_left = 796.0
-offset_top = 449.0
-offset_right = 1052.0
-offset_bottom = 705.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -388.0
+offset_top = -210.0
+offset_right = -132.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 0
 focus_mode = 0
 texture_normal = ExtResource("1_hcikf")
 texture_pressed = ExtResource("2_qjtap")
 
 [node name="BrakeButton" type="TextureButton" parent="." unique_id=466256019]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 449.0
-offset_right = 385.0
-offset_bottom = 705.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 157.0
+offset_top = -210.0
+offset_right = 413.0
+offset_bottom = 46.0
+grow_vertical = 0
 focus_mode = 1
 texture_normal = ExtResource("1_hcikf")
 texture_pressed = ExtResource("2_qjtap")

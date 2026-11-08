@@ -4,6 +4,7 @@ extends Control
 @export var tachometer : Tachometer
 @export var pause : Control
 @export var poppy_label : Label
+@onready var end_screen: Control = $EndScreen
 
 @onready var distance_label: Label = $Dashboard/DistanceLabel
 
@@ -13,7 +14,7 @@ func _ready() -> void:
 	speedometer = $Dashboard/Gauges/Speedometer
 	tachometer = $Dashboard/Gauges/Tachometer
 	pause = $PauseScreen
-	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
+	poppy_label = $Dashboard/PoppyCounter/HBoxContainer/PoppyCountLabel
 	
 	# Hide joystick on dekstop
 	if not OS.has_feature("android") or OS.has_feature("ios"):
@@ -41,9 +42,10 @@ func update_poppy_label() -> void:
 
 func _process(_delta: float) -> void:
 	update_poppy_label()
+	update_distance_label()
 
 func update_distance_label():
-	distance_label.text = "Distance: " + str(Global.distance)
+	distance_label.text = "Distance: " + str(int(Global.distance) / 3960)
 
 func show_upgrades() -> void:
 	$Dashboard/UpgradeMenu.show()
@@ -52,6 +54,7 @@ func hide_upgrades() -> void:
 	$Dashboard/UpgradeMenu.hide()
 	
 func show_end_state() -> void:
+	end_screen.update_text()
 	$EndScreen.show()
 	get_tree().paused = true
 

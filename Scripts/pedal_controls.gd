@@ -1,5 +1,15 @@
 extends Control
 
+func _ready() -> void:
+	# Only the visible part of each pedal reacts to taps, not the transparent corners.
+	for button: TextureButton in [$AccelerateButton, $BrakeButton]:
+		button.texture_click_mask = make_click_mask(button.texture_normal)
+
+func make_click_mask(texture: Texture2D) -> BitMap:
+	var mask := BitMap.new()
+	mask.create_from_image_alpha(texture.get_image())
+	return mask
+
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Boost"):
 		$AccelerateButton.button_pressed = true

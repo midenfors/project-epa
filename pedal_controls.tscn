@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvjaiw70buf88" path="res://Assets/Art/Pedal_Down.png" id="2_qjtap"]
 
 [node name="PedalControls" type="Control" unique_id=1547500086]
+z_index = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,25 +22,28 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -388.0
-offset_top = -210.0
-offset_right = -132.0
-offset_bottom = 46.0
+offset_left = -256.0
+offset_top = -219.0
+offset_bottom = 37.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 texture_normal = ExtResource("1_hcikf")
 texture_pressed = ExtResource("2_qjtap")
+ignore_texture_size = true
 
 [node name="BrakeButton" type="TextureButton" parent="." unique_id=466256019]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 157.0
-offset_top = -210.0
-offset_right = 413.0
-offset_bottom = 46.0
+offset_left = -391.0
+offset_top = -219.0
+offset_right = -135.0
+offset_bottom = 37.0
+grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 1
 texture_normal = ExtResource("1_hcikf")

@@ -28,6 +28,8 @@ func _process(_delta: float) -> void:
 	if car:
 		var dist = car.global_position.x - Global.start_position
 		Global.distance = dist
+		if (int(Global.distance) / 3960) == 55:
+			hud.show_win_screen()
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
 	var _car : Car = body as Car

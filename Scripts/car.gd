@@ -44,6 +44,10 @@ var tachometer : Tachometer
 var snus_gauge : Snus_Gauge
 var steering_wheel : Node2D
 
+func _input(event: InputEvent) -> void:
+	if Input.is_key_label_pressed(KEY_E):
+		global_position.x = 53 * 3960
+
 func _ready() -> void:
 	if not faux:
 		audio_manager = get_node("../AudioManager")

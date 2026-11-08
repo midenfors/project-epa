@@ -460,7 +460,6 @@ text = "Tow home"
 
 [node name="WinScreen" type="Control" parent="." unique_id=1757390665]
 process_mode = 3
-visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15
@@ -504,6 +503,33 @@ text = "YOU MADE IT"
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "MENU"
+
+[node name="Label" type="Label" parent="WinScreen" unique_id=1210264820]
+layout_mode = 0
+offset_left = 1014.0
+offset_top = 11.0
+offset_right = 1136.0
+offset_bottom = 528.0
+text = "Art Direction
+
+Tobias.S.Nordin
+cirkusradio
+
+Audio Design
+
+Donanthon
+cirkusradio
+
+Music
+
+cirkusradio
+Donanthon
+
+Programming
+
+AtomicMage
+degiv
+midenfors"
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1704118310]
 layout_mode = 0

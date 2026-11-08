@@ -160,3 +160,7 @@ func _physics_process(_delta: float) -> void:
 			speedometer.set_arrow_to_zero()
 		
 		move_and_slide()
+
+
+func play_poppy_audio():
+	audio_manager.play_sfx(audio_manager.POPPY_BOTTLE)

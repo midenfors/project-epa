@@ -11,6 +11,7 @@ script = ExtResource("1_mmcid")
 speed_reduce = 350
 
 [node name="StandingTree" type="Sprite2D" parent="." unique_id=323519535]
+z_index = 2
 position = Vector2(-3, -200)
 texture = ExtResource("2_mmcid")
 

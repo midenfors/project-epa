@@ -7,7 +7,8 @@ var current_roads = {}
 var key = 0
 var roads_past = 0
 
-var milestones = [1, 9, 25, 39, 51, 56]
+var goal = 56
+var milestones = [1, 9, 25, 39, 51]
 var box_obstacle = [2, 6, 9, 13, 18, 21, 26, 27]
 var mud = [5, 12, 16, 20, 23, 24, 26, 30]
 

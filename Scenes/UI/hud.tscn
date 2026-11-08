@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://w5gl52gct288" path="res://Scripts/end_screen.gd" id="11_cna6x"]
 [ext_resource type="Texture2D" uid="uid://dsyimaf87drrm" path="res://Assets/Art/Car_Engine3.png" id="12_k24i8"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="18_qff6j"]
+[ext_resource type="Texture2D" uid="uid://df4jvpou6f0fg" path="res://Assets/Art/Buy Button.png" id="19_e17ao"]
 
 [sub_resource type="Gradient" id="Gradient_7wqu8"]
 offsets = PackedFloat32Array(1)
@@ -281,6 +282,18 @@ position = Vector2(172, 343.00003)
 rotation = 0.0
 scale = Vector2(1.9221945, 1.9221945)
 faux = true
+
+[node name="UpgradeButton" type="TextureButton" parent="Dashboard" unique_id=1532862498]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 23.0
+offset_right = 34.0
+offset_bottom = 59.0
+grow_horizontal = 2
+texture_normal = ExtResource("19_e17ao")
 
 [node name="PauseScreen" type="Control" parent="." unique_id=1957676972]
 process_mode = 3

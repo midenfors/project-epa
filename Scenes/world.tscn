@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvhqp0ov4flbi" path="res://Scenes/UI/hud.tscn" id="5_fo5ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
-size = Vector2(32, 645)
+size = Vector2(32, 2231)
 
 [node name="world" type="Node" unique_id=521325791]
 script = ExtResource("1_5a7ea")
@@ -23,7 +23,7 @@ position = Vector2(717, 158)
 position = Vector2(-678, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoadCaller" unique_id=700905560]
-position = Vector2(-6, -0.5)
+position = Vector2(-6, -16.5)
 shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1650432471]

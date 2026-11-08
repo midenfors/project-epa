@@ -8,10 +8,10 @@ var key = 0
 var roads_past = 0
 
 var goal = 55
-var milestones = [1, 9, 25, 39, 51]
+var milestones = [1, 9, 25, 39, 51, 56]
 var box_obstacle = [2, 6, 9, 13, 17, 21, 26, 27]
 var mud = [7, 14, 18, 22, 25, 26, 28, 32]
-var driver = [1, 18, 24]
+var driver = [0]
 
 @onready var camera = $Camera2D
 

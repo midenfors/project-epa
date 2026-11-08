@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_iac18")
 name = "Bumper"
-description = "Gör så att du kan köra på saker utan att oroa dig."
+description = "Keep those obstacles from blocking your way"
 base_cost = 13
 icon = ExtResource("1_ngru0")
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

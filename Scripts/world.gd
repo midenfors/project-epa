@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#check end of run state
-	camera.position.x = car.position.x
+	camera.position.x = car.position.x + 500
 	if car.speed == 0 and car.car_started_motion:
 		hud.show_end_state()
 

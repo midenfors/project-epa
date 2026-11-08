@@ -25,7 +25,7 @@ var boost_duration_target = 600
 var boost_duration_cutoff = boost_duration_target * 1.8
 var boost_crit_window = 300
 
-var steering_speed : float = PI/16
+var steering_speed : float = PI/8
 var speed : float = 0
 
 var car_started_motion = false

@@ -14,7 +14,7 @@ func _ready() -> void:
 	speedometer = $Dashboard/Gauges/Speedometer
 	tachometer = $Dashboard/Gauges/Tachometer
 	pause = $PauseScreen
-	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
+	poppy_label = $Dashboard/PoppyCounter/HBoxContainer/PoppyCountLabel
 	
 	# Hide joystick on dekstop
 	if not OS.has_feature("android") or OS.has_feature("ios"):

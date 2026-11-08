@@ -149,27 +149,31 @@ position = Vector2(591, 736)
 texture = ExtResource("10_8c63k")
 
 [node name="PoppyCounter" type="Control" parent="Dashboard" unique_id=1482944850]
-anchors_preset = 0
-offset_left = -300.0
-offset_top = 29.0
-offset_right = -260.0
-offset_bottom = 69.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Dashboard/PoppyCounter" unique_id=890823072]
-layout_mode = 0
-offset_left = 300.0
-offset_top = 538.0
-offset_right = 378.0
-offset_bottom = 616.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Dashboard/PoppyCounter" unique_id=117545653]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 196.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Dashboard/PoppyCounter/HBoxContainer" unique_id=890823072]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
 texture = ExtResource("6_qdh5o")
 expand_mode = 1
 
-[node name="PoppyCountLabel" type="Label" parent="Dashboard/PoppyCounter" unique_id=1304172771]
-layout_mode = 0
-offset_left = 373.0
-offset_top = 563.0
-offset_right = 566.0
-offset_bottom = 608.0
+[node name="PoppyCountLabel" type="Label" parent="Dashboard/PoppyCounter/HBoxContainer" unique_id=1304172771]
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 14
 theme_override_font_sizes/font_size = 32

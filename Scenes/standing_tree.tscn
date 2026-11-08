@@ -12,7 +12,7 @@ speed_reduce = 350
 
 [node name="StandingTree" type="Sprite2D" parent="." unique_id=323519535]
 z_index = 2
-position = Vector2(-3, -200)
+position = Vector2(0, -100)
 texture = ExtResource("2_mmcid")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=605100573]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://pbxlfihgbb1k"]
+
+[ext_resource type="Script" uid="uid://kxv6c1rvodsf" path="res://Scripts/audi.gd" id="1_0dn34"]
+[ext_resource type="Texture2D" uid="uid://d1fganwq3ks6a" path="res://Assets/Art/Audi Car.png" id="2_0dn34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dn34"]
+size = Vector2(240, 206)
+
+[node name="Audi" type="CharacterBody2D" unique_id=946282569]
+script = ExtResource("1_0dn34")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=848922154]
+texture = ExtResource("2_0dn34")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=806843407]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=752735757]
+physics_interpolation_mode = 1
+rotation = 1.5707964
+scale = Vector2(0.4, 1)
+shape = SubResource("RectangleShape2D_0dn34")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

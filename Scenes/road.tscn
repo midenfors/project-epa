@@ -125,7 +125,7 @@ position = Vector2(2945, -245)
 position = Vector2(3679, -368)
 
 [node name="Standing_Tree25" parent="Obstacles" unique_id=334530587 instance=ExtResource("4_80q1u")]
-position = Vector2(3843, -324)
+position = Vector2(3845, -298)
 
 [node name="Position" type="Node" parent="." unique_id=563851728]
 

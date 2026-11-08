@@ -11,10 +11,13 @@ size = Vector2(32, 645)
 [node name="world" type="Node" unique_id=521325791]
 script = ExtResource("1_5a7ea")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=203217801]
+
 [node name="RoadParent" type="Marker2D" parent="." unique_id=1470602965]
 position = Vector2(-678, 0)
 
 [node name="Car" parent="." unique_id=1563742778 instance=ExtResource("2_go701")]
+position = Vector2(717, 158)
 
 [node name="RoadCaller" type="Area2D" parent="." unique_id=914110124]
 position = Vector2(-678, 0)
@@ -28,5 +31,9 @@ shape = SubResource("RectangleShape2D_5a7ea")
 [node name="HUD" parent="CanvasLayer" unique_id=341932580 instance=ExtResource("5_fo5ed")]
 
 [node name="AudioManager" parent="." unique_id=509873445 instance=ExtResource("5_5ukr8")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1451290446]
+offset = Vector2(0, 150)
+zoom = Vector2(0.7, 0.7)
 
 [connection signal="body_exited" from="RoadCaller" to="." method="_on_area_2d_body_exited"]

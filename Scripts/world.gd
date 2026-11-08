@@ -5,12 +5,15 @@ var road_scene = load("res://Scenes/road.tscn")
 var current_roads = {}
 var key = 0
 
+@onready var camera = $Camera2D
+
 func _ready() -> void:
 	add_road()
 	add_road()
 
 func _process(_delta: float) -> void:
 	#check end of run state
+	camera.position.x = car.position.x
 	if car.speed == 0 and car.car_started_motion:
 		hud.show_end_state()
 

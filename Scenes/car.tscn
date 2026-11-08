@@ -24,7 +24,23 @@ point_count = 2
 rotation = 1.5707964
 script = ExtResource("1_wqo35")
 
-[node name="WheelSprite" type="Sprite2D" parent="." unique_id=1524077083]
+[node name="Wheel_Front_Left" type="Sprite2D" parent="." unique_id=1524077083]
+position = Vector2(-46.000004, -73)
+rotation = -1.5707964
+texture = ExtResource("2_1sfmx")
+
+[node name="Wheel_Front_Right" type="Sprite2D" parent="." unique_id=2106008432]
+position = Vector2(50.999996, -75.00001)
+rotation = -1.5707964
+texture = ExtResource("2_1sfmx")
+
+[node name="Wheel_Rear_Left" type="Sprite2D" parent="." unique_id=324473404]
+position = Vector2(-45.999996, 76)
+rotation = -1.5707964
+texture = ExtResource("2_1sfmx")
+
+[node name="Wheel_Rear_Right" type="Sprite2D" parent="." unique_id=1408677614]
+position = Vector2(51.000004, 77)
 rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
@@ -36,8 +52,6 @@ texture = ExtResource("2_go66d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1481306472]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_qi6xy")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1537647939]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1243732601]
 modulate = Color(0.37888458, 0.30823612, 0.22541577, 1)
@@ -62,6 +76,6 @@ scale_amount_curve = SubResource("Curve_u41r7")
 anim_offset_max = 1.0
 
 [node name="CarEngine" type="Sprite2D" parent="." unique_id=427579668]
-position = Vector2(-1.9999999, 2)
+position = Vector2(1.9999963, -86)
 rotation = -1.5707964
 texture = ExtResource("5_u41r7")

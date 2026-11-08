@@ -41,9 +41,10 @@ func update_poppy_label() -> void:
 
 func _process(_delta: float) -> void:
 	update_poppy_label()
+	update_distance_label()
 
 func update_distance_label():
-	distance_label.text = "Distance: " + str(Global.distance)
+	distance_label.text = "Distance: " + str(int(Global.distance))
 
 func show_upgrades() -> void:
 	$Dashboard/UpgradeMenu.show()

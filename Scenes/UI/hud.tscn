@@ -460,6 +460,7 @@ text = "Tow home"
 
 [node name="WinScreen" type="Control" parent="." unique_id=1757390665]
 process_mode = 3
+visible = false
 z_index = 4
 layout_mode = 1
 anchors_preset = 15

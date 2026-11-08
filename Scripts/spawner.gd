@@ -1,5 +1,6 @@
 extends Node
 
+var audi_scene = load("res://Scenes/audi.tscn")
 var poppy_scene = load("res://Scenes/poppy.tscn")
 var box_scene = load("res://Scenes/large_box.tscn")
 var sign_scene = load("res://Scenes/sign.tscn")
@@ -36,4 +37,7 @@ func mud_terrain():
 	add_child(mud)
 
 func driver():
-	var a
+	var audi = audi_scene.instantiate()
+	audi.position = Vector2(-2000, rng.randf_range(-100, 200)) + get_parent().position
+	add_child(audi)
+	

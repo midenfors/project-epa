@@ -8,6 +8,7 @@ var audio_manager : AudioManager
 var engine_upgrade : int = 0
 var wheels_upgrade : int = 0
 var booster_upgrade : int = 0
+var bumper_upgrade : int = 0
 
 @export var faux : bool = false
 
@@ -34,6 +35,9 @@ var terrain_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
 var break_deceleration_modifier = 50
 var in_mud : bool = false
+
+@export var obstacle_slowdown_modifier = 1
+var bumper_upgrade_effect = 0.1
 
 var speedometer : Speedometer
 var tachometer : Tachometer
@@ -93,6 +97,20 @@ func _ready() -> void:
 			$Wheels/T1.visible = true
 			pass
 	
+	bumper_upgrade = Global.bumper_upgrades
+	$Bumpers/CarBumper1Grill.visible = false
+	$Bumpers/CarBumper2Bumper.visible = false
+	$Bumpers/CarBumper2RenPlog.visible = false
+	match bumper_upgrade:
+		1:
+			$Bumpers/CarBumper1Grill.visible = true
+		2:
+			$Bumpers/CarBumper2Bumper.visible = false
+		_:
+			$Bumpers/CarBumper2RenPlog.visible = false
+			pass
+	obstacle_slowdown_modifier *= (1 - Global.bumper_upgrades)
+	
 # Deceleration after engine upgrades (level 10 = half the slowdown).
 func get_deceleration() -> float:
 	var factor := maxf(0.0, 1.0 - engine_decel_reduction * Global.engine_upgrades)
@@ -130,7 +148,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					speed += speed_boost
 				
-		speed = clamp(speed, 0, 10000)
+		speed = clamp(speed, 0, 2000)
 		
 		var dec_modifier = 1
 		if on_grass:

@@ -4,6 +4,7 @@ extends Control
 @export var tachometer : Tachometer
 @export var pause : Control
 @export var poppy_label : Label
+@onready var end_screen: Control = $EndScreen
 
 @onready var distance_label: Label = $Dashboard/DistanceLabel
 
@@ -44,7 +45,7 @@ func _process(_delta: float) -> void:
 	update_distance_label()
 
 func update_distance_label():
-	distance_label.text = "Distance: " + str(int(Global.distance))
+	distance_label.text = "Distance: " + str(int(Global.distance) / 3960)
 
 func show_upgrades() -> void:
 	$Dashboard/UpgradeMenu.show()
@@ -53,6 +54,7 @@ func hide_upgrades() -> void:
 	$Dashboard/UpgradeMenu.hide()
 	
 func show_end_state() -> void:
+	end_screen.update_text()
 	$EndScreen.show()
 	get_tree().paused = true
 

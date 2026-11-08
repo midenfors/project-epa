@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="1_b51y2"]
 [ext_resource type="Script" uid="uid://r42874pyqe48" path="res://Scripts/grass_area.gd" id="2_w872l"]
 [ext_resource type="PackedScene" uid="uid://cq7mavo41v6b6" path="res://Scenes/tree_trunk.tscn" id="2_wtjdh"]
+[ext_resource type="PackedScene" uid="uid://oyg412rbjmdr" path="res://Scenes/standing_tree.tscn" id="4_80q1u"]
 [ext_resource type="Script" uid="uid://dglgdnvibcxqn" path="res://Scripts/spawner.gd" id="5_80q1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w872l"]
@@ -50,6 +51,81 @@ position = Vector2(1659, -313)
 
 [node name="Obstacle5" parent="Obstacles" unique_id=1842943117 instance=ExtResource("2_wtjdh")]
 position = Vector2(2111, -244)
+
+[node name="Standing_Tree" parent="Obstacles" unique_id=372518061 instance=ExtResource("4_80q1u")]
+position = Vector2(747, -229)
+
+[node name="Standing_Tree2" parent="Obstacles" unique_id=108858052 instance=ExtResource("4_80q1u")]
+position = Vector2(924, -288)
+
+[node name="Standing_Tree3" parent="Obstacles" unique_id=1679404047 instance=ExtResource("4_80q1u")]
+position = Vector2(1264, -202)
+
+[node name="Standing_Tree4" parent="Obstacles" unique_id=443072655 instance=ExtResource("4_80q1u")]
+position = Vector2(1488, -275)
+
+[node name="Standing_Tree5" parent="Obstacles" unique_id=944761375 instance=ExtResource("4_80q1u")]
+position = Vector2(1866, -230)
+
+[node name="Standing_Tree6" parent="Obstacles" unique_id=701601398 instance=ExtResource("4_80q1u")]
+position = Vector2(2282, -299)
+
+[node name="Standing_Tree7" parent="Obstacles" unique_id=1643574304 instance=ExtResource("4_80q1u")]
+position = Vector2(535, 411)
+
+[node name="Standing_Tree8" parent="Obstacles" unique_id=1580479054 instance=ExtResource("4_80q1u")]
+position = Vector2(861, 528)
+
+[node name="Standing_Tree9" parent="Obstacles" unique_id=1611813429 instance=ExtResource("4_80q1u")]
+position = Vector2(1004, 401)
+
+[node name="Standing_Tree10" parent="Obstacles" unique_id=758734186 instance=ExtResource("4_80q1u")]
+position = Vector2(1371, 361)
+
+[node name="Standing_Tree11" parent="Obstacles" unique_id=466251173 instance=ExtResource("4_80q1u")]
+position = Vector2(1624, 475)
+
+[node name="Standing_Tree12" parent="Obstacles" unique_id=1514708456 instance=ExtResource("4_80q1u")]
+position = Vector2(1943, 371)
+
+[node name="Standing_Tree13" parent="Obstacles" unique_id=1349991535 instance=ExtResource("4_80q1u")]
+position = Vector2(2152, 548)
+
+[node name="Standing_Tree14" parent="Obstacles" unique_id=1214899232 instance=ExtResource("4_80q1u")]
+position = Vector2(2451, 462)
+
+[node name="Standing_Tree15" parent="Obstacles" unique_id=1756922039 instance=ExtResource("4_80q1u")]
+position = Vector2(172, -325)
+
+[node name="Standing_Tree16" parent="Obstacles" unique_id=1492542593 instance=ExtResource("4_80q1u")]
+position = Vector2(323, -239)
+
+[node name="Standing_Tree17" parent="Obstacles" unique_id=375617930 instance=ExtResource("4_80q1u")]
+position = Vector2(156, 483)
+
+[node name="Standing_Tree18" parent="Obstacles" unique_id=329335390 instance=ExtResource("4_80q1u")]
+position = Vector2(2626, 555)
+
+[node name="Standing_Tree19" parent="Obstacles" unique_id=1037894516 instance=ExtResource("4_80q1u")]
+position = Vector2(2827, 485)
+
+[node name="Standing_Tree20" parent="Obstacles" unique_id=127007390 instance=ExtResource("4_80q1u")]
+position = Vector2(3309, 566)
+
+[node name="Standing_Tree21" parent="Obstacles" unique_id=878269922 instance=ExtResource("4_80q1u")]
+position = Vector2(3530, 488)
+
+[node name="Standing_Tree22" parent="Obstacles" unique_id=45692149 instance=ExtResource("4_80q1u")]
+position = Vector2(2714, -265)
+
+[node name="Standing_Tree23" parent="Obstacles" unique_id=2015174419 instance=ExtResource("4_80q1u")]
+position = Vector2(2945, -245)
+
+[node name="Standing_Tree24" parent="Obstacles" unique_id=1829218383 instance=ExtResource("4_80q1u")]
+position = Vector2(3679, -368)
+
+[node name="Standing_Tree25" parent="Obstacles" unique_id=334530587 instance=ExtResource("4_80q1u")]
+position = Vector2(3843, -324)
 
 [node name="Position" type="Node" parent="." unique_id=563851728]
 

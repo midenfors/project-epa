@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://saqv4pskbbjo"]
 
 [ext_resource type="Script" uid="uid://bdbb072wtom2m" path="res://Scripts/UI/button.gd" id="1_5wsvm"]
+[ext_resource type="Theme" uid="uid://cxb3kvws7iov1" path="res://Resources/main-buttons.tres" id="1_gih0s"]
 [ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="1_mrfpk"]
 [ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="1_u7lva"]
 [ext_resource type="Texture2D" uid="uid://cyn202pcky0er" path="res://Assets/Art/Snusdossa.png" id="2_i2xx2"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_gih0s")
 
 [node name="BG" type="TextureRect" parent="." unique_id=294852953]
 layout_mode = 1

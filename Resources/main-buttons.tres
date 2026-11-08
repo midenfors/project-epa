@@ -1,0 +1,32 @@
+[gd_resource type="Theme" format=3 uid="uid://cxb3kvws7iov1"]
+
+[ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="1_7hm8r"]
+[ext_resource type="Texture2D" uid="uid://df4jvpou6f0fg" path="res://Assets/Art/Buy Button.png" id="1_qnf1k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0clf"]
+texture = ExtResource("1_qnf1k")
+texture_margin_left = 9.532514
+texture_margin_top = 9.172795
+texture_margin_right = 9.712372
+texture_margin_bottom = 8.273502
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1avxl"]
+texture = ExtResource("1_qnf1k")
+texture_margin_left = 9.532514
+texture_margin_top = 9.172795
+texture_margin_right = 9.712372
+texture_margin_bottom = 8.273502
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yke77"]
+texture = ExtResource("1_qnf1k")
+texture_margin_left = 9.532514
+texture_margin_top = 9.172795
+texture_margin_right = 9.712372
+texture_margin_bottom = 8.273502
+region_rect = Rect2(0, 0, 95, 36)
+
+[resource]
+Button/fonts/font = ExtResource("1_7hm8r")
+Button/styles/focus = SubResource("StyleBoxTexture_p0clf")
+Button/styles/hover = SubResource("StyleBoxTexture_1avxl")
+Button/styles/normal = SubResource("StyleBoxTexture_yke77")

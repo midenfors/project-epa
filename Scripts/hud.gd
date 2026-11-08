@@ -53,3 +53,16 @@ func show_end_state() -> void:
 func hide_end_state() -> void:
 	$EndScreen.hide()
 	get_tree().paused = false
+
+func _on_upgrade_button_pressed() -> void:
+	show_upgrades()
+	$Dashboard/UpgradeButton.hide()
+
+
+func _on_close_upgr_button_pressed() -> void:
+	hide_upgrades()
+	$Dashboard/UpgradeButton.show()
+	
+
+func _on_cheat_button_pressed() -> void:
+	Global.increase_poppy(50)

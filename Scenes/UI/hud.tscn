@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="18_qff6j"]
 [ext_resource type="Theme" uid="uid://cxb3kvws7iov1" path="res://Resources/main-buttons.tres" id="19_e17ao"]
 [ext_resource type="Texture2D" uid="uid://c3do4pebinvxk" path="res://Assets/Art/Craft Icon.png" id="20_0hfmd"]
-[ext_resource type="Texture2D" uid="uid://b7uhvs4ofyqjc" path="res://builds/web/index.png" id="20_pc4p0"]
 
 [sub_resource type="Gradient" id="Gradient_7wqu8"]
 offsets = PackedFloat32Array(1)
@@ -48,6 +47,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DistanceLabel" type="Label" parent="Dashboard" unique_id=1543603963]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -312.0
+offset_top = 37.0
+offset_right = -38.0
+offset_bottom = 60.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Distance: 0"
 
 [node name="SnusGauge" type="Control" parent="Dashboard" unique_id=1621035185]
 anchors_preset = 0
@@ -163,6 +176,7 @@ theme_override_font_sizes/font_size = 32
 text = ": 999"
 
 [node name="UpgradeMenu" type="Control" parent="Dashboard" unique_id=1791634231]
+visible = false
 z_index = 5
 layout_mode = 1
 anchors_preset = 15
@@ -305,7 +319,7 @@ offset_top = 34.0
 offset_right = 194.0
 offset_bottom = 94.0
 theme = ExtResource("19_e17ao")
-icon = ExtResource("20_pc4p0")
+icon = ExtResource("6_qdh5o")
 expand_icon = true
 
 [node name="UpgradeButton" type="Button" parent="Dashboard" unique_id=641129064]

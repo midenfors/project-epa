@@ -1,5 +1,7 @@
 extends Node
 
+var start_position = 0
+var distance : float = 0
 var poppys : int = 0
 var snus_counter : int = 1
 var snus_upgrades : int = 0

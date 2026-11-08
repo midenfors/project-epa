@@ -18,12 +18,16 @@ var driver = [14, 18, 24]
 func _ready() -> void:
 	add_road()
 	add_road()
+	Global.start_position = car.global_position.x
 
 func _process(_delta: float) -> void:
 	#check end of run state
 	camera.position.x = car.position.x + 500
 	if car.speed == 0 and car.car_started_motion:
 		hud.show_end_state()
+	if car:
+		var dist = car.global_position.x - Global.start_position
+		Global.distance = dist
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
 	var _car : Car = body as Car

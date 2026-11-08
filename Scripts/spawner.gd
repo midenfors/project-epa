@@ -36,4 +36,4 @@ func mud_terrain():
 	add_child(mud)
 
 func driver():
-	
+	var a

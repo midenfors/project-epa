@@ -5,6 +5,8 @@ extends Control
 @export var pause : Control
 @export var poppy_label : Label
 
+@onready var distance_label: Label = $Dashboard/DistanceLabel
+
 @onready var joystick : VirtualJoystick = $VirtualJoystick
 
 func _ready() -> void:
@@ -39,6 +41,9 @@ func update_poppy_label() -> void:
 
 func _process(_delta: float) -> void:
 	update_poppy_label()
+
+func update_distance_label():
+	distance_label.text = "Distance: " + str(Global.distance)
 
 func show_upgrades() -> void:
 	$Dashboard/UpgradeMenu.show()

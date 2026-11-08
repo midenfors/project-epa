@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="1_u7lva"]
 [ext_resource type="Texture2D" uid="uid://cyn202pcky0er" path="res://Assets/Art/Snusdossa.png" id="2_i2xx2"]
 [ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="3_o14dv"]
+[ext_resource type="Texture2D" uid="uid://dmkqluooe27nq" path="res://Assets/Art/Car_Wheels1.png" id="6_4pqbp"]
 
 [node name="MainMenu" type="Control" unique_id=1447482263]
 layout_mode = 3
@@ -97,6 +98,45 @@ offset_bottom = 13.0
 grow_vertical = 0
 rotation = -0.7853982
 texture = ExtResource("3_o14dv")
+
+[node name="TextureRect" type="TextureRect" parent="CarBase" unique_id=1488351101]
+layout_mode = 0
+offset_left = 75.660416
+offset_top = 82.73148
+offset_right = 123.660416
+offset_bottom = 122.73148
+rotation = 3.169814
+scale = Vector2(0.8052438, 0.2895866)
+texture = ExtResource("6_4pqbp")
+
+[node name="TextureRect2" type="TextureRect" parent="CarBase" unique_id=285523501]
+layout_mode = 0
+offset_left = 32.526897
+offset_top = 175.36247
+offset_right = 80.5269
+offset_bottom = 215.36247
+scale = Vector2(0.8052438, 0.2895866)
+texture = ExtResource("6_4pqbp")
+
+[node name="TextureRect3" type="TextureRect" parent="CarBase" unique_id=814383962]
+layout_mode = 0
+offset_left = 192.33304
+offset_top = 175.36247
+offset_right = 240.33305
+offset_bottom = 215.36247
+rotation = 6.2831855
+scale = Vector2(0.8052438, 0.2895866)
+texture = ExtResource("6_4pqbp")
+
+[node name="TextureRect4" type="TextureRect" parent="CarBase" unique_id=862871723]
+layout_mode = 0
+offset_left = 231.931
+offset_top = 83.43858
+offset_right = 279.93103
+offset_bottom = 123.43858
+rotation = 3.169814
+scale = Vector2(0.8052438, 0.2895866)
+texture = ExtResource("6_4pqbp")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Play" method="_on_settings_pressed"]

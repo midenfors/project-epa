@@ -156,6 +156,7 @@ theme_override_font_sizes/font_size = 32
 text = ": 999"
 
 [node name="UpgradeMenu" type="Control" parent="Dashboard" unique_id=1791634231]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -396,6 +397,18 @@ text = "poppys collected:"
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Tow home"
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1704118310]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 454.0
+offset_right = 606.0
+offset_bottom = 494.0
+joystick_mode = 1
+action_left = &"Turn Left"
+action_right = &"Turn Right"
+action_up = &"Turn Left"
+action_down = &"Turn Right"
 
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/ResumeBtn" to="PauseScreen" method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/MenuBtn" to="PauseScreen" method="_on_menu_btn_pressed"]

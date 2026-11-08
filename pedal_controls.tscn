@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c478xcut2pbio"]
+
+[ext_resource type="Texture2D" uid="uid://d1oe80uf832pk" path="res://Assets/Art/Pedal_Up.png" id="1_hcikf"]
+[ext_resource type="Script" uid="uid://pc0ageud4eo8" path="res://Scripts/pedal_controls.gd" id="1_qjtap"]
+[ext_resource type="Texture2D" uid="uid://cvjaiw70buf88" path="res://Assets/Art/Pedal_Down.png" id="2_qjtap"]
+
+[node name="PedalControls" type="Control" unique_id=1547500086]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qjtap")
+
+[node name="AccelerateButton" type="TextureButton" parent="." unique_id=1567038410]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 449.0
+offset_right = 1052.0
+offset_bottom = 705.0
+focus_mode = 0
+texture_normal = ExtResource("1_hcikf")
+texture_pressed = ExtResource("2_qjtap")
+
+[node name="BrakeButton" type="TextureButton" parent="." unique_id=466256019]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 449.0
+offset_right = 385.0
+offset_bottom = 705.0
+focus_mode = 1
+texture_normal = ExtResource("1_hcikf")
+texture_pressed = ExtResource("2_qjtap")
+
+[connection signal="button_down" from="AccelerateButton" to="." method="_on_accelerate_button_button_down"]
+[connection signal="button_up" from="AccelerateButton" to="." method="_on_accelerate_button_button_up"]
+[connection signal="pressed" from="AccelerateButton" to="." method="_on_accelerate_button_pressed"]
+[connection signal="button_down" from="BrakeButton" to="." method="_on_brake_button_button_down"]
+[connection signal="button_up" from="BrakeButton" to="." method="_on_brake_button_button_up"]
+[connection signal="pressed" from="BrakeButton" to="." method="_on_brake_button_pressed"]

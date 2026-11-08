@@ -5,11 +5,17 @@ extends Control
 @export var pause : Control
 @export var poppy_label : Label
 
+@onready var joystick : VirtualJoystick = $VirtualJoystick
+
 func _ready() -> void:
 	speedometer = $Dashboard/Gauges/Speedometer
 	tachometer = $Dashboard/Gauges/Tachometer
 	pause = $PauseScreen
 	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
+	
+	# Hide joystick on dekstop
+	if not OS.has_feature("android") or OS.has_feature("ios"):
+		joystick.hide()
 	
 	update_poppy_label()
 	

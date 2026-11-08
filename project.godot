@@ -13,7 +13,10 @@ config_version=5
 config/name="project-epa"
 run/main_scene="uid://saqv4pskbbjo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://clo31shfm22jj"
+boot_splash/bg_color=Color(0.52156866, 0.54901963, 0.27058825, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://0be866d3kn3x"
+config/icon="uid://0be866d3kn3x"
 
 [audio]
 
@@ -103,4 +106,5 @@ Upgrades={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.52156866, 0.54901963, 0.27058825, 1)

@@ -46,7 +46,7 @@ func _ready() -> void:
 	
 	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
-	engine_upgrade = Global.get_upgrade_level("engine")
+	engine_upgrade = Global.engine_upgrades
 	$Engines/CarEngine1.visible = false
 	$Engines/CarEngine2.visible = false
 	$Engines/CarEngine3.visible = false
@@ -74,7 +74,7 @@ func _ready() -> void:
 		_:
 			pass
 	
-	wheels_upgrade = Global.get_upgrade_level("wheel")
+	wheels_upgrade = Global.wheels_upgrades
 	$Wheels/T1.visible = false
 	$Wheels/T2.visible = false
 	$Wheels/T2.visible = false

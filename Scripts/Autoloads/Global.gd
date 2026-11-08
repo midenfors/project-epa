@@ -18,3 +18,4 @@ func get_upgrade_level(id: String) -> int:
 
 func add_upgrade_level(id: String, levels: int) -> void:
 	set(id + "_upgrades", get_upgrade_level(id) + levels)
+	

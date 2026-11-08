@@ -81,26 +81,25 @@ rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
 [node name="T2" type="Node2D" parent="Wheels" unique_id=1343389086]
-visible = false
 
 [node name="Wheel_Front_Left" type="Sprite2D" parent="Wheels/T2" unique_id=1533835188]
-position = Vector2(-55.000008, -75)
-rotation = -1.5707964
+position = Vector2(-48.000004, -73.00001)
+rotation = 1.5707964
 texture = ExtResource("4_7dpuy")
 
 [node name="Wheel_Front_Right" type="Sprite2D" parent="Wheels/T2" unique_id=947390079]
-position = Vector2(57.999996, -76.99999)
-rotation = 1.5707964
+position = Vector2(50.999996, -76)
+rotation = 4.712389
 texture = ExtResource("4_7dpuy")
 
 [node name="Wheel_Rear_Left" type="Sprite2D" parent="Wheels/T2" unique_id=895213522]
-position = Vector2(-54.999996, 72)
-rotation = -1.5707964
+position = Vector2(-47.999996, 71.99999)
+rotation = 1.5707964
 texture = ExtResource("4_7dpuy")
 
 [node name="Wheel_Rear_Right" type="Sprite2D" parent="Wheels/T2" unique_id=236026836]
-position = Vector2(58, 73.00001)
-rotation = 1.5707964
+position = Vector2(51.000004, 73)
+rotation = 4.712389
 texture = ExtResource("4_7dpuy")
 
 [node name="T3" type="Node2D" parent="Wheels" unique_id=293440821]

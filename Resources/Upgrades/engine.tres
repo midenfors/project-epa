@@ -5,7 +5,9 @@
 
 [resource]
 script = ExtResource("1_3qrcw")
-icon = ExtResource("1_a1vr3")
 name = "Engine"
 description = "For better speed"
+base_cost = 30
+cost_increase = 2.0
+icon = ExtResource("1_a1vr3")
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

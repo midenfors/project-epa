@@ -32,7 +32,7 @@ var car_started_motion = false
 var on_grass : bool = false
 var terrain_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
-var break_deceleration_modifier = 15
+var break_deceleration_modifier = 50
 var in_mud : bool = false
 
 var speedometer : Speedometer
@@ -76,7 +76,7 @@ func _ready() -> void:
 			$TopBoosters/CarBoost3.visible = true
 		_:
 			pass
-	speed_boost += (speed_boost * 0.3 * Global.booster_upgrades)
+	speed_boost += (speed_boost * 0.1 * Global.booster_upgrades)
 	
 	wheels_upgrade = Global.wheels_upgrades
 	$Wheels/T1.visible = false

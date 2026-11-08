@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_ext5o")
 name = "Booster"
-base_cost = 3
+base_cost = 10
+cost_increase = 2.0
 icon = ExtResource("1_uc64d")
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

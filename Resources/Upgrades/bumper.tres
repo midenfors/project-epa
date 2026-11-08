@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://jtr83qy86bvu"]
+
+[ext_resource type="Script" uid="uid://vn6db8n58n3i" path="res://Scripts/Upgrades.gd" id="1_iac18"]
+[ext_resource type="Texture2D" uid="uid://cwxxr5ci6411x" path="res://Assets/Art/Car_Bumper1_Grill.png" id="1_ngru0"]
+
+[resource]
+script = ExtResource("1_iac18")
+name = "Bumper"
+description = "Gör så att du kan köra på saker utan att oroa dig."
+base_cost = 13
+icon = ExtResource("1_ngru0")
+metadata/_custom_type_script = "uid://vn6db8n58n3i"

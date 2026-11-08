@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b752yo2aybctd"
+path="res://.godot/imported/EPA dunk loop (EQ).mp3-be94e81640f5d693e9901332721991dc.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/EPA dunk loop (EQ).mp3"
+dest_files=["res://.godot/imported/EPA dunk loop (EQ).mp3-be94e81640f5d693e9901332721991dc.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

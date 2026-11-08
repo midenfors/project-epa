@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="project-epa"
+config/name="B-EPA"
 run/main_scene="uid://saqv4pskbbjo"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/bg_color=Color(0.52156866, 0.54901963, 0.27058825, 1)
@@ -26,6 +26,7 @@ buses/default_bus_layout=""
 
 Debug="*uid://c5626oax5gr61"
 Global="*uid://biirinrksdpv5"
+MusicManager="*uid://bt2l562rx3t3n"
 
 [display]
 

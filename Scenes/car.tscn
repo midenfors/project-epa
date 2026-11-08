@@ -4,9 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dmkqluooe27nq" path="res://Assets/Art/Car_Wheels1.png" id="2_1sfmx"]
 [ext_resource type="Texture2D" uid="uid://ce8w5pimn2rdf" path="res://Assets/Art/Car_Boost1.png" id="2_argdw"]
 [ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="2_go66d"]
+[ext_resource type="Texture2D" uid="uid://cwxxr5ci6411x" path="res://Assets/Art/Car_Bumper1_Grill.png" id="3_af8kn"]
 [ext_resource type="Texture2D" uid="uid://bwnvs5shehrrl" path="res://Assets/Art/Car_Wheel2.png" id="4_7dpuy"]
+[ext_resource type="Texture2D" uid="uid://7kiln1m7y58y" path="res://Assets/Art/Car_Bumper2_Bumper.png" id="4_ht70k"]
 [ext_resource type="Texture2D" uid="uid://d3ccid6njm4vr" path="res://Assets/Art/Particles/Large_Particle_Atlas.png" id="4_yi23e"]
 [ext_resource type="Texture2D" uid="uid://dwj7ph3k6gww7" path="res://Assets/Art/Car_Wheel3.png" id="5_pkuty"]
+[ext_resource type="Texture2D" uid="uid://dys8yjk1ax3fd" path="res://Assets/Art/Car_Bumper2_RenPlog.png" id="5_rbggc"]
 [ext_resource type="Texture2D" uid="uid://nsvd8cniyj7m" path="res://Assets/Art/Car_Engine1.png" id="5_u41r7"]
 [ext_resource type="Texture2D" uid="uid://p4qu8pmuvprj" path="res://Assets/Art/Car_Boost2_Fan1.png" id="7_lh2yg"]
 [ext_resource type="Texture2D" uid="uid://3w321qxvpfym" path="res://Assets/Art/Car_Boost2_Fan2.png" id="8_6c0gb"]
@@ -54,6 +57,26 @@ visible = false
 position = Vector2(28.000006, 119)
 rotation = -1.5707964
 texture = ExtResource("2_argdw")
+
+[node name="Bumpers" type="Node2D" parent="." unique_id=648321725]
+
+[node name="CarBumper1Grill" type="Sprite2D" parent="Bumpers" unique_id=1306929394]
+visible = false
+position = Vector2(3.9999945, -123)
+rotation = -1.5707964
+texture = ExtResource("3_af8kn")
+
+[node name="CarBumper2Bumper" type="Sprite2D" parent="Bumpers" unique_id=1921239130]
+visible = false
+position = Vector2(1.9999945, -124)
+rotation = -1.5707964
+texture = ExtResource("4_ht70k")
+
+[node name="CarBumper2RenPlog" type="Sprite2D" parent="Bumpers" unique_id=1892231406]
+visible = false
+position = Vector2(1.9999944, -127)
+rotation = -1.5707964
+texture = ExtResource("5_rbggc")
 
 [node name="Wheels" type="Node2D" parent="." unique_id=2041051414]
 
@@ -160,7 +183,7 @@ anim_offset_max = 1.0
 
 [node name="CarBoost2" type="AnimatedSprite2D" parent="TopBoosters" unique_id=474196392]
 visible = false
-position = Vector2(1.0000026, 61)
+position = Vector2(5.3048134e-06, 121)
 rotation = -1.5707964
 sprite_frames = SubResource("SpriteFrames_jbh1w")
 autoplay = "default"
@@ -182,12 +205,12 @@ texture = ExtResource("5_u41r7")
 
 [node name="CarEngine2" type="Sprite2D" parent="Engines" unique_id=505121915]
 visible = false
-position = Vector2(1.9999961, -90)
+position = Vector2(1.9999962, -87)
 rotation = -1.5707964
 texture = ExtResource("10_6c0gb")
 
 [node name="CarEngine3" type="Sprite2D" parent="Engines" unique_id=1051106152]
 visible = false
-position = Vector2(2.9999964, -82)
+position = Vector2(1.9999967, -78)
 rotation = -1.5707964
 texture = ExtResource("11_15bpq")

@@ -30,7 +30,7 @@ var speed : float = 0
 
 var car_started_motion = false
 var on_grass : bool = false
-var grass_deceleration_modifier = 4
+var terrain_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
 var break_deceleration_modifier = 15
 
@@ -75,6 +75,7 @@ func _ready() -> void:
 			$TopBoosters/CarBoost3.visible = true
 		_:
 			pass
+	speed_boost += (speed_boost * 0.3 * Global.booster_upgrades)
 	
 	wheels_upgrade = Global.wheels_upgrades
 	$Wheels/T1.visible = false
@@ -83,8 +84,10 @@ func _ready() -> void:
 	match wheels_upgrade:
 		1:
 			$Wheels/T2.visible = true
+			terrain_deceleration_modifier *= 0.5
 		2:
 			$Wheels/T3.visible = true
+			terrain_deceleration_modifier *= 0
 		_:
 			$Wheels/T1.visible = true
 			pass
@@ -130,7 +133,7 @@ func _physics_process(_delta: float) -> void:
 		
 		var dec_modifier = 1
 		if on_grass:
-			dec_modifier *= grass_deceleration_modifier
+			dec_modifier *= terrain_deceleration_modifier
 			if $CPUParticles2D.emitting == false:
 				if speed > grass_particle_speed_limit:
 					$CPUParticles2D.restart()

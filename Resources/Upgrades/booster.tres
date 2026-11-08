@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bs261mlecdxbu"]
+
+[ext_resource type="Script" uid="uid://vn6db8n58n3i" path="res://Scripts/Upgrades.gd" id="1_ext5o"]
+
+[resource]
+script = ExtResource("1_ext5o")
+name = "Booster"
+base_cost = 3
+metadata/_custom_type_script = "uid://vn6db8n58n3i"

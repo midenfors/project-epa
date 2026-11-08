@@ -6,6 +6,7 @@ var snus_upgrades : int = 0
 var poppy_power_upgrades : int = 0
 var engine_upgrades : int = 0
 var wheels_upgrades : int = 0
+var booster_upgrades : int = 0
 
 func increase_poppy(amount):
 	poppys += amount

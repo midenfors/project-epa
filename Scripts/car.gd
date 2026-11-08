@@ -60,7 +60,7 @@ func _ready() -> void:
 		_:
 			pass
 	
-	# booster_upgrades = Global.get_upgrade_level("booster")
+	booster_upgrade = Global.booster_upgrades
 	$BottomBosters/CarBoost1.visible = false
 	$TopBoosters/CarBoost2.visible = false
 	$TopBoosters/CarBoost3.visible = false
@@ -68,9 +68,9 @@ func _ready() -> void:
 		3, 4:
 			$BottomBosters/CarBoost1.visible = true
 		5, 6, 7:
-			$BottomBosters/CarBoost2.visible = true
+			$TopBoosters/CarBoost2.visible = true
 		8, 9, 10:
-			$BottomBosters/CarBoost3.visible = true
+			$TopBoosters/CarBoost3.visible = true
 		_:
 			pass
 	

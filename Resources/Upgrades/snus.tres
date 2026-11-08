@@ -8,6 +8,5 @@ script = ExtResource("1_dp32i")
 name = "Snus Storage"
 description = "Fuel for EPA"
 cost_increase = 2.0
-max_level = 20
 icon = ExtResource("1_2mmnb")
 metadata/_custom_type_script = "uid://vn6db8n58n3i"

@@ -102,12 +102,13 @@ func _ready() -> void:
 	$Bumpers/CarBumper2Bumper.visible = false
 	$Bumpers/CarBumper2RenPlog.visible = false
 	match bumper_upgrade:
-		1:
+		1, 2, 3:
 			$Bumpers/CarBumper1Grill.visible = true
-		2:
-			$Bumpers/CarBumper2Bumper.visible = false
+		4, 5, 6, 7:
+			$Bumpers/CarBumper2Bumper.visible = true
+		8, 9, 10:
+			$Bumpers/CarBumper2RenPlog.visible = true
 		_:
-			$Bumpers/CarBumper2RenPlog.visible = false
 			pass
 	obstacle_slowdown_modifier *= (1 - Global.bumper_upgrades)
 	

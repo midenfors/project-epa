@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://oyg412rbjmdr"]
+
+[ext_resource type="Script" uid="uid://wfgps0lb6vvr" path="res://Scripts/obstacle.gd" id="1_mmcid"]
+[ext_resource type="Texture2D" uid="uid://dqwpkyqfe18km" path="res://Assets/Art/standing_tree.png" id="2_mmcid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t52rh"]
+size = Vector2(276.53683, 27.527369)
+
+[node name="Standing_Tree" type="Area2D" unique_id=372518061]
+script = ExtResource("1_mmcid")
+speed_reduce = 350
+
+[node name="StandingTree" type="Sprite2D" parent="." unique_id=323519535]
+position = Vector2(-3, -200)
+texture = ExtResource("2_mmcid")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=605100573]
+position = Vector2(-3, -13)
+rotation = 0.016485482
+scale = Vector2(0.1, 0.9)
+shape = SubResource("RectangleShape2D_t52rh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

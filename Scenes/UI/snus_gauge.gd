@@ -2,27 +2,25 @@ class_name Snus_Gauge
 extends Control
 
 var snusdosa_tex : Texture2D = preload("res://Assets/Art/Snusdossa.png")
-const global_script = preload("res://Scripts/Autoloads/Global.gd")
-var global_inst = global_script.new()
 var snus_sprites = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var max = global_inst.snus_counter
+	update_snus_amount()
+
+# Rebuilds the snus stack: base snus + 1 per Snus Storage level.
+func update_snus_amount():
+	for sprite in snus_sprites:
+		sprite.queue_free()
+	snus_sprites.clear()
+
+	var _max = Global.snus_counter + Global.snus_upgrades
 	var offset : float = 30
-	for i in range(max, 0, -1):
+	for i in range(_max, 0, -1):
 		var sprite := Sprite2D.new()
 		sprite.texture = snusdosa_tex
-		sprite.position = $SnusMarker2D.position + Vector2(0, offset) * (i - max)
+		sprite.position = $SnusMarker2D.position + Vector2(0, offset) * (i - _max)
 		add_child(sprite)
 		snus_sprites += [sprite]
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 
 func consume_snus():
 	if snus_sprites.size() > 0:

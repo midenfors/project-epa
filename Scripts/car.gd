@@ -13,6 +13,7 @@ var audio_manager : AudioManager
 @export var num_speed_boosts : int = 3      # Number of snus in the bucket
 @export var speed_boost : float = 150.0     # Car Booster Upgrade
 @export var deceleration : float = -30      # Car Engine Upgrade
+@export var engine_decel_reduction : float = 0.05  # Each engine level cuts deceleration by 5%
 
 var boost_delay = 1000
 var time_last_boost : float = -999
@@ -35,6 +36,11 @@ func _ready() -> void:
 	speedometer = get_node("../CanvasLayer/HUD/Speedometer")
 	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
+# Deceleration after engine upgrades (level 10 = half the slowdown).
+func get_deceleration() -> float:
+	var factor := maxf(0.0, 1.0 - engine_decel_reduction * Global.engine_upgrades)
+	return deceleration * factor
+
 func _physics_process(_delta: float) -> void:
 	num_speed_boosts = snus_gauge.num_snus_remaining()
 	# var input_throttle = Input.get_axis("Break", "Gas") * throttle_modifier
@@ -70,7 +76,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if $CPUParticles2D.emitting == true:
 			$CPUParticles2D.emitting = false
-	speed += deceleration * dec_modifer * _delta
+	speed += get_deceleration() * dec_modifer * _delta
 	if speed < 0:
 		speed = 0
 	velocity = Vector2(speed, 0)

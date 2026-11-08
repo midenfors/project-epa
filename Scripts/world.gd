@@ -16,13 +16,13 @@ func _process(_delta: float) -> void:
 		hud.show_end_state()
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
-	var car : Car = body as Car
-	car.on_grass = true
+	var _car : Car = body as Car
+	_car.on_grass = true
 	pass # Replace with function body.
 
 func _on_grass_area_body_exited(body: Node2D) -> void:
-	var car : Car = body as Car
-	car.on_grass = false
+	var _car : Car = body as Car
+	_car.on_grass = false
 	pass # Replace with function body.
 
 func add_road() -> void:
@@ -43,5 +43,5 @@ func add_road() -> void:
 	road_parent.position = road.position + road.find_child("End").position
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	call_deferred("add_road")

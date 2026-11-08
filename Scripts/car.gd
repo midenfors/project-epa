@@ -70,7 +70,7 @@ func _physics_process(_delta: float) -> void:
 		car_started_motion = true
 		var boost_crit : bool = false
 		
-		if abs(boost_duration - boost_duration_target) < boost_crit_window/2:
+		if abs(boost_duration - boost_duration_target) < boost_crit_window/2.0:
 			boost_crit = true
 		if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
 			time_last_boost = time_now

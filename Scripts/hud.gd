@@ -6,8 +6,8 @@ extends Control
 @export var poppy_label : Label
 
 func _ready() -> void:
-	speedometer = $Gauges/Speedometer
-	tachometer = $Gauges/Tachometer
+	speedometer = $Dashboard/Gauges/Speedometer
+	tachometer = $Dashboard/Gauges/Tachometer
 	pause = $PauseScreen
 	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
 	

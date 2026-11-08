@@ -7,10 +7,11 @@ var current_roads = {}
 var key = 0
 var roads_past = 0
 
-var goal = 56
+var goal = 55
 var milestones = [1, 9, 25, 39, 51]
-var box_obstacle = [2, 6, 9, 13, 18, 21, 26, 27]
-var mud = [5, 12, 16, 20, 23, 24, 26, 30]
+var box_obstacle = [2, 6, 9, 13, 17, 21, 26, 27]
+var mud = [7, 14, 18, 22, 25, 26, 28, 32]
+var driver = [14, 18, 24]
 
 @onready var camera = $Camera2D
 
@@ -60,6 +61,9 @@ func add_road() -> void:
 	for i in mud:
 		if roads_past == i:
 			road.find_child("Spawner").mud_terrain()
+	for i in driver:
+		if roads_past == i:
+			road.find_child("Spawner").driver()
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	call_deferred("add_road")

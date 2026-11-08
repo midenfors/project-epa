@@ -8,6 +8,8 @@ var engine_upgrades : int = 0
 var wheels_upgrades : int = 0
 var booster_upgrades : int = 0
 
+var force_upgrade_menu : bool = false
+
 func increase_poppy(amount):
 	poppys += amount
 

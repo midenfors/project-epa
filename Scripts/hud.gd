@@ -12,6 +12,13 @@ func _ready() -> void:
 	poppy_label = $Dashboard/PoppyCounter/PoppyCountLabel
 	
 	update_poppy_label()
+	
+	if Global.force_upgrade_menu:
+		$Dashboard/UpgradeMenu.visible = true
+		Global.force_upgrade_menu = false
+	else:
+		$Dashboard/UpgradeMenu.visible = false
+	
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Upgrades"):

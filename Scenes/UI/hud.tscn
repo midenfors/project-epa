@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://tg4u023ovifj" path="res://Assets/Art/Car_Engine2.png" id="11_8km2t"]
 [ext_resource type="Script" uid="uid://w5gl52gct288" path="res://Scripts/end_screen.gd" id="11_cna6x"]
 [ext_resource type="Texture2D" uid="uid://dsyimaf87drrm" path="res://Assets/Art/Car_Engine3.png" id="12_k24i8"]
+[ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="18_qff6j"]
 
 [sub_resource type="Gradient" id="Gradient_7wqu8"]
 offsets = PackedFloat32Array(1)
@@ -155,7 +156,6 @@ theme_override_font_sizes/font_size = 32
 text = ": 999"
 
 [node name="UpgradeMenu" type="Control" parent="Dashboard" unique_id=1791634231]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,6 +175,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_vm6d2")
 
 [node name="CAR" type="TextureRect" parent="Dashboard/UpgradeMenu" unique_id=1600665002]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -272,6 +273,12 @@ layout_mode = 2
 
 [node name="UpgradeContainer3" parent="Dashboard/UpgradeMenu/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1349211232 instance=ExtResource("7_7wqu8")]
 layout_mode = 2
+
+[node name="Car" parent="Dashboard/UpgradeMenu" unique_id=1563742778 instance=ExtResource("18_qff6j")]
+position = Vector2(172, 343.00003)
+rotation = 0.0
+scale = Vector2(1.9221945, 1.9221945)
+faux = true
 
 [node name="PauseScreen" type="Control" parent="." unique_id=1957676972]
 process_mode = 3

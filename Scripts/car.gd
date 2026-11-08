@@ -9,6 +9,8 @@ var engine_upgrade : int = 0
 var wheels_upgrade : int = 0
 var booster_upgrade : int = 0
 
+@export var faux : bool = false
+
 # Upgradable
 @export var num_speed_boosts : int = 3      # Number of snus in the bucket
 @export var speed_boost : float = 150.0     # Car Booster Upgrade
@@ -44,7 +46,8 @@ func _ready() -> void:
 	snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
 	steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
 	
-	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
+	if not faux:
+		audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 	
 	engine_upgrade = Global.engine_upgrades
 	$Engines/CarEngine1.visible = false
@@ -93,67 +96,68 @@ func get_deceleration() -> float:
 	return deceleration * factor
 
 func _physics_process(_delta: float) -> void:
-	num_speed_boosts = snus_gauge.num_snus_remaining()
+	if not faux:
+		num_speed_boosts = snus_gauge.num_snus_remaining()
 
-	var time_now = Time.get_ticks_msec()
-	var boost_duration = 0
-	
-	if Input.is_action_just_pressed("Boost"):
-		if num_speed_boosts > 0:
-			audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
-			time_boost_charge_start = time_now
-			current_boost_has_triggered = false
-	var can_trigger_boost = num_speed_boosts > 0 and not current_boost_has_triggered
-	
-	if can_trigger_boost and Input.is_action_pressed("Boost"):
-		boost_duration = time_now - time_boost_charge_start
-	if can_trigger_boost and (Input.is_action_just_released("Boost") or boost_duration > boost_duration_cutoff):
-		car_started_motion = true
-		var boost_crit : bool = false
+		var time_now = Time.get_ticks_msec()
+		var boost_duration = 0
 		
-		if abs(boost_duration - boost_duration_target) < boost_crit_window/2.0:
-			boost_crit = true
-		if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
-			time_last_boost = time_now
-			num_speed_boosts -= 1
-			snus_gauge.consume_snus()
-			current_boost_has_triggered = true
-			if boost_crit:
-				speed += speed_boost * 2
-			else:
-				speed += speed_boost
+		if Input.is_action_just_pressed("Boost"):
+			if num_speed_boosts > 0:
+				audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
+				time_boost_charge_start = time_now
+				current_boost_has_triggered = false
+		var can_trigger_boost = num_speed_boosts > 0 and not current_boost_has_triggered
+		
+		if can_trigger_boost and Input.is_action_pressed("Boost"):
+			boost_duration = time_now - time_boost_charge_start
+		if can_trigger_boost and (Input.is_action_just_released("Boost") or boost_duration > boost_duration_cutoff):
+			car_started_motion = true
+			var boost_crit : bool = false
 			
-	speed = clamp(speed, 0, 10000)
-	
-	var dec_modifier = 1
-	if on_grass:
-		dec_modifier *= grass_deceleration_modifier
-		if $CPUParticles2D.emitting == false:
-			if speed > grass_particle_speed_limit:
-				$CPUParticles2D.restart()
+			if abs(boost_duration - boost_duration_target) < boost_crit_window/2.0:
+				boost_crit = true
+			if num_speed_boosts > 0 and time_now - time_last_boost > boost_delay:
+				time_last_boost = time_now
+				num_speed_boosts -= 1
+				snus_gauge.consume_snus()
+				current_boost_has_triggered = true
+				if boost_crit:
+					speed += speed_boost * 2
+				else:
+					speed += speed_boost
+				
+		speed = clamp(speed, 0, 10000)
+		
+		var dec_modifier = 1
+		if on_grass:
+			dec_modifier *= grass_deceleration_modifier
+			if $CPUParticles2D.emitting == false:
+				if speed > grass_particle_speed_limit:
+					$CPUParticles2D.restart()
+			else:
+				if speed <= grass_particle_speed_limit:
+					$CPUParticles2D.emitting = false
 		else:
-			if speed <= grass_particle_speed_limit:
+			if $CPUParticles2D.emitting == true:
 				$CPUParticles2D.emitting = false
-	else:
-		if $CPUParticles2D.emitting == true:
-			$CPUParticles2D.emitting = false
-	if Input.is_action_pressed("Break"):
-		dec_modifier *= break_deceleration_modifier
-	speed += get_deceleration() * dec_modifier * _delta
-	if speed < 0:
-		speed = 0
-	velocity = Vector2(speed, 0)
-	var steering_angle = steering_speed * Input.get_axis("Turn Left", "Turn Right")
-	velocity = velocity.rotated(steering_angle)
-	
-	# Visual turning feedback
-	rotation = lerpf(rotation, PI/2 + steering_angle, 1.0 - exp(-turn_smoothing * _delta))
-	steering_wheel.rotation = lerpf(steering_wheel.rotation, steering_angle * 5, 1.0 - exp(-turn_smoothing * _delta))
-	
-	tachometer.set_rpm(boost_duration / boost_duration_cutoff)
-	if speed > 0:
-		speedometer.set_speed(speed * 0.1)
-	else:
-		speedometer.set_arrow_to_zero()
-	
-	move_and_slide()
+		if Input.is_action_pressed("Break"):
+			dec_modifier *= break_deceleration_modifier
+		speed += get_deceleration() * dec_modifier * _delta
+		if speed < 0:
+			speed = 0
+		velocity = Vector2(speed, 0)
+		var steering_angle = steering_speed * Input.get_axis("Turn Left", "Turn Right")
+		velocity = velocity.rotated(steering_angle)
+		
+		# Visual turning feedback
+		rotation = lerpf(rotation, PI/2 + steering_angle, 1.0 - exp(-turn_smoothing * _delta))
+		steering_wheel.rotation = lerpf(steering_wheel.rotation, steering_angle * 5, 1.0 - exp(-turn_smoothing * _delta))
+		
+		tachometer.set_rpm(boost_duration / boost_duration_cutoff)
+		if speed > 0:
+			speedometer.set_speed(speed * 0.1)
+		else:
+			speedometer.set_arrow_to_zero()
+		
+		move_and_slide()

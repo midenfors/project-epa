@@ -28,6 +28,7 @@ func _process(_delta: float) -> void:
 	if car:
 		var dist = car.global_position.x - Global.start_position
 		Global.distance = dist
+		#Win STATE
 		if (int(Global.distance) / 3960) == 55:
 			hud.show_win_screen()
 

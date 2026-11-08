@@ -1,6 +1,6 @@
 extends Node
 
-var poppys : int = 0
+var poppys : int = 99
 var snus_counter : int = 3
 var snus_upgrades : int = 0
 var poppy_power_upgrades : int = 0

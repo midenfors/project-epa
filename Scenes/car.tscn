@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ciec4ui37y4dn" path="res://Scripts/car.gd" id="1_wqo35"]
 [ext_resource type="Texture2D" uid="uid://dmkqluooe27nq" path="res://Assets/Art/Car_Wheels1.png" id="2_1sfmx"]
+[ext_resource type="Texture2D" uid="uid://ce8w5pimn2rdf" path="res://Assets/Art/Car_Boost1.png" id="2_argdw"]
 [ext_resource type="Texture2D" uid="uid://cdpy2t5xl4yfl" path="res://Assets/Art/Car_Base.png" id="2_go66d"]
+[ext_resource type="Texture2D" uid="uid://bwnvs5shehrrl" path="res://Assets/Art/Car_Wheel2.png" id="4_7dpuy"]
 [ext_resource type="Texture2D" uid="uid://d3ccid6njm4vr" path="res://Assets/Art/Particles/Large_Particle_Atlas.png" id="4_yi23e"]
+[ext_resource type="Texture2D" uid="uid://dwj7ph3k6gww7" path="res://Assets/Art/Car_Wheel3.png" id="5_pkuty"]
 [ext_resource type="Texture2D" uid="uid://nsvd8cniyj7m" path="res://Assets/Art/Car_Engine1.png" id="5_u41r7"]
+[ext_resource type="Texture2D" uid="uid://p4qu8pmuvprj" path="res://Assets/Art/Car_Boost2_Fan1.png" id="7_lh2yg"]
+[ext_resource type="Texture2D" uid="uid://3w321qxvpfym" path="res://Assets/Art/Car_Boost2_Fan2.png" id="8_6c0gb"]
+[ext_resource type="Texture2D" uid="uid://yn4i30uv0k36" path="res://Assets/Art/Car_Boost3_Jet.png" id="9_15bpq"]
+[ext_resource type="Texture2D" uid="uid://tg4u023ovifj" path="res://Assets/Art/Car_Engine2.png" id="10_6c0gb"]
+[ext_resource type="Texture2D" uid="uid://dsyimaf87drrm" path="res://Assets/Art/Car_Engine3.png" id="11_15bpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi6xy"]
 size = Vector2(78.99999, 220)
@@ -20,29 +28,101 @@ _limits = [1.0, 3.6094933, 0.0, 1.0]
 _data = [Vector2(0.24468085, 1.1172805), 0.0, 2.0211363, 0, 0, Vector2(0.9787234, 3.6094933), 4.7247334, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbh1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lh2yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6c0gb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="Car" type="CharacterBody2D" unique_id=1563742778 groups=["Player"]]
 rotation = 1.5707964
 script = ExtResource("1_wqo35")
 
-[node name="Wheel_Front_Left" type="Sprite2D" parent="." unique_id=1524077083]
+[node name="BottomBosters" type="Node2D" parent="." unique_id=591032349]
+
+[node name="CarBoost1" type="Sprite2D" parent="BottomBosters" unique_id=1169614932]
+visible = false
+position = Vector2(28.000006, 119)
+rotation = -1.5707964
+texture = ExtResource("2_argdw")
+
+[node name="Wheels" type="Node2D" parent="." unique_id=2041051414]
+
+[node name="T1" type="Node2D" parent="Wheels" unique_id=1895207755]
+
+[node name="Wheel_Front_Left" type="Sprite2D" parent="Wheels/T1" unique_id=1524077083]
 position = Vector2(-46.000004, -73)
 rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
-[node name="Wheel_Front_Right" type="Sprite2D" parent="." unique_id=2106008432]
+[node name="Wheel_Front_Right" type="Sprite2D" parent="Wheels/T1" unique_id=2106008432]
 position = Vector2(50.999996, -75.00001)
 rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
-[node name="Wheel_Rear_Left" type="Sprite2D" parent="." unique_id=324473404]
+[node name="Wheel_Rear_Left" type="Sprite2D" parent="Wheels/T1" unique_id=324473404]
 position = Vector2(-45.999996, 76)
 rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
 
-[node name="Wheel_Rear_Right" type="Sprite2D" parent="." unique_id=1408677614]
+[node name="Wheel_Rear_Right" type="Sprite2D" parent="Wheels/T1" unique_id=1408677614]
 position = Vector2(51.000004, 77)
 rotation = -1.5707964
 texture = ExtResource("2_1sfmx")
+
+[node name="T2" type="Node2D" parent="Wheels" unique_id=1343389086]
+visible = false
+
+[node name="Wheel_Front_Left" type="Sprite2D" parent="Wheels/T2" unique_id=1533835188]
+position = Vector2(-55.000008, -75)
+rotation = -1.5707964
+texture = ExtResource("4_7dpuy")
+
+[node name="Wheel_Front_Right" type="Sprite2D" parent="Wheels/T2" unique_id=947390079]
+position = Vector2(57.999996, -76.99999)
+rotation = 1.5707964
+texture = ExtResource("4_7dpuy")
+
+[node name="Wheel_Rear_Left" type="Sprite2D" parent="Wheels/T2" unique_id=895213522]
+position = Vector2(-54.999996, 72)
+rotation = -1.5707964
+texture = ExtResource("4_7dpuy")
+
+[node name="Wheel_Rear_Right" type="Sprite2D" parent="Wheels/T2" unique_id=236026836]
+position = Vector2(58, 73.00001)
+rotation = 1.5707964
+texture = ExtResource("4_7dpuy")
+
+[node name="T3" type="Node2D" parent="Wheels" unique_id=293440821]
+visible = false
+
+[node name="Wheel_Front_Left" type="Sprite2D" parent="Wheels/T3" unique_id=1389996591]
+position = Vector2(-58.000015, -64.999985)
+rotation = -4.712389
+texture = ExtResource("5_pkuty")
+
+[node name="Wheel_Front_Right" type="Sprite2D" parent="Wheels/T3" unique_id=1775111586]
+position = Vector2(62.999992, -66.00001)
+rotation = -1.5707964
+texture = ExtResource("5_pkuty")
+
+[node name="Wheel_Rear_Left" type="Sprite2D" parent="Wheels/T3" unique_id=1811110021]
+position = Vector2(-59, 69.99999)
+rotation = 1.5707964
+texture = ExtResource("5_pkuty")
+
+[node name="Wheel_Rear_Right" type="Sprite2D" parent="Wheels/T3" unique_id=1732890714]
+position = Vector2(61.000004, 69)
+rotation = 4.712389
+texture = ExtResource("5_pkuty")
 
 [node name="BodySprite" type="Sprite2D" parent="." unique_id=1424530375]
 position = Vector2(1, -4.371139e-08)
@@ -75,7 +155,38 @@ angular_velocity_max = 90.0
 scale_amount_curve = SubResource("Curve_u41r7")
 anim_offset_max = 1.0
 
-[node name="CarEngine" type="Sprite2D" parent="." unique_id=427579668]
-position = Vector2(1.9999963, -86)
+[node name="TopBoosters" type="Node2D" parent="." unique_id=1414993563]
+
+[node name="CarBoost2" type="AnimatedSprite2D" parent="TopBoosters" unique_id=474196392]
+visible = false
+position = Vector2(1.0000026, 61)
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_jbh1w")
+autoplay = "default"
+frame_progress = 0.5866188
+
+[node name="CarBoost3" type="Sprite2D" parent="TopBoosters" unique_id=1680339829]
+visible = false
+position = Vector2(2, 68)
+rotation = -1.5707964
+texture = ExtResource("9_15bpq")
+
+[node name="Engines" type="Node2D" parent="." unique_id=1268744857]
+
+[node name="CarEngine1" type="Sprite2D" parent="Engines" unique_id=427579668]
+visible = false
+position = Vector2(0.9999964, -82)
 rotation = -1.5707964
 texture = ExtResource("5_u41r7")
+
+[node name="CarEngine2" type="Sprite2D" parent="Engines" unique_id=505121915]
+visible = false
+position = Vector2(1.9999961, -90)
+rotation = -1.5707964
+texture = ExtResource("10_6c0gb")
+
+[node name="CarEngine3" type="Sprite2D" parent="Engines" unique_id=1051106152]
+visible = false
+position = Vector2(2.9999964, -82)
+rotation = -1.5707964
+texture = ExtResource("11_15bpq")

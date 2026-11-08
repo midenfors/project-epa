@@ -5,9 +5,9 @@ var audio_manager : AudioManager
 
 @export var turn_smoothing : float = 8.0 # Högre = snabbare
 
-@export var engine_level: int = 0
-@export var boost_level: int = 0
-@export var snus_level: int = 0
+var engine_upgrade : int = 0
+var wheels_upgrade : int = 0
+var booster_upgrade : int = 0
 
 # Upgradable
 @export var num_speed_boosts : int = 3      # Number of snus in the bucket
@@ -45,6 +45,47 @@ func _ready() -> void:
 	steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
 	
 	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
+	
+	engine_upgrade = Global.get_upgrade_level("engine")
+	$Engines/CarEngine1.visible = false
+	$Engines/CarEngine2.visible = false
+	$Engines/CarEngine3.visible = false
+	match engine_upgrade:
+		3, 4:
+			$Engines/CarEngine1.visible = true
+		5, 6, 7:
+			$Engines/CarEngine2.visible = true
+		8, 9, 10:
+			$Engines/CarEngine3.visible = true
+		_:
+			pass
+	
+	# booster_upgrades = Global.get_upgrade_level("booster")
+	$BottomBosters/CarBoost1.visible = false
+	$TopBoosters/CarBoost2.visible = false
+	$TopBoosters/CarBoost3.visible = false
+	match booster_upgrade:
+		3, 4:
+			$BottomBosters/CarBoost1.visible = true
+		5, 6, 7:
+			$BottomBosters/CarBoost2.visible = true
+		8, 9, 10:
+			$BottomBosters/CarBoost3.visible = true
+		_:
+			pass
+	
+	wheels_upgrade = Global.get_upgrade_level("wheels")
+	$Wheels/T1.visible = false
+	$Wheels/T2.visible = false
+	$Wheels/T2.visible = false
+	match wheels_upgrade:
+		_:
+			$Wheels/T1.visible = true
+		5, 6, 7:
+			$Wheels/T2.visible = true
+		8, 9, 10:
+			$Wheels/T3.visible = true
+			pass
 	
 # Deceleration after engine upgrades (level 10 = half the slowdown).
 func get_deceleration() -> float:

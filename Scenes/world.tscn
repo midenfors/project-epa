@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://y5lbexiudvff" path="res://Scripts/world.gd" id="1_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://jlu1jv40kyf0" path="res://Scenes/car.tscn" id="2_go701"]
+[ext_resource type="PackedScene" uid="uid://c478xcut2pbio" path="res://pedal_controls.tscn" id="4_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://cc78tv4k0beqg" path="res://Scenes/audio_manager.tscn" id="5_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://dvhqp0ov4flbi" path="res://Scenes/UI/hud.tscn" id="5_fo5ed"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
 size = Vector2(32, 2231)
 
 [node name="world" type="Node" unique_id=521325791]
 script = ExtResource("1_5a7ea")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=203217801]
 
 [node name="RoadParent" type="Marker2D" parent="." unique_id=1470602965]
 position = Vector2(-678, 0)
@@ -27,6 +27,11 @@ position = Vector2(-6, -16.5)
 shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1650432471]
+
+[node name="HUD" parent="CanvasLayer" unique_id=341932580 instance=ExtResource("5_fo5ed")]
+
+[node name="PedalControls" parent="CanvasLayer/HUD" unique_id=1547500086 instance=ExtResource("4_fo5ed")]
+layout_mode = 1
 
 [node name="AudioManager" parent="." unique_id=509873445 instance=ExtResource("5_5ukr8")]
 

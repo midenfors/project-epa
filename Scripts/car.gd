@@ -5,8 +5,6 @@ var audio_manager : AudioManager
 
 @export var turn_smoothing : float = 8.0 # Högre = snabbare
 
-@export var snus_gauge : Snus_Gauge
-
 @export var engine_level: int = 0
 @export var boost_level: int = 0
 @export var snus_level: int = 0
@@ -17,6 +15,7 @@ var audio_manager : AudioManager
 @export var deceleration : float = -30      # Car Engine Upgrade
 @export var engine_decel_reduction : float = 0.05  # Each engine level cuts deceleration by 5%
 
+var current_boost_has_triggered : bool = false
 var boost_delay = 1200
 var time_last_boost : float = -999
 var time_boost_charge_start : float = 0
@@ -35,12 +34,14 @@ var break_deceleration_modifier = 15
 
 var speedometer : Speedometer
 var tachometer : Tachometer
+var snus_gauge : Snus_Gauge
 var steering_wheel : Node2D
 
 func _ready() -> void:
 	audio_manager = get_node("../AudioManager")
 	speedometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Speedometer")
 	tachometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Tachometer")
+	snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
 	steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
 	
 	audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
@@ -55,13 +56,17 @@ func _physics_process(_delta: float) -> void:
 
 	var time_now = Time.get_ticks_msec()
 	var boost_duration = 0
-	if Input.is_action_pressed("Boost") and num_speed_boosts > 0:
-		boost_duration = time_now - time_boost_charge_start
+	
 	if Input.is_action_just_pressed("Boost"):
-		audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
-		time_boost_charge_start = time_now
-		
-	if Input.is_action_just_released("Boost"):
+		if num_speed_boosts > 0:
+			audio_manager.play_sfx(audio_manager.ÖPPNA_SNUS)
+			time_boost_charge_start = time_now
+			current_boost_has_triggered = false
+	var can_trigger_boost = num_speed_boosts > 0 and not current_boost_has_triggered
+	
+	if can_trigger_boost and Input.is_action_pressed("Boost"):
+		boost_duration = time_now - time_boost_charge_start
+	if can_trigger_boost and (Input.is_action_just_released("Boost") or boost_duration > boost_duration_cutoff):
 		car_started_motion = true
 		var boost_crit : bool = false
 		
@@ -71,6 +76,7 @@ func _physics_process(_delta: float) -> void:
 			time_last_boost = time_now
 			num_speed_boosts -= 1
 			snus_gauge.consume_snus()
+			current_boost_has_triggered = true
 			if boost_crit:
 				speed += speed_boost * 2
 			else:
@@ -100,7 +106,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = velocity.rotated(steering_angle)
 	
 	# Visual turning feedback
-	# rotation = PI/2 + steering_angle
 	rotation = lerpf(rotation, PI/2 + steering_angle, 1.0 - exp(-turn_smoothing * _delta))
 	steering_wheel.rotation = lerpf(steering_wheel.rotation, steering_angle * 5, 1.0 - exp(-turn_smoothing * _delta))
 	

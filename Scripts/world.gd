@@ -8,7 +8,6 @@ var key = 0
 func _ready() -> void:
 	add_road()
 	add_road()
-	car.snus_gauge = $CanvasLayer/HUD/SnusGauge
 
 func _process(_delta: float) -> void:
 	#check end of run state

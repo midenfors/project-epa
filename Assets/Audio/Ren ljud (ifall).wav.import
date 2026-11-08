@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7q46b667o6jb"
+path="res://.godot/imported/Ren ljud (ifall).wav-b07b4fbd40a1c0fe85db50789808c5ae.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Ren ljud (ifall).wav"
+dest_files=["res://.godot/imported/Ren ljud (ifall).wav-b07b4fbd40a1c0fe85db50789808c5ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

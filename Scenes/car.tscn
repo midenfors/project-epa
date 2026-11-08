@@ -43,6 +43,7 @@ animations = [{
 }]
 
 [node name="Car" type="CharacterBody2D" unique_id=1563742778 groups=["Player"]]
+z_index = 1
 rotation = 1.5707964
 script = ExtResource("1_wqo35")
 

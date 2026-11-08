@@ -33,6 +33,7 @@ var on_grass : bool = false
 var terrain_deceleration_modifier = 4
 var grass_particle_speed_limit = 12
 var break_deceleration_modifier = 15
+var in_mud : bool = false
 
 var speedometer : Speedometer
 var tachometer : Tachometer
@@ -134,6 +135,17 @@ func _physics_process(_delta: float) -> void:
 		var dec_modifier = 1
 		if on_grass:
 			dec_modifier *= terrain_deceleration_modifier
+			if $CPUParticles2D.emitting == false:
+				if speed > grass_particle_speed_limit:
+					$CPUParticles2D.restart()
+			else:
+				if speed <= grass_particle_speed_limit:
+					$CPUParticles2D.emitting = false
+		else:
+			if $CPUParticles2D.emitting == true:
+				$CPUParticles2D.emitting = false
+		if in_mud:
+			dec_modifier *= terrain_deceleration_modifier * 4
 			if $CPUParticles2D.emitting == false:
 				if speed > grass_particle_speed_limit:
 					$CPUParticles2D.restart()

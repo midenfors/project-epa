@@ -1,6 +1,5 @@
 extends Node
 var road_scene = load("res://Scenes/road.tscn")
-var sign_scene = load("res://Scenes/sign.tscn")
 @onready var car : Car = $Car
 @onready var hud = $CanvasLayer/HUD
 
@@ -8,7 +7,9 @@ var current_roads = {}
 var key = 0
 var roads_past = 0
 
-var milestones = [1, 2, 3, 4, 5]
+var milestones = [3, 7, 13, 20, 100]
+var box_obstacle = [10, 15, 19, 23, 26, 29, 30, 32]
+var mud = [5, 12, 16, 20, 24, 23, 26, 30]
 
 @onready var camera = $Camera2D
 
@@ -51,11 +52,13 @@ func add_road() -> void:
 	roads_past = roads_past + 1
 	for i in milestones:
 		if roads_past == i:
-			var sign = sign_scene.instantiate()
-			sign.position = road.position
-			add_child(sign)
+			road.find_child("Spawner").milestone()
+	for i in box_obstacle:
+		if roads_past == i:
 			road.find_child("Spawner").box_terrain()
-
+	for i in mud:
+		if roads_past == i:
+			road.find_child("Spawner").mud_terrain()
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
 	call_deferred("add_road")

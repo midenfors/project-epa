@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4kd6wvfhq3n4"]
+
+[ext_resource type="Texture2D" uid="uid://1kegsfnalxrl" path="res://Assets/Art/Mud.png" id="1_luw8e"]
+[ext_resource type="Script" uid="uid://b4tbrsu427q66" path="res://Scripts/mud.gd" id="1_o0d0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0d0d"]
+size = Vector2(384, 460)
+
+[node name="Mud" type="Area2D" unique_id=1289417900]
+script = ExtResource("1_o0d0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=275113864]
+position = Vector2(-2, -9)
+shape = SubResource("RectangleShape2D_o0d0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2118628922]
+texture = ExtResource("1_luw8e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdakqotyyy1fo"
+path="res://.godot/imported/EPA dunk loud bass loop (EQ).mp3-060a8e2611aab1b8a2fa72012741aba2.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/EPA dunk loud bass loop (EQ).mp3"
+dest_files=["res://.godot/imported/EPA dunk loud bass loop (EQ).mp3-060a8e2611aab1b8a2fa72012741aba2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

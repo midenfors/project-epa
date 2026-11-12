@@ -1,0 +1,86 @@
+{
+	"categories": [
+		{
+			"uuid": "12923bb3-ffb1-429b-9a74-6f928b86b180",
+			"title": "Task",
+			"color": "569eff"
+		},
+		{
+			"uuid": "2ead79a3-ee82-4e86-b53f-142612489d32",
+			"title": "Bugs",
+			"color": "b51d1d"
+		},
+		{
+			"uuid": "c6b8ddab-a4e7-4e74-b3dc-f947adfd5bb3",
+			"title": "UI",
+			"color": "35d128"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "82b7a559-f5aa-4d80-8f71-532edcad37b4",
+			"title": "Todo",
+			"tasks": [
+				"97ce531e-77b5-4e27-bf40-a36bbfc6a161"
+			]
+		},
+		{
+			"uuid": "dc5eee9c-1eeb-40b9-bf93-b1b76c3cb640",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "00415760-0b3a-4c22-9f30-1ed3b3520616",
+			"title": "Done",
+			"tasks": [
+				"f5ce0925-4a82-4403-ac32-9d9034f68830"
+			]
+		},
+		{
+			"uuid": "36e640e5-614b-400d-991f-917efd17ffe7",
+			"title": "Bugs",
+			"tasks": [
+				"eb1ca49b-7c36-4088-802f-bba83e3737dc"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "f5ce0925-4a82-4403-ac32-9d9034f68830",
+			"title": "Jam Build",
+			"description": "",
+			"category": "12923bb3-ffb1-429b-9a74-6f928b86b180",
+			"steps": []
+		},
+		{
+			"uuid": "eb1ca49b-7c36-4088-802f-bba83e3737dc",
+			"title": "Tow menu behind upgrade menu / Jakob",
+			"description": "",
+			"category": "2ead79a3-ee82-4e86-b53f-142612489d32",
+			"steps": []
+		},
+		{
+			"uuid": "97ce531e-77b5-4e27-bf40-a36bbfc6a161",
+			"title": "Balance upgrades",
+			"description": "",
+			"category": "12923bb3-ffb1-429b-9a74-6f928b86b180",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"82b7a559-f5aa-4d80-8f71-532edcad37b4"
+			],
+			[
+				"dc5eee9c-1eeb-40b9-bf93-b1b76c3cb640"
+			],
+			[
+				"00415760-0b3a-4c22-9f30-1ed3b3520616"
+			],
+			[
+				"36e640e5-614b-400d-991f-917efd17ffe7"
+			]
+		]
+	}
+}

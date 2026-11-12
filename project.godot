@@ -37,6 +37,10 @@ window/stretch/aspect="expand"
 
 movie_writer/movie_file="/home/atomicmage/Documents/Programming/Godot/project-epa/builds/test.avi"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

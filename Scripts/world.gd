@@ -22,7 +22,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#check end of run state
-	camera.position.x = car.position.x + 500
 	if car.speed == 0 and car.car_started_motion:
 		hud.show_end_state()
 	if car:
@@ -31,6 +30,9 @@ func _process(_delta: float) -> void:
 		#Win STATE
 		if (int(Global.distance) / 3960) == 55:
 			hud.show_win_screen()
+
+func _physics_process(delta):
+	camera.position.x = car.position.x + 500
 
 func _on_grass_area_body_entered(body: Node2D) -> void:
 	var _car : Car = body as Car

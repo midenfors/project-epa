@@ -47,5 +47,5 @@ func _on_buy_pressed() -> void:
 	var car : Car = get_node("../../../../Car")
 	car.update_visuals()
 	_refresh()
-	Global.force_upgrade_menu = true
+	# Global.force_upgrade_menu = true
 	

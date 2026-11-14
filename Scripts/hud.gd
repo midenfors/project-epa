@@ -70,6 +70,7 @@ func _on_upgrade_button_pressed() -> void:
 func _on_close_upgr_button_pressed() -> void:
 	hide_upgrades()
 	$Dashboard/UpgradeButton.show()
+	get_tree().reload_current_scene()
 
 func _on_cheat_button_pressed() -> void:
 	Global.increase_poppy(50)

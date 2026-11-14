@@ -44,18 +44,8 @@ func _refresh() -> void:
 
 func _on_buy_pressed() -> void:
 	upgrade.buy()
-	#var car = get_node("CanvasLayer/HUD/UpgradeMenu/Car")
-	#if car != null:
-		#var old = car
-		#var parent = old.get_parent()
-		#var index = car.get_index()
-		#var new_car = object_scene.instantiate()
-#
-		#parent.remove_child(old)
-		#old.queue_free()
-		#parent.add_child(new_object)
-		#parent.move_child(new_object, index)
+	var car : Car = get_node("../../../../Car")
+	car.update_visuals()
 	_refresh()
 	Global.force_upgrade_menu = true
-	get_tree().reload_current_scene()
 	

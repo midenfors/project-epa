@@ -47,6 +47,72 @@ var steering_wheel : Node2D
 func _input(event: InputEvent) -> void:
 	if Input.is_key_label_pressed(KEY_E):
 		global_position.x = 53 * 3960
+		
+func update_visuals():
+	$Engines/CarEngine1.visible = false
+	$Engines/CarEngine2.visible = false
+	$Engines/CarEngine3.visible = false
+	match Global.engine_upgrades:
+		1, 2, 3:
+			$Engines/CarEngine1.visible = true
+		4, 5, 6:
+			$Engines/CarEngine2.visible = true
+		7, 8, 9, 10:
+			$Engines/CarEngine3.visible = true
+		_:
+			pass
+	
+	$BottomBosters/CarBoost1.visible = false
+	$TopBoosters/CarBoost2.visible = false
+	$TopBoosters/CarBoost3.visible = false
+	match Global.booster_upgrades:
+		1, 2, 3:
+			$BottomBosters/CarBoost1.visible = true
+		4, 5, 6:
+			$TopBoosters/CarBoost2.visible = true
+		7, 8, 9, 10:
+			$TopBoosters/CarBoost3.visible = true
+		_:
+			pass
+	
+	$Wheels/T1.visible = false
+	$Wheels/T2.visible = false
+	$Wheels/T2.visible = false
+	match Global.wheels_upgrades:
+		1:
+			$Wheels/T2.visible = true
+		2:
+			$Wheels/T3.visible = true
+		_:
+			$Wheels/T1.visible = true
+			pass
+	
+	$Bumpers/CarBumper1Grill.visible = false
+	$Bumpers/CarBumper2Bumper.visible = false
+	$Bumpers/CarBumper2RenPlog.visible = false
+	match Global.bumper_upgrades:
+		1, 2, 3:
+			$Bumpers/CarBumper1Grill.visible = true
+		4, 5, 6, 7:
+			$Bumpers/CarBumper2Bumper.visible = true
+		8, 9, 10:
+			$Bumpers/CarBumper2RenPlog.visible = true
+		_:
+			pass
+
+func update_upgrade_modifiers():
+	engine_upgrade = Global.engine_upgrades
+	speed_boost += (speed_boost * 0.1 * Global.booster_upgrades)
+	
+	match Global.wheels_upgrades:
+		1:
+			terrain_deceleration_modifier *= 0.5
+		2:
+			terrain_deceleration_modifier *= 0
+		_:
+			pass
+	obstacle_slowdown_modifier *= (1 - bumper_upgrade_effect * Global.bumper_upgrades)
+	
 
 func _ready() -> void:
 	if not faux:
@@ -56,70 +122,15 @@ func _ready() -> void:
 		snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
 		steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
 		audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
-	
-	engine_upgrade = Global.engine_upgrades
-	$Engines/CarEngine1.visible = false
-	$Engines/CarEngine2.visible = false
-	$Engines/CarEngine3.visible = false
-	match engine_upgrade:
-		3, 4:
-			$Engines/CarEngine1.visible = true
-		5, 6, 7:
-			$Engines/CarEngine2.visible = true
-		8, 9, 10:
-			$Engines/CarEngine3.visible = true
-		_:
-			pass
-	
-	booster_upgrade = Global.booster_upgrades
-	$BottomBosters/CarBoost1.visible = false
-	$TopBoosters/CarBoost2.visible = false
-	$TopBoosters/CarBoost3.visible = false
-	match booster_upgrade:
-		3, 4:
-			$BottomBosters/CarBoost1.visible = true
-		5, 6, 7:
-			$TopBoosters/CarBoost2.visible = true
-		8, 9, 10:
-			$TopBoosters/CarBoost3.visible = true
-		_:
-			pass
-	speed_boost += (speed_boost * 0.1 * Global.booster_upgrades)
-	
-	wheels_upgrade = Global.wheels_upgrades
-	$Wheels/T1.visible = false
-	$Wheels/T2.visible = false
-	$Wheels/T2.visible = false
-	match wheels_upgrade:
-		1:
-			$Wheels/T2.visible = true
-			terrain_deceleration_modifier *= 0.5
-		2:
-			$Wheels/T3.visible = true
-			terrain_deceleration_modifier *= 0
-		_:
-			$Wheels/T1.visible = true
-			pass
-	
-	bumper_upgrade = Global.bumper_upgrades
-	$Bumpers/CarBumper1Grill.visible = false
-	$Bumpers/CarBumper2Bumper.visible = false
-	$Bumpers/CarBumper2RenPlog.visible = false
-	match bumper_upgrade:
-		1, 2, 3:
-			$Bumpers/CarBumper1Grill.visible = true
-		4, 5, 6, 7:
-			$Bumpers/CarBumper2Bumper.visible = true
-		8, 9, 10:
-			$Bumpers/CarBumper2RenPlog.visible = true
-		_:
-			pass
-	obstacle_slowdown_modifier *= (1 - bumper_upgrade_effect * Global.bumper_upgrades)
-	
+		update_upgrade_modifiers()
+	update_visuals()
+
+
 # Deceleration after engine upgrades (level 10 = half the slowdown).
 func get_deceleration() -> float:
 	var factor := maxf(0.0, 1.0 - engine_decel_reduction * Global.engine_upgrades)
 	return deceleration * factor
+
 
 func _physics_process(_delta: float) -> void:
 	if not faux:

@@ -42,7 +42,8 @@ var bumper_upgrade_effect = 0.1
 var speedometer : Speedometer
 var tachometer : Tachometer
 var snus_gauge : Snus_Gauge
-var steering_wheel : Node2D
+var steering_wheel : TextureRect
+var touch_controller : HBoxContainer
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_label_pressed(KEY_E):
@@ -120,7 +121,9 @@ func _ready() -> void:
 		speedometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Speedometer")
 		tachometer = get_node("../CanvasLayer/HUD/Dashboard/Gauges/Tachometer")
 		snus_gauge = get_node("../CanvasLayer/HUD/Dashboard/SnusGauge")
-		steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Ratt")
+		steering_wheel = get_node("../CanvasLayer/HUD/Dashboard/Steering/Wheel")
+		touch_controller = get_node("../CanvasLayer/HUD/Dashboard/Steering/Wheel/TouchController")
+		
 		audio_manager.play_sfx(audio_manager.MOTORLJUD__1__EPA)
 		update_upgrade_modifiers()
 	update_visuals()
@@ -201,6 +204,7 @@ func _physics_process(_delta: float) -> void:
 		# Visual turning feedback
 		rotation = lerpf(rotation, PI/2 + steering_angle, 1.0 - exp(-turn_smoothing * _delta))
 		steering_wheel.rotation = lerpf(steering_wheel.rotation, steering_angle * 5, 1.0 - exp(-turn_smoothing * _delta))
+		touch_controller.rotation = -steering_wheel.rotation
 		
 		tachometer.set_rpm(boost_duration / boost_duration_cutoff)
 		if speed > 0:

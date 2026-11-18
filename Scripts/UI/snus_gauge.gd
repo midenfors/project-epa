@@ -16,7 +16,7 @@ func update_snus_amount():
 	var _max : int = Global.snus_counter + Global.snus_upgrades
 	var v_offset : float = 40
 	var h_offset : float = 80
-	var max_stack_height = 5
+	var max_stack_height = 99
 	for i in range(_max, 0, -1):
 		var sprite := Sprite2D.new()
 		sprite.texture = snusdosa_tex

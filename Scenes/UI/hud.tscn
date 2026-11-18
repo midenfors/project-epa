@@ -65,9 +65,15 @@ theme_override_font_sizes/font_size = 24
 text = "Distance: 99999"
 
 [node name="SnusGauge" type="Control" parent="Dashboard" unique_id=1621035185]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -628.0
+offset_top = -737.0
+offset_right = -588.0
+offset_bottom = -697.0
+grow_vertical = 0
 script = ExtResource("2_fqivn")
 
 [node name="SnusMarker2D" type="Marker2D" parent="Dashboard/SnusGauge" unique_id=1996838785]
@@ -77,20 +83,23 @@ position = Vector2(699, 578)
 layout_mode = 1
 
 [node name="Gauges" type="Control" parent="Dashboard" unique_id=1053239954]
-anchors_preset = 0
-offset_left = -250.0
-offset_right = -210.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
 
 [node name="Speedometer" type="Control" parent="Dashboard/Gauges" unique_id=340154884]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 592.0
-offset_top = 485.0
-offset_right = 848.0
-offset_bottom = 741.0
+offset_left = 301.0
+offset_top = -142.0
+offset_right = 301.0
+offset_bottom = -142.0
 grow_vertical = 0
 scale = Vector2(1.2, 1.2)
 script = ExtResource("1_8glcj")
@@ -119,10 +128,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 423.00003
-offset_top = 486.0
-offset_right = 684.0
-offset_bottom = 665.0
+offset_left = 147.00003
+offset_top = -140.0
+offset_right = 408.0
+offset_bottom = 39.0
 grow_vertical = 0
 scale = Vector2(1.2, 1.2)
 script = ExtResource("7_uidm2")
@@ -147,9 +156,41 @@ offset_right = 39.999996
 offset_bottom = 40.0
 texture = ExtResource("8_uidm2")
 
-[node name="Ratt" type="Sprite2D" parent="Dashboard" unique_id=952292294]
-position = Vector2(328, 741)
+[node name="Steering" type="Control" parent="Dashboard" unique_id=794426835]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -242.0
+offset_right = 80.0
+grow_vertical = 0
+
+[node name="Wheel" type="TextureRect" parent="Dashboard/Steering" unique_id=1955566249]
+layout_mode = 0
+offset_right = 584.0
+offset_bottom = 611.0
+pivot_offset = Vector2(290, 299)
 texture = ExtResource("10_8c63k")
+
+[node name="TouchController" type="HBoxContainer" parent="Dashboard/Steering/Wheel" unique_id=882443676]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(290, 299)
+offset_transform_enabled = true
+
+[node name="Left" type="Button" parent="Dashboard/Steering/Wheel/TouchController" unique_id=1442333067]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="Right" type="Button" parent="Dashboard/Steering/Wheel/TouchController" unique_id=1125346909]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
 
 [node name="PoppyCounter" type="Control" parent="Dashboard" unique_id=1482944850]
 layout_mode = 1
@@ -534,16 +575,20 @@ midenfors"
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1704118310]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 459.0
-offset_right = 345.0
-offset_bottom = 499.0
+offset_left = 281.0
+offset_top = 426.0
+offset_right = 321.0
+offset_bottom = 466.0
 joystick_mode = 1
 action_left = &"Turn Left"
 action_right = &"Turn Right"
 action_up = &""
 action_down = &""
 
+[connection signal="button_down" from="Dashboard/Steering/Wheel/TouchController/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="Dashboard/Steering/Wheel/TouchController/Left" to="." method="_on_left_button_up"]
+[connection signal="button_down" from="Dashboard/Steering/Wheel/TouchController/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="Dashboard/Steering/Wheel/TouchController/Right" to="." method="_on_right_button_up"]
 [connection signal="pressed" from="Dashboard/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CloseUpgrButton" to="." method="_on_close_upgr_button_pressed"]
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CheatButton" to="." method="_on_cheat_button_pressed"]

@@ -33,15 +33,14 @@
 			"uuid": "00415760-0b3a-4c22-9f30-1ed3b3520616",
 			"title": "Done",
 			"tasks": [
-				"f5ce0925-4a82-4403-ac32-9d9034f68830"
+				"f5ce0925-4a82-4403-ac32-9d9034f68830",
+				"eb1ca49b-7c36-4088-802f-bba83e3737dc"
 			]
 		},
 		{
 			"uuid": "36e640e5-614b-400d-991f-917efd17ffe7",
 			"title": "Bugs",
-			"tasks": [
-				"eb1ca49b-7c36-4088-802f-bba83e3737dc"
-			]
+			"tasks": []
 		}
 	],
 	"tasks": [

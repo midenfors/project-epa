@@ -8,6 +8,7 @@ const EPA_DUNK_LOOP__EQ_ = preload("uid://b752yo2aybctd")
 func _ready() -> void:
 	music = AudioStreamPlayer.new()
 	add_child(music)
+	music.bus = AudioServer.get_bus_name(AudioServer.get_bus_index("Music"))
 	music.finished.connect(finished_intro)
 	music.stream = EPA_DUNK_FULL__EQ_
 	music.play()

@@ -35,6 +35,7 @@ func play_sfx(_stream) -> void:
 	var player = AudioStreamPlayer.new()
 	add_child(player)
 	player.stream = _stream
+	player.bus = AudioServer.get_bus_name(AudioServer.get_bus_index("SFX"))
 	player.autoplay = true
 	player.play()
 	player.finished.connect(sfx_finished.bind(player))

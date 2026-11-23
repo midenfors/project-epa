@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://cnmyt7i65at70" path="res://Scripts/UI/settings.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://dggjygmr5n17p" path="res://Assets/Art/Background1.png" id="2_bg"]
 [ext_resource type="FontFile" uid="uid://dxg5qwusf6mwk" path="res://Assets/Fonts/Amatic_SC/AmaticSC-Bold.ttf" id="3_font"]
+[ext_resource type="Theme" uid="uid://cxb3kvws7iov1" path="res://Resources/main-buttons.tres" id="4_ygnii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hm8r"]
+bg_color = Color(0.2839167, 0.2721427, 0.25741875, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+shadow_size = 24
 
 [node name="Settings" type="Control" unique_id=1218047381]
 layout_mode = 3
@@ -31,50 +40,165 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -358.0
+offset_top = -299.0
+offset_right = 358.0
+offset_bottom = 299.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7hm8r")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=717359947]
+[node name="Title" type="Label" parent="Panel" unique_id=577972190]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+offset_bottom = 102.0
 grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1384453940]
-custom_minimum_size = Vector2(320, 0)
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1498860403]
-layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 80
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="VolumeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1315490113]
+[node name="Back" type="Button" parent="Panel" unique_id=1046011570]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -117.0
+offset_right = -17.0
+offset_bottom = -17.55371
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_ygnii")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=374198694]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_top = 166.0
+offset_right = 259.0
+offset_bottom = 482.0
+grow_horizontal = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=938552135]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+current_tab = 2
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/TabContainer" unique_id=495132036]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+metadata/_tab_index = 0
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/TabContainer/Audio" unique_id=82068590]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="MarginContainer/TabContainer/Audio" unique_id=384821160]
 layout_mode = 2
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 26
-text = "Volume"
+text = "Master Volume"
+horizontal_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=1421601690]
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio" unique_id=524327003]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 value = 100.0
 
-[node name="FullscreenCheck" type="CheckButton" parent="CenterContainer/VBoxContainer" unique_id=24527758]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Audio" unique_id=229591044]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="MarginContainer/TabContainer/Audio" unique_id=972866469]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio" unique_id=1518931986]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+value = 100.0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Audio" unique_id=1094314282]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="MarginContainer/TabContainer/Audio" unique_id=231982186]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "Sound effects Volume"
+horizontal_alignment = 1
+
+[node name="SFX_Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio" unique_id=1626946644]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+value = 100.0
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/TabContainer/Audio" unique_id=1187505921]
+layout_mode = 2
+
+[node name="Graphics" type="VBoxContainer" parent="MarginContainer/TabContainer" unique_id=1627659514]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+metadata/_tab_index = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Graphics" unique_id=136877254]
+layout_mode = 2
+
+[node name="FullscreenCheck" type="CheckButton" parent="MarginContainer/TabContainer/Graphics" unique_id=1714020101]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 26
 text = "Fullscreen"
 
-[node name="Back" type="Button" parent="CenterContainer/VBoxContainer" unique_id=836587465]
-unique_name_in_owner = true
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Graphics" unique_id=672832759]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
-text = "Back"
+
+[node name="Gameplay" type="VBoxContainer" parent="MarginContainer/TabContainer" unique_id=750373761]
+layout_mode = 2
+theme_override_constants/separation = 8
+metadata/_tab_index = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Gameplay" unique_id=118824052]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/TabContainer/Gameplay" unique_id=319738595]
+layout_mode = 2
+disabled = true
+text = "Reset Save"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Gameplay" unique_id=2009064982]
+layout_mode = 2
+
+[node name="Other" type="VBoxContainer" parent="MarginContainer/TabContainer" unique_id=958982847]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+metadata/_tab_index = 3
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Other" unique_id=956671541]
+layout_mode = 2

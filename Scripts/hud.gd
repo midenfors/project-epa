@@ -66,7 +66,6 @@ func _on_upgrade_button_pressed() -> void:
 	show_upgrades()
 	$Dashboard/UpgradeButton.hide()
 
-
 func _on_close_upgr_button_pressed() -> void:
 	hide_upgrades()
 	$Dashboard/UpgradeButton.show()
@@ -81,18 +80,14 @@ func _on_menu_btn_pressed() -> void:
 func show_win_screen() -> void:
 	$WinScreen.show()
 
-
 func _on_left_button_down():
 	Input.action_press("Turn Left")
-
 
 func _on_right_button_down():
 	Input.action_press("Turn Right")
 
-
 func _on_left_button_up():
 	Input.action_release("Turn Left")
-
 
 func _on_right_button_up():
 	Input.action_release("Turn Right")

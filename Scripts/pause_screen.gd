@@ -30,3 +30,10 @@ func pause():
 func unpause():
 	paused = false
 	get_tree().paused = false
+
+const SETTINGS = preload("uid://cds3j2kei57o7")
+
+func _on_settings_pressed() -> void:
+	var settings_node = SETTINGS.instantiate()
+	add_child(settings_node)
+	

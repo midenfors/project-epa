@@ -432,6 +432,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "RESUME"
 
+[node name="Settings" type="Button" parent="PauseScreen/MarginContainer/VBoxContainer" unique_id=1168990586]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
 [node name="MenuBtn" type="Button" parent="PauseScreen/MarginContainer/VBoxContainer" unique_id=75500934]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
@@ -593,6 +598,7 @@ action_down = &""
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CloseUpgrButton" to="." method="_on_close_upgr_button_pressed"]
 [connection signal="pressed" from="Dashboard/UpgradeMenu/CheatButton" to="." method="_on_cheat_button_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/ResumeBtn" to="PauseScreen" method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/Settings" to="PauseScreen" method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/MenuBtn" to="PauseScreen" method="_on_menu_btn_pressed"]
 [connection signal="pressed" from="PauseScreen/MarginContainer/VBoxContainer/QuitBtn" to="PauseScreen" method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="EndScreen/MarginContainer/VBoxContainer/TowHomeBtn" to="EndScreen" method="_on_tow_home_btn_pressed"]
